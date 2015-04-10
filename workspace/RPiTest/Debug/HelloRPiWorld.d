@@ -1,1 +1,0 @@
-HelloRPiWorld.d: ../HelloRPiWorld.cpp
