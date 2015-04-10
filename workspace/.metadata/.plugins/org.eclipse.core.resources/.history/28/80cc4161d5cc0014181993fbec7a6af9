@@ -1,0 +1,22 @@
+/*
+ * GPIOAccess.cpp
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <sstream>
+#include "GPIOAccess.h"
+
+using namespace std;
+
+GPIOAccess::GPIOAccess(string number){
+	this->gpioNumber = number;
+}
+
+
+
+

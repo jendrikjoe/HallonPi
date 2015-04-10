@@ -1,0 +1,39 @@
+/*
+ * test.cpp
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include "GPIOAccess.h"
+#include <unistd.h>
+#include "wiringPi.h"
+using namespace std;
+int main(void)
+{
+	cout << "Hello World" << endl;
+	GPIOAccess gpio4 = GPIOAccess("4");
+	gpio4.exportGpio();
+	gpio4.setDirection("out");
+	string value ="0";
+	int i=0;
+	while(i<100000){
+		usleep(50000);
+		if(value!="0"){
+			value="0";
+			gpio4.setValGpio(value);
+		}
+		else{
+			value = "1";
+			gpio4.setValGpio(value);
+		}
+		i++;
+	}
+	gpio4.unexportGpio();
+	return 0;
+}
+

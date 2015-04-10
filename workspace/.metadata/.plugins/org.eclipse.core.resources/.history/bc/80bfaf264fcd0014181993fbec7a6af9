@@ -1,0 +1,16 @@
+/*
+ * Sender.cpp
+ *
+ *  Created on: Mar 18, 2015
+ *      Author: Jendrik
+ */
+
+Sender::Sender(){
+	sendBuffer = new char[10000];
+}
+
+Sender::~Sender(){
+	delete sendBuffer;
+}
+
+

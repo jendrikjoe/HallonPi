@@ -1,0 +1,21 @@
+19:12:10 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../Sender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
+../Sender.cpp: In member function 'char Sender::encryptData(char)':
+../Sender.cpp:22:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../Sender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 

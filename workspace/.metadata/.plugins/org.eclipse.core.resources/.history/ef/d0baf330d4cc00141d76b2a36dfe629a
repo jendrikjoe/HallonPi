@@ -1,0 +1,25 @@
+/*
+ * GPIOAccess.h
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef GPIOACCESS_H_
+#define GPIOACCESS_H_
+
+#include<string>
+using namespace std;
+
+class GPIOAccess{
+public:
+	GPIOAccess(int x); //opens GPIO-pin with the number x
+	int export_gpio();	//exports the GPIO-pin
+	int unexport_gpio(); //unexports the GPIO-pin
+	int setdir_gpio(string dir);
+};
+
+
+
+
+#endif /* GPIOACCESS_H_ */

@@ -1,0 +1,17 @@
+/*
+ * Sender.h
+ *
+ *  Created on: Mar 18, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef SENDER_H_
+#define SENDER_H_
+
+class Sender{
+	Sender::Sender();
+};
+
+
+
+#endif /* SENDER_H_ */

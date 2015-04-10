@@ -1,0 +1,24 @@
+/*
+ * BitStruct.h
+ *
+ *  Created on: Mar 22, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef BITSTRUCT_H_
+#define BITSTRUCT_H_
+
+namespace bitcalc{
+
+	union bytestruct{
+		struct{
+			char bit1: 1;
+		};
+	};
+
+}
+
+
+
+
+#endif /* BITSTRUCT_H_ */

@@ -1,0 +1,32 @@
+/*
+ * GPIOAccess.cpp
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <sstream>
+#include "GPIOAccess.h"
+
+using namespace std;
+
+GPIOAccess::GPIOAccess(string number){
+	this->gpioNumber = number;
+}
+
+int GPIOAccess::exportGpio(){
+	string exportStr = "/sys/class/gpio/export";
+	ofstream exportStream(exportStr.c_str());
+	if(exportStream <0)
+	{
+		cout <<"File couldn't be opened! " <<this;
+		return -1;
+	}
+}
+
+
+
+

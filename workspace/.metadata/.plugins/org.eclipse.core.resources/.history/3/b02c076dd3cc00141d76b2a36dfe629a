@@ -1,0 +1,21 @@
+/*
+ * GPIOAccess.h
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef GPIOACCESS_H_
+#define GPIOACCESS_H_
+#include <string>
+
+class GPIOAccess{
+public:
+	GPIOAccess();
+	GPIOAccess(string x);
+};
+
+
+
+
+#endif /* GPIOACCESS_H_ */

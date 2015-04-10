@@ -1,0 +1,52 @@
+/*
+ * GPIOAccess.cpp
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <sstream>
+#include "GPIOAccess.h"
+
+using namespace std;
+
+GPIOAccess::GPIOAccess(string number){
+	this->gpioNumber = number;
+}
+
+int GPIOAccess::exportGpio(){
+	string exportStr = "/sys/class/gpio/export";
+	ofstream exportStream(exportStr.c_str());
+	if(exportStream <0)
+	{
+		cout <<"Unable to export GPIO!" <<this;
+		return -1;
+	}
+	exportStream << this->gpioNumber;
+	exportStream.close();
+	return 0;
+}
+
+int GPIOAccess::unexportGpio(){
+	string unexportStr = "/sys/class/gpio/unexport";
+	ofstream unexportStream(unexportStr.c_str());
+	if(unexportStream <0)
+	{
+		cout <<"Unable to unexport GPIO!" <<this;
+		return -1;
+	}
+	unexportStream << this->gpioNumber;
+	unexportStream.close();
+	return 0;
+}
+
+int GPIOAccess::setValGpio(string val){
+
+}
+
+
+
+

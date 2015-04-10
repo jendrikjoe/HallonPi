@@ -1,0 +1,43 @@
+/*
+ * test.cpp
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include "GPIOAccess.h"
+#include <unistd.h>
+#include <wiringPi.h>
+#include "BitStruct.h"
+using namespace std;
+
+int main (void)
+{
+  wiringPiSetup();
+  pinMode(7, OUTPUT);
+  bitcalc::intstruct test;
+  bitcalc::bytestruct test2;
+  test2.byte = 2;
+  cout << sizeof(int) << sizeof(long) << endl;
+  cout << test2.bit1 << test2.bit2 << test2.bit3 << test2.bit4
+		  << test2.bit5 << test2.bit6 << test2.bit7 << test2.bit8 << endl;
+  test.integer = 0xffffffff;
+  cout << test.byte1.bit1 << test.byte1.bit2 << test.byte1.bit3
+		  << test.byte1.bit4 << test.byte1.bit5 << test.byte1.bit6
+		  << test.byte1.bit7 << test.byte1.bit8;
+  cout << test.byte2.bit1 << test.byte2.bit2 << test.byte2.bit3
+  		  << test.byte2.bit4 << test.byte2.bit5 << test.byte2.bit6
+  		  << test.byte2.bit7 << test.byte2.bit8;
+  cout << test.byte3.bit1 << test.byte3.bit2 << test.byte3.bit3
+  		  << test.byte3.bit4 << test.byte3.bit5 << test.byte3.bit6
+  		  << test.byte3.bit7 << test.byte3.bit8;
+  cout << test.byte4.bit1 << test.byte4.bit2 << test.byte4.bit3
+  		  << test.byte4.bit4 << test.byte4.bit5 << test.byte4.bit6
+  		  << test.byte4.bit7 << test.byte4.bit8;
+  return 0 ;
+}
+

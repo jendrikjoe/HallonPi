@@ -1,0 +1,35 @@
+17:12:46 **** Build of configuration Debug for project RPiTest ****
+make all 
+Building file: ../HelloRPiWorld.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O2 -g3 -Wall -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"HelloRPiWorld.d" -MT"HelloRPiWorld.d" -o "HelloRPiWorld.o" "../HelloRPiWorld.cpp"
+Finished building: ../HelloRPiWorld.cpp
+ 
+Building target: RPiTest
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "RPiTest"  ./HelloRPiWorld.o   
+./HelloRPiWorld.o: In function `_start':
+:(.text+0x4): multiple definition of `_start'
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../arm-linux-gnueabihf/libc/usr/lib/arm-linux-gnueabihf/crt1.o:(.text+0x0): first defined here
+./HelloRPiWorld.o: In function `_fini':
+:(.fini+0x0): multiple definition of `_fini'
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../arm-linux-gnueabihf/libc/usr/lib/arm-linux-gnueabihf/crti.o:(.fini+0x0): first defined here
+./HelloRPiWorld.o:(.rodata+0x0): multiple definition of `_IO_stdin_used'
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../arm-linux-gnueabihf/libc/usr/lib/arm-linux-gnueabihf/crt1.o:(.rodata.cst4+0x0): first defined here
+./HelloRPiWorld.o: In function `__data_start':
+:(.data+0x0): multiple definition of `__data_start'
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../arm-linux-gnueabihf/libc/usr/lib/arm-linux-gnueabihf/crt1.o:(.data+0x0): first defined here
+./HelloRPiWorld.o: In function `__data_start':
+:(.data+0x4): multiple definition of `__dso_handle'
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../lib/gcc/arm-linux-gnueabihf/4.9.1/crtbegin.o:(.data+0x0): first defined here
+./HelloRPiWorld.o: In function `_init':
+:(.init+0x0): multiple definition of `_init'
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../arm-linux-gnueabihf/libc/usr/lib/arm-linux-gnueabihf/crti.o:(.init+0x0): first defined here
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../lib/gcc/arm-linux-gnueabihf/4.9.1/crtend.o:(.tm_clone_table+0x0): multiple definition of `__TMC_END__'
+./HelloRPiWorld.o::(.data+0x8): first defined here
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../lib/gcc/arm-linux-gnueabihf/4.9.1/../../../../arm-linux-gnueabihf/bin/ld: ./HelloRPiWorld.o: access beyond end of merged section (34060)
+collect2: error: ld returned 1 exit status
+make: *** [RPiTest] Error 1
+
+17:12:47 Build Finished (took 317ms)
+

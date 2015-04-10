@@ -1,0 +1,41 @@
+/*
+ * BitStruct.h
+ *
+ *  Created on: Mar 22, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef BITSTRUCT_H_
+#define BITSTRUCT_H_
+
+namespace bitcalc{
+
+	union bytestruct{
+		struct{
+			unsigned short bit1: 1;
+			unsigned short bit2: 1;
+			unsigned short bit3: 1;
+			unsigned short bit4: 1;
+			unsigned short bit5: 1;
+			unsigned short bit6: 1;
+			unsigned short bit7: 1;
+			unsigned short bit8: 1;
+		};
+		unsigned char byte;
+	};
+
+	union intstruct{
+		struct{
+			bytestruct byte1 :8;
+			bytestruct byte2 :8;
+			bytestruct byte3 :8;
+			bytestruct byte4 :8;
+		};
+		unsigned int integer;
+	};
+}
+
+
+
+
+#endif /* BITSTRUCT_H_ */

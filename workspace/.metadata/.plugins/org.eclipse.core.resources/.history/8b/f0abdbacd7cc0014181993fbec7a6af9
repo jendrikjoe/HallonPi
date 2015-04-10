@@ -1,0 +1,26 @@
+/*
+ * test.cpp
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+
+#include <iostream>
+#include "GPIOAccess.h"
+using namespace std;
+int main(void)
+{
+	cout << "Hello World" <<endl;
+	GPIOAccess *gpio4 = new GPIOAccess("4");
+	string value ="0";
+	while(1){
+		if(value=="0"){
+			value="1";
+			gpio4->setValGpio(value);
+		}
+
+	}
+	return 0;
+}
+

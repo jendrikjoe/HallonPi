@@ -1,0 +1,19 @@
+/*
+ * Sender.cpp
+ *
+ *  Created on: Mar 18, 2015
+ *      Author: Jendrik
+ */
+
+#define CRC32MASK 0x04C11DB7
+#include "Sender.h"
+
+Sender::Sender(){
+	sendBuffer = new char[102400];
+}
+
+Sender::~Sender(){
+	delete sendBuffer;
+}
+
+

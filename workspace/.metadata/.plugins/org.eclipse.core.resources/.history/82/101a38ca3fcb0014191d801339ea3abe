@@ -1,0 +1,18 @@
+/*
+ * HelloRPiWorld.cpp
+ *
+ *  Created on: Mar 15, 2015
+ *      Author: Jendrik
+ */
+#include <iostream.h>
+
+using namespace std;
+
+int main(void)
+{
+	cout << "Hello RPi!" << endl;
+	return 0;
+}
+
+
+

@@ -1,0 +1,35 @@
+18:48:32 **** Incremental Build of configuration Debug for project bareMetalTest ****
+make all 
+Building file: ../test.c
+Invoking: Cross GCC Compiler
+arm-none-eabi-gcc -O2 -Wall -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.c"
+Finished building: ../test.c
+ 
+Building target: bareMetalTest
+Invoking: Cross GCC Linker
+arm-none-eabi-gcc  -o "bareMetalTest"  ./test.o   
+./test.o: In function `__data_start':
+crtstuff.c:(.data+0x0): multiple definition of `__dso_handle'
+/usr/local/linaro/gcc-arm-none-eabi-4_7-2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/crtbegin.o:(.data+0x0): first defined here
+./test.o: In function `start':
+crtstuff.c:(.text+0x58): multiple definition of `_mainCRTStartup'
+/usr/local/linaro/gcc-arm-none-eabi-4_7-2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/crt0.o:(.text+0x0): first defined here
+./test.o: In function `_init':
+crtstuff.c:(.init+0x0): multiple definition of `_init'
+/usr/local/linaro/gcc-arm-none-eabi-4_7-2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/crti.o:(.init+0x0): first defined here
+./test.o: In function `start':
+crtstuff.c:(.text+0x58): multiple definition of `_start'
+/usr/local/linaro/gcc-arm-none-eabi-4_7-2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/crt0.o:(.text+0x0): first defined here
+./test.o: In function `_fini':
+crtstuff.c:(.fini+0x0): multiple definition of `_fini'
+/usr/local/linaro/gcc-arm-none-eabi-4_7-2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/crti.o:(.fini+0x0): first defined here
+./test.o: In function `start':
+crtstuff.c:(.text+0x58): multiple definition of `start'
+/usr/local/linaro/gcc-arm-none-eabi-4_7-2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/crt0.o:(.text+0x0): first defined here
+/usr/local/linaro/gcc-arm-none-eabi-4_7-2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/bin/ld: error: ./test.o uses VFP register arguments, bareMetalTest does not
+/usr/local/linaro/gcc-arm-none-eabi-4_7-2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/bin/ld: failed to merge target specific data of file ./test.o
+collect2: error: ld returned 1 exit status
+make: *** [bareMetalTest] Error 1
+
+18:48:32 Build Finished (took 391ms)
+

@@ -1,0 +1,35 @@
+/*
+ * test.cpp
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include "GPIOAccess.h"
+#include <unistd.h>
+#include <wiringPi.h>
+#include "BitStruct.h"
+using namespace std;
+
+int main (void)
+{
+  wiringPiSetup();
+  pinMode(7, OUTPUT);
+  bitcalc::intstruct test = bitcalc::intstruct = 64;
+  cout << test.byte1.bit1 << test.byte1.bit2 << test.byte1.bit3
+		  << test.byte1.bit4 << test.byte1.bit5 << test.byte1.bit6
+		  << test.byte1.bit7 << test.byte1.bit8 << endl;
+  for(;;)
+  {
+    digitalWrite(7,HIGH);
+    delay(500);
+    digitalWrite(7,LOW);
+    delay(500);
+  }
+  return 0 ;
+}
+

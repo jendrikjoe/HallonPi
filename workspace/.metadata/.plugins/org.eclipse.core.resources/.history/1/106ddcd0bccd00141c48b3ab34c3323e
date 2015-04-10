@@ -1,0 +1,17 @@
+/*
+ * Sender.cpp
+ *
+ *  Created on: Mar 18, 2015
+ *      Author: Jendrik
+ */
+#include<Sender.h>
+
+Sender::Sender(){
+	sendBuffer = new char[10240];
+}
+
+Sender::~Sender(){
+	delete sendBuffer;
+}
+
+

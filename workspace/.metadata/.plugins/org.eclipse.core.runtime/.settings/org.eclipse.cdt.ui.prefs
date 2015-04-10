@@ -1,0 +1,16 @@
+content_assist_disabled_computers=org.eclipse.cdt.ui.textProposalCategory\u0000org.eclipse.cdt.ui.parserProposalCategory\u0000
+eclipse.preferences.version=1
+includeStyle.external=<?xml version\="1.0" encoding\="UTF-8"?>\n<style angle_brackets\="false" blank_line_before\="false" keep_together\="false" relative_path\="false"/>
+includeStyle.inOtherProject=<?xml version\="1.0" encoding\="UTF-8"?>\n<style angle_brackets\="false" blank_line_before\="false" keep_together\="false" relative_path\="false"/>
+includeStyle.inSameProject=<?xml version\="1.0" encoding\="UTF-8"?>\n<style angle_brackets\="false" blank_line_before\="false" keep_together\="false" relative_path\="false"/>
+includeStyle.other=<?xml version\="1.0" encoding\="UTF-8"?>\n<style blank_line_before\="true" keep_together\="true" order\="3"/>
+includeStyle.partner=<?xml version\="1.0" encoding\="UTF-8"?>\n<style angle_brackets\="false" blank_line_before\="true" keep_together\="true" order\="0" relative_path\="false"/>
+includeStyle.related=<?xml version\="1.0" encoding\="UTF-8"?>\n<style blank_line_before\="false" keep_together\="false"/>
+includeStyle.sameFolder=<?xml version\="1.0" encoding\="UTF-8"?>\n<style angle_brackets\="false" blank_line_before\="false" keep_together\="false" relative_path\="false"/>
+includeStyle.subfolder=<?xml version\="1.0" encoding\="UTF-8"?>\n<style angle_brackets\="false" blank_line_before\="false" keep_together\="false" relative_path\="false"/>
+includeStyle.system=<?xml version\="1.0" encoding\="UTF-8"?>\n<style blank_line_before\="true" keep_together\="true" order\="1"/>
+includeStyle.systemWithExtension=<?xml version\="1.0" encoding\="UTF-8"?>\n<style angle_brackets\="true" blank_line_before\="false" keep_together\="true" order\="1" relative_path\="false"/>
+includeStyle.systemWithoutExtension=<?xml version\="1.0" encoding\="UTF-8"?>\n<style angle_brackets\="true" blank_line_before\="false" keep_together\="true" order\="2" relative_path\="false"/>
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true
