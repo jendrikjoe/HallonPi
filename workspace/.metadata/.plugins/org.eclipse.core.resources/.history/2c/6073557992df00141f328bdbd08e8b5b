@@ -1,0 +1,16 @@
+/*
+ * TCPSender.cpp
+ *
+ *  Created on: Apr 10, 2015
+ *      Author: Jendrik
+ */
+
+#include "TCPSender.h"
+
+
+TCPSender::TCPSender(){
+	//A socket is created, making it possible to talk to
+	// the operating system:
+	socketNumber = socket(AF_INET,SOCK_STREAM,0);
+	//The socket is bind to a certain port:
+}

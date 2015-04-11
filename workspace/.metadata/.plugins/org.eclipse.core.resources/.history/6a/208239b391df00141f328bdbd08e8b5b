@@ -1,0 +1,13 @@
+/*
+ * TCPSender.cpp
+ *
+ *  Created on: Apr 10, 2015
+ *      Author: Jendrik
+ */
+
+#include "TCPSender.h"
+
+
+TCPSender::TCPSender(){
+	socketNumber = socket(AF_INET,SOCK_STREAM);
+}

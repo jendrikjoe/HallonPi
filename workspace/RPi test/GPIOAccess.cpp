@@ -5,10 +5,7 @@
  *      Author: Jendrik
  */
 
-#include <fstream>
-#include <string>
-#include <iostream>
-#include <sstream>
+
 #include "GPIOAccess.h"
 
 using namespace std;

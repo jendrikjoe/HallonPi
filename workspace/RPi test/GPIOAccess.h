@@ -8,7 +8,11 @@
 #ifndef GPIOACCESS_H_
 #define GPIOACCESS_H_
 
-#include<string>
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <string>
 using namespace std;
 
 class GPIOAccess{

@@ -1,0 +1,50 @@
+/*
+ * TCPSender.cpp
+ *
+ *  Created on: Apr 10, 2015
+ *      Author: Jendrik
+ */
+
+#include "TCPSender.h"
+
+
+TCPSender::TCPSender(){
+	//The own system network properties are saved:
+	//A socket is created, making it possible to talk to
+	// the operating system:
+	int sinSize;
+	socketNumber = socket(AF_INET,SOCK_STREAM,0);
+	if(socketNumber == -1){
+		perror("socket establishing failed! \n");
+		//TODO Put what to do if socket does not work
+	}
+	//Address family is set to standard:
+	myAddr.sin_family = AF_INET;
+	//Port set to MYPORT
+	myAddr.sin_port = htons(MYPORT);
+	//Setting addr to 0.0.0.0 which makes bind to fill in
+	// the machines address.
+	myAddr.sin_addr.s_addr = INADDR_ANY;
+	//zero the rest of the struct
+	memset(&(myAddr.sin_zero), 0, 8);
+	//The socket is bind to a certain port:
+	if(bind(socketNumber, (struct sockaddr*)&myAddr,
+			sizeof(struct sockaddr)) == -1){
+		perror("bind establishing failed! \n");
+		//TODO Put what to do if bind does not work
+	}
+	if(listen(socketNumber, CLIENTNUMBER) == -1){
+		perror("Listener couldn't be established");
+	}
+
+	inputSocket = accept(socketNumber, (struct sockaddr*) &remoteAddr,
+			&();
+	if(inputSocket == -1){
+		perror("Accept error!\n");
+	}
+	else printf("Accept ok");
+}
+
+
+TCPSender::~TCPSender(){
+}

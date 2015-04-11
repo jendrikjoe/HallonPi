@@ -1,6 +1,6 @@
-12:19:48 **** Incremental Build of configuration Debug for project bareMatalTest ****
+22:08:06 **** Incremental Build of configuration Debug for project bareMatalTest ****
 make all 
 make: Nothing to be done for `all'.
 
-12:19:48 Build Finished (took 64ms)
+22:08:06 Build Finished (took 68ms)
 

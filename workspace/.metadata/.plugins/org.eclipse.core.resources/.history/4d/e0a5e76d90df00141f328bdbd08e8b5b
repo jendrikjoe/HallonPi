@@ -1,0 +1,16 @@
+/*
+ * TCPSender.h
+ *
+ *  Created on: Apr 10, 2015
+ *      Author: Jendrik
+ */
+
+#include <sys/socket.h>
+
+
+class TCPSender{
+
+public:
+	TCPSender();
+
+};

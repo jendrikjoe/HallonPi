@@ -13,12 +13,10 @@ class Sender{
 public:
 	Sender();
 	~Sender();
-	int sendChars(char* data, int len);
 
 
 private:
 	char *sendBuffer;
-	char encryptData(char);
 
 
 };

@@ -13,13 +13,14 @@
 #include <unistd.h>
 #include <wiringPi.h>
 #include "BitStruct.h"
+#include "TCPSender.h"
 using namespace std;
 
 int main (void)
 {
   wiringPiSetup();
   pinMode(7, OUTPUT);
-  bitcalc::intstruct test;
+  /*bitcalc::intstruct test;
   bitcalc::bytestruct test2;
   test2.byte = 2;
   cout << sizeof(unsigned int) << sizeof(long) << endl;
@@ -43,7 +44,8 @@ int main (void)
     cout << test2.bit1 << test2.bit2 << test2.bit3 << test2.bit4
         		  << test2.bit5 << test2.bit6 << test2.bit7 << test2.bit8 << endl;
 
-
+	*/
+  TCPSender *tcpSender = new TCPSender();
   return 0 ;
 }
 

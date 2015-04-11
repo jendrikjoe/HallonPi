@@ -1,21 +1,67 @@
-19:12:10 **** Incremental Build of configuration Debug for project RPi test ****
+20:34:40 **** Incremental Build of configuration Debug for project RPi test ****
 make all 
+make: Nothing to be done for `all'.
+20:46:20 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+20:46:20 **** Incremental Build of configuration Debug for project bareMatalTest ****
+make all 
+make: Nothing to be done for `all'.
+20:46:46 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+20:46:46 **** Incremental Build of configuration Debug for project bareMatalTest ****
+make all 
+make: Nothing to be done for `all'.
+22:08:04 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../GPIOAccess.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"GPIOAccess.d" -MT"GPIOAccess.d" -o "GPIOAccess.o" "../GPIOAccess.cpp"
+Finished building: ../GPIOAccess.cpp
+ 
 Building file: ../Sender.cpp
 Invoking: Cross G++ Compiler
 arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
-../Sender.cpp: In member function 'char Sender::encryptData(char)':
-../Sender.cpp:22:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
 Finished building: ../Sender.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
  
 Building file: ../test.cpp
 Invoking: Cross G++ Compiler
 arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:48:14: warning: unused variable 'tcpSender' [-Wunused-variable]
+   TCPSender *tcpSender = new TCPSender();
+              ^
 Finished building: ../test.cpp
  
 Building target: RPi test
 Invoking: Cross G++ Linker
-arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./test.o   -lwiringPi -lpthread
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
 Finished building target: RPi test
  
+22:08:06 **** Incremental Build of configuration Debug for project bareMatalTest ****
+make all 
+make: Nothing to be done for `all'.

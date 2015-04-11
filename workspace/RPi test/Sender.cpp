@@ -16,7 +16,3 @@ Sender::~Sender(){
 	delete sendBuffer;
 }
 
-
-char Sender::encryptData(char){
-
-}

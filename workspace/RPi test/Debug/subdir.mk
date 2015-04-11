@@ -6,16 +6,19 @@
 CPP_SRCS += \
 ../GPIOAccess.cpp \
 ../Sender.cpp \
+../TCPSender.cpp \
 ../test.cpp 
 
 OBJS += \
 ./GPIOAccess.o \
 ./Sender.o \
+./TCPSender.o \
 ./test.o 
 
 CPP_DEPS += \
 ./GPIOAccess.d \
 ./Sender.d \
+./TCPSender.d \
 ./test.d 
 
 

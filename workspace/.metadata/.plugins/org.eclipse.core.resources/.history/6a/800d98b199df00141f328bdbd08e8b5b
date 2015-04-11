@@ -1,0 +1,28 @@
+/*
+ * TCPSender.h
+ *
+ *  Created on: Apr 10, 2015
+ *      Author: Jendrik
+ */
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <string.h>
+#include <stdio.h>
+#define MYPORT 31725
+#define CLIENTNUMBER 2
+
+
+
+class TCPSender{
+
+public:
+	TCPSender();
+
+private:
+	int socketNumber;
+	struct sockaddr_in myAddr;
+
+
+};
