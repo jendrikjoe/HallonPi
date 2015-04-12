@@ -1,0 +1,26 @@
+/*
+ * CommunicationPackage.h
+ *
+ *  Created on: Apr 10, 2015
+ *      Author: Jendrik
+ */
+
+
+
+namespace tcp{
+
+
+class CommunicationPackage{
+
+public:
+	void getFrame(char *output) const;
+	unsigned int getTimeStamp() const;
+	bool isValid() const;
+	bool isStarting(char *input);
+
+protected:
+	CommunicationPackage();
+	~CommunicationPackage();
+};
+
+}

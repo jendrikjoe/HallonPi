@@ -1,0 +1,47 @@
+/*
+ * CommunicationPackage.h
+ *
+ *  Created on: Apr 10, 2015
+ *      Author: Jendrik
+ */
+
+#include "PackageType.h"
+
+namespace tcp{
+
+
+class CommunicationPackage{
+
+public:
+	void getFrame(char *output) const;
+	unsigned int getTimeStamp() const;
+	bool isValid() const;
+	bool isStarting(char *input);
+
+	static const char starting[2];
+	static const char ending[2];
+
+private:
+	unsigned short packageLength;
+	char *frame;
+	bool valid;
+	unsigned int timeStamp;
+	PackageType packageType;
+	void writeStart();
+	void readStart(char *frame);
+
+protected:
+	static const unsigned short floatBytes;
+	static const unsigned short doubleBytes;
+	static const unsigned short uIntBytes;
+	static const unsigned short uShortBytes;
+
+
+	CommunicationPackage();
+	CommunicationPackage(const CommunicationPackage &input);
+	CommunicationPackage(char *frame, PackageType type, unsigned short packageLength);
+	~CommunicationPackage();
+
+};
+
+}

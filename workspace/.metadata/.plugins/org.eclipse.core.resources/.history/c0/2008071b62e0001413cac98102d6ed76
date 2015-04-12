@@ -1,0 +1,62 @@
+/*
+ * CommunicationPackage.cpp
+ *
+ *  Created on: Apr 11, 2015
+ *      Author: Jendrik
+ */
+
+
+#include "CommunicationPackage.h"
+
+namespace tcp{
+
+	const char CommunicationPackage::starting = {0x13, 0x7D};
+	const char CommunicationPackage::ending = {0x16, 0x7B};
+
+	const unsigned short CommunicationPackage::floatBytes = sizeof(float);
+	const unsigned short CommunicationPackage::doubleBytes = sizeof(double);
+	const unsigned short CommunicationPackage::uIntBytes = sizeof(unsigned int);
+	const unsigned short CommunicationPackage::uShortBytes = sizeof(unsigned short);
+
+
+	CommunicationPackage::CommunicationPackage() {
+		this->packageLength = 0;
+		this->packageType = DEFAULT_COM;
+		this->valid = false;
+		this->timeStamp = 0;
+		this->frame = new char[1];
+	}
+
+
+	CommunicationPackage::CommunicationPackage(const CommunicationPackage &input) {
+		this->valid = input.valid;
+		this->timeStamp = input.timeStamp;
+		this->packageLength = input.packageLength;
+		this->packageType = input.packageType;
+
+		this->frame = new char[packageLength];
+		for(int i=0; i<packageLength; i++) {
+			this->frame[i] = input.frame[i];
+		}
+	}
+
+
+	CommunicationPackage::CommunicationPackage(char *input,
+			PackageType type, unsigned short packageLength) {
+
+	}
+
+
+
+	void CommunicationPackage::getFrame(char *output) const {
+		for(int i=0; i<packageLength; i++) {
+			output[i] = frame[i];
+		}
+	}
+
+	CommunicationPackage::~CommunicationPackage() {
+		delete frame;
+	}
+
+}
+

@@ -5,47 +5,47 @@
  *      Author: Jendrik
  */
 
+#include <wiringPi.h>
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
 #include "GPIOAccess.h"
 #include <unistd.h>
-#include <wiringPi.h>
+#include <pthread.h>
+#include <time.h>
 #include "BitStruct.h"
 #include "TCPSender.h"
+#include "CommunicationPackage.h"
+
+#define NUMBEROFTHREADS 4
+
 using namespace std;
+
+
+
+void *startTCP(void* threadid){
+	printf("Hello World");
+	//TCPSender *tcpSender = new TCPSender();
+	pthread_exit(NULL);
+}
 
 int main (void)
 {
   wiringPiSetup();
   pinMode(7, OUTPUT);
-  /*bitcalc::intstruct test;
-  bitcalc::bytestruct test2;
-  test2.byte = 2;
-  cout << sizeof(unsigned int) << sizeof(long) << endl;
-  cout << test2.bit1 << test2.bit2 << test2.bit3 << test2.bit4
-		  << test2.bit5 << test2.bit6 << test2.bit7 << test2.bit8 << endl;
-  test.integer = 0xffffffff;
-  unsigned char output = test.byte4;
-  test2.byte = output;
-  cout << test2.bit1 << test2.bit2 << test2.bit3 << test2.bit4
-  		  << test2.bit5 << test2.bit6 << test2.bit7 << test2.bit8;
-  output = test.byte3;
-  test2.byte = output;
-  cout << test2.bit1 << test2.bit2 << test2.bit3 << test2.bit4
-    		  << test2.bit5 << test2.bit6 << test2.bit7 << test2.bit8;
-  output = test.byte2;
-  test2.byte = output;
-  cout << test2.bit1 << test2.bit2 << test2.bit3 << test2.bit4
-      		  << test2.bit5 << test2.bit6 << test2.bit7 << test2.bit8;
-  output = test.byte1;
-  test2.byte = output;
-    cout << test2.bit1 << test2.bit2 << test2.bit3 << test2.bit4
-        		  << test2.bit5 << test2.bit6 << test2.bit7 << test2.bit8 << endl;
+  pthread_t tcpThread;
+  int control;
 
-	*/
-  TCPSender *tcpSender = new TCPSender();
-  return 0 ;
+  //tcp::CommunicationPackage *package = new tcp::CommunicationPackage();
+  //startTCP((void*) tcpThread);
+  /*cout << "Before thread" << endl;
+  control = pthread_create(&tcpThread, NULL, startTCP, (void*) tcpThread);
+  if (control){
+           printf("ERROR; return code from pthread_create() is %d\n", control);
+           exit(-1);
+        }
+  pthread_exit(NULL);*/
 }
+
 

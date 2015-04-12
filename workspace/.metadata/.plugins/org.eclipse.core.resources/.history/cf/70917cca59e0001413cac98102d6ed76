@@ -1,0 +1,42 @@
+/*
+ * test.cpp
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include "GPIOAccess.h"
+#include <unistd.h>
+#include <wiringPi.h>
+#include <pthread.h>
+#include "BitStruct.h"
+#include "TCPSender.h"
+
+#define NUMBEROFTHREADS 4
+
+using namespace std;
+
+
+
+void *startTCP(void* threadid){
+	cout << "Hello World";
+	//TCPSender *tcpSender = new TCPSender();
+	pthread_exit(NULL);
+}
+
+int main (void)
+{
+  wiringPiSetup();
+  pinMode(7, OUTPUT);
+  pthread_t *tcpThread;
+  int control;
+  control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpThread);
+  sleep(100000);
+  return 0 ;
+}
+
+

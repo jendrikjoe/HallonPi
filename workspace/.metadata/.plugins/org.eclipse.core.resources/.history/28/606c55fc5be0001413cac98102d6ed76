@@ -1,0 +1,15 @@
+/*
+ * TCPBuffer.h
+ *
+ *  Created on: Apr 11, 2015
+ *      Author: Jendrik
+ */
+
+class TCPBuffer{
+
+public:
+	TCPBuffer();
+	~TCPBuffer();
+};
+
+

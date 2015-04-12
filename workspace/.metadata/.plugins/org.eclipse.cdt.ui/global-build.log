@@ -1,38 +1,547 @@
-20:34:40 **** Incremental Build of configuration Debug for project RPi test ****
+16:42:43 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'void* startTCP()':
+../test.cpp:27:26: error: void value not ignored as it ought to be
+  return pthread_exit(NULL);
+                          ^
+../test.cpp:26:13: warning: unused variable 'tcpSender' [-Wunused-variable]
+  TCPSender *tcpSender = new TCPSender();
+             ^
+../test.cpp: In function 'int main()':
+../test.cpp:35:49: error: invalid conversion from 'void* (*)()' to 'void* (*)(void*)' [-fpermissive]
+   pthread_create(tcpThread, NULL, startTCP, NULL);
+                                                 ^
+In file included from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/arm-linux-gnueabihf/bits/gthr-default.h:35:0,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/arm-linux-gnueabihf/bits/gthr.h:148,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/ext/atomicity.h:35,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/bits/ios_base.h:39,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/ios:42,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/ostream:38,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/iostream:39,
+                 from ../test.cpp:11:
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/usr/include/pthread.h:225:12: note: initializing argument 3 of 'int pthread_create(pthread_t*, const pthread_attr_t*, void* (*)(void*), void*)'
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../test.cpp: In function 'void* startTCP()':
+../test.cpp:28:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [test.o] Error 1
+16:43:13 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'void* startTCP()':
+../test.cpp:26:13: warning: unused variable 'tcpSender' [-Wunused-variable]
+  TCPSender *tcpSender = new TCPSender();
+             ^
+../test.cpp: In function 'int main()':
+../test.cpp:35:49: error: invalid conversion from 'void* (*)()' to 'void* (*)(void*)' [-fpermissive]
+   pthread_create(tcpThread, NULL, startTCP, NULL);
+                                                 ^
+In file included from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/arm-linux-gnueabihf/bits/gthr-default.h:35:0,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/arm-linux-gnueabihf/bits/gthr.h:148,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/ext/atomicity.h:35,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/bits/ios_base.h:39,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/ios:42,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/ostream:38,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/iostream:39,
+                 from ../test.cpp:11:
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/usr/include/pthread.h:225:12: note: initializing argument 3 of 'int pthread_create(pthread_t*, const pthread_attr_t*, void* (*)(void*), void*)'
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+make: *** [test.o] Error 1
+16:43:13 **** Incremental Build of configuration Debug for project bareMatalTest ****
 make all 
 make: Nothing to be done for `all'.
-20:46:20 **** Incremental Build of configuration Debug for project RPi test ****
+16:45:25 **** Incremental Build of configuration Debug for project RPi test ****
 make all 
-Building file: ../TCPSender.cpp
+Building file: ../test.cpp
 Invoking: Cross G++ Compiler
-arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
-Finished building: ../TCPSender.cpp
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'void* startTCP()':
+../test.cpp:26:13: warning: unused variable 'tcpSender' [-Wunused-variable]
+  TCPSender *tcpSender = new TCPSender();
+             ^
+../test.cpp: In function 'int main()':
+../test.cpp:36:66: error: invalid conversion from 'void* (*)()' to 'void* (*)(void*)' [-fpermissive]
+   control = pthread_create(tcpThread, NULL, startTCP, (void*)NULL);
+                                                                  ^
+In file included from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/arm-linux-gnueabihf/bits/gthr-default.h:35:0,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/arm-linux-gnueabihf/bits/gthr.h:148,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/ext/atomicity.h:35,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/bits/ios_base.h:39,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/ios:42,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/ostream:38,
+                 from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/iostream:39,
+                 from ../test.cpp:11:
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/usr/include/pthread.h:225:12: note: initializing argument 3 of 'int pthread_create(pthread_t*, const pthread_attr_t*, void* (*)(void*), void*)'
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+make: *** [test.o] Error 1
+16:45:54 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'void* startTCP()':
+../test.cpp:26:39: error: expected primary-expression before 'void'
+  TCPSender *tcpSender = new TCPSender(void* threadid);
+                                       ^
+../test.cpp:26:13: warning: unused variable 'tcpSender' [-Wunused-variable]
+  TCPSender *tcpSender = new TCPSender(void* threadid);
+             ^
+../test.cpp: In function 'int main()':
+../test.cpp:36:63: error: 'tcpthread' was not declared in this scope
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpthread);
+                                                               ^
+make: *** [test.o] Error 1
+16:46:03 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'void* startTCP(void*)':
+../test.cpp:26:13: warning: unused variable 'tcpSender' [-Wunused-variable]
+  TCPSender *tcpSender = new TCPSender();
+             ^
+../test.cpp: In function 'int main()':
+../test.cpp:36:63: error: 'tcpthread' was not declared in this scope
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpthread);
+                                                               ^
+make: *** [test.o] Error 1
+16:46:11 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'void* startTCP(void*)':
+../test.cpp:26:13: warning: unused variable 'tcpSender' [-Wunused-variable]
+  TCPSender *tcpSender = new TCPSender();
+             ^
+../test.cpp: In function 'int main()':
+../test.cpp:35:7: warning: variable 'control' set but not used [-Wunused-but-set-variable]
+   int control;
+       ^
+../test.cpp:36:73: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpThread);
+                                                                         ^
+Finished building: ../test.cpp
  
 Building target: RPi test
 Invoking: Cross G++ Linker
 arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
 Finished building target: RPi test
  
-20:46:20 **** Incremental Build of configuration Debug for project bareMatalTest ****
+16:46:43 **** Incremental Build of configuration Debug for project RPi test ****
 make all 
-make: Nothing to be done for `all'.
-20:46:46 **** Incremental Build of configuration Debug for project RPi test ****
-make all 
-Building file: ../TCPSender.cpp
+Building file: ../test.cpp
 Invoking: Cross G++ Compiler
-arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
-Finished building: ../TCPSender.cpp
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:36:7: warning: variable 'control' set but not used [-Wunused-but-set-variable]
+   int control;
+       ^
+../test.cpp:37:73: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpThread);
+                                                                         ^
+Finished building: ../test.cpp
  
 Building target: RPi test
 Invoking: Cross G++ Linker
 arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
 Finished building target: RPi test
  
-20:46:46 **** Incremental Build of configuration Debug for project bareMatalTest ****
+16:47:54 **** Incremental Build of configuration Debug for project RPi test ****
 make all 
-make: Nothing to be done for `all'.
-22:08:04 **** Incremental Build of configuration Debug for project RPi test ****
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:36:7: warning: variable 'control' set but not used [-Wunused-but-set-variable]
+   int control;
+       ^
+../test.cpp:37:73: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpThread);
+                                                                         ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+16:48:59 **** Incremental Build of configuration Debug for project RPi test ****
 make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:36:7: warning: variable 'control' set but not used [-Wunused-but-set-variable]
+   int control;
+       ^
+../test.cpp:37:73: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpThread);
+                                                                         ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+16:49:36 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:36:7: warning: variable 'control' set but not used [-Wunused-but-set-variable]
+   int control;
+       ^
+../test.cpp:38:73: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpThread);
+                                                                         ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+16:50:30 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../Sender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
+Finished building: ../Sender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:36:7: warning: variable 'control' set but not used [-Wunused-but-set-variable]
+   int control;
+       ^
+../test.cpp:38:73: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpThread);
+                                                                         ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+16:51:04 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:36:7: warning: variable 'control' set but not used [-Wunused-but-set-variable]
+   int control;
+       ^
+../test.cpp:38:73: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpThread);
+                                                                         ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+16:51:26 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:36:7: warning: variable 'control' set but not used [-Wunused-but-set-variable]
+   int control;
+       ^
+../test.cpp:38:73: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpThread);
+                                                                         ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+16:52:23 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:36:7: warning: variable 'control' set but not used [-Wunused-but-set-variable]
+   int control;
+       ^
+../test.cpp:38:73: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpThread);
+                                                                         ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+16:53:27 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:38:73: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   control = pthread_create(tcpThread, NULL, startTCP, (void*) tcpThread);
+                                                                         ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+16:54:36 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:30: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   startTCP((void*) tcpThread);
+                              ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+16:55:44 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'void* startTCP(void*)':
+../test.cpp:29:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../test.cpp: In function 'int main()':
+../test.cpp:37:30: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   startTCP((void*) tcpThread);
+                              ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+16:58:37 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'void* startTCP(void*)':
+../test.cpp:29:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../test.cpp: In function 'int main()':
+../test.cpp:37:30: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   startTCP((void*) tcpThread);
+                              ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:00:38 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:29: warning: 'tcpThread' is used uninitialized in this function [-Wuninitialized]
+   startTCP((void*) tcpThread);
+                             ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:00:58 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+08:32:12 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp:13:35: error: conflicting declaration 'const char tcp::CommunicationPackage::starting'
+  const char CommunicationPackage::starting = {0x13, 0x7D};
+                                   ^
+In file included from ../CommunicationPackage.cpp:9:0:
+../CommunicationPackage.h:26:20: note: previous declaration as 'const char tcp::CommunicationPackage::starting [2]'
+  static const char starting[2];
+                    ^
+../CommunicationPackage.cpp:13:35: error: declaration of 'const char tcp::CommunicationPackage::starting [2]' outside of class is not definition [-fpermissive]
+  const char CommunicationPackage::starting = {0x13, 0x7D};
+                                   ^
+../CommunicationPackage.cpp:14:35: error: conflicting declaration 'const char tcp::CommunicationPackage::ending'
+  const char CommunicationPackage::ending = {0x16, 0x7B};
+                                   ^
+In file included from ../CommunicationPackage.cpp:9:0:
+../CommunicationPackage.h:27:20: note: previous declaration as 'const char tcp::CommunicationPackage::ending [2]'
+  static const char ending[2];
+                    ^
+../CommunicationPackage.cpp:14:35: error: declaration of 'const char tcp::CommunicationPackage::ending [2]' outside of class is not definition [-fpermissive]
+  const char CommunicationPackage::ending = {0x16, 0x7B};
+                                   ^
+../CommunicationPackage.cpp: In function 'bool tcp::test()':
+../CommunicationPackage.cpp:33:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../CommunicationPackage.cpp: In function 'unsigned int tcp::char2UInt(char*)':
+../CommunicationPackage.cpp:48:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<sizeof(unsigned int); i++)
+                 ^
+../CommunicationPackage.cpp: In member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)':
+../CommunicationPackage.cpp:56:19: error: expected primary-expression before 'char'
+   char *reader = (char*)
+                   ^
+../CommunicationPackage.cpp:56:19: error: expected ')' before 'char'
+../CommunicationPackage.cpp:57:2: error: expected ',' or ';' before '}' token
+  }
+  ^
+../CommunicationPackage.cpp:56:9: warning: unused variable 'reader' [-Wunused-variable]
+   char *reader = (char*)
+         ^
+../CommunicationPackage.cpp: In constructor 'tcp::CommunicationPackage::CommunicationPackage(char*, tcp::PackageType, short unsigned int)':
+../CommunicationPackage.cpp:94:2: error: expected ';' before '}' token
+  }
+  ^
+make: *** [CommunicationPackage.o] Error 1
+08:33:04 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp:13:24: error: 'starting' in 'class tcp::CommunicationPackage' does not name a type
+  CommunicationPackage::starting = {0x13, 0x7D};
+                        ^
+../CommunicationPackage.cpp:14:24: error: 'ending' in 'class tcp::CommunicationPackage' does not name a type
+  CommunicationPackage::ending = {0x16, 0x7B};
+                        ^
+../CommunicationPackage.cpp: In function 'bool tcp::test()':
+../CommunicationPackage.cpp:33:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../CommunicationPackage.cpp: In function 'unsigned int tcp::char2UInt(char*)':
+../CommunicationPackage.cpp:48:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<sizeof(unsigned int); i++)
+                 ^
+../CommunicationPackage.cpp: In member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)':
+../CommunicationPackage.cpp:56:19: error: expected primary-expression before 'char'
+   char *reader = (char*)
+                   ^
+../CommunicationPackage.cpp:56:19: error: expected ')' before 'char'
+../CommunicationPackage.cpp:57:2: error: expected ',' or ';' before '}' token
+  }
+  ^
+../CommunicationPackage.cpp:56:9: warning: unused variable 'reader' [-Wunused-variable]
+   char *reader = (char*)
+         ^
+../CommunicationPackage.cpp: In constructor 'tcp::CommunicationPackage::CommunicationPackage(char*, tcp::PackageType, short unsigned int)':
+../CommunicationPackage.cpp:94:2: error: expected ';' before '}' token
+  }
+  ^
+make: *** [CommunicationPackage.o] Error 1
+08:33:53 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp:13:35: error: conflicting declaration 'const char tcp::CommunicationPackage::starting'
+  const char CommunicationPackage::starting = {0x13, 0x7D};
+                                   ^
+In file included from ../CommunicationPackage.cpp:9:0:
+../CommunicationPackage.h:26:20: note: previous declaration as 'const char tcp::CommunicationPackage::starting [2]'
+  static const char starting[2];
+                    ^
+../CommunicationPackage.cpp:13:35: error: declaration of 'const char tcp::CommunicationPackage::starting [2]' outside of class is not definition [-fpermissive]
+  const char CommunicationPackage::starting = {0x13, 0x7D};
+                                   ^
+../CommunicationPackage.cpp:14:35: error: conflicting declaration 'const char tcp::CommunicationPackage::ending'
+  const char CommunicationPackage::ending = {0x16, 0x7B};
+                                   ^
+In file included from ../CommunicationPackage.cpp:9:0:
+../CommunicationPackage.h:27:20: note: previous declaration as 'const char tcp::CommunicationPackage::ending [2]'
+  static const char ending[2];
+                    ^
+../CommunicationPackage.cpp:14:35: error: declaration of 'const char tcp::CommunicationPackage::ending [2]' outside of class is not definition [-fpermissive]
+  const char CommunicationPackage::ending = {0x16, 0x7B};
+                                   ^
+../CommunicationPackage.cpp: In function 'bool tcp::test()':
+../CommunicationPackage.cpp:33:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../CommunicationPackage.cpp: In function 'unsigned int tcp::char2UInt(char*)':
+../CommunicationPackage.cpp:48:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<sizeof(unsigned int); i++)
+                 ^
+../CommunicationPackage.cpp: In member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)':
+../CommunicationPackage.cpp:56:19: error: expected primary-expression before 'char'
+   char *reader = (char*)
+                   ^
+../CommunicationPackage.cpp:56:19: error: expected ')' before 'char'
+../CommunicationPackage.cpp:57:2: error: expected ',' or ';' before '}' token
+  }
+  ^
+../CommunicationPackage.cpp:56:9: warning: unused variable 'reader' [-Wunused-variable]
+   char *reader = (char*)
+         ^
+../CommunicationPackage.cpp: In constructor 'tcp::CommunicationPackage::CommunicationPackage(char*, tcp::PackageType, short unsigned int)':
+../CommunicationPackage.cpp:94:2: error: expected ';' before '}' token
+  }
+  ^
+make: *** [CommunicationPackage.o] Error 1
+08:34:50 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In function 'bool tcp::test()':
+../CommunicationPackage.cpp:33:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../CommunicationPackage.cpp: In function 'unsigned int tcp::char2UInt(char*)':
+../CommunicationPackage.cpp:48:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<sizeof(unsigned int); i++)
+                 ^
+Finished building: ../CommunicationPackage.cpp
+ 
 Building file: ../GPIOAccess.cpp
 Invoking: Cross G++ Compiler
 arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"GPIOAccess.d" -MT"GPIOAccess.d" -o "GPIOAccess.o" "../GPIOAccess.cpp"
@@ -52,16 +561,1113 @@ Building file: ../test.cpp
 Invoking: Cross G++ Compiler
 arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
 ../test.cpp: In function 'int main()':
-../test.cpp:48:14: warning: unused variable 'tcpSender' [-Wunused-variable]
-   TCPSender *tcpSender = new TCPSender();
-              ^
+../test.cpp:36:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:37:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
 Finished building: ../test.cpp
  
 Building target: RPi test
 Invoking: Cross G++ Linker
-arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+./CommunicationPackage.o: In function `tcp::CommunicationPackage::getUIntFromFrame(unsigned short)':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../CommunicationPackage.cpp:42: undefined reference to `tcp::CommunicationPackage::char2UInt(char*)'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../CommunicationPackage.cpp:42: undefined reference to `tcp::CommunicationPackage::char2UInt(char*)'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../CommunicationPackage.cpp:42: undefined reference to `tcp::CommunicationPackage::char2UInt(char*)'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+08:35:25 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In function 'bool tcp::test()':
+../CommunicationPackage.cpp:33:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../CommunicationPackage.cpp: In function 'unsigned int tcp::char2UInt(char*)':
+../CommunicationPackage.cpp:48:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<sizeof(unsigned int); i++)
+                 ^
+Finished building: ../CommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+./CommunicationPackage.o: In function `tcp::CommunicationPackage::getUIntFromFrame(unsigned short)':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../CommunicationPackage.cpp:42: undefined reference to `tcp::CommunicationPackage::char2UInt(char*)'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../CommunicationPackage.cpp:42: undefined reference to `tcp::CommunicationPackage::char2UInt(char*)'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../CommunicationPackage.cpp:42: undefined reference to `tcp::CommunicationPackage::char2UInt(char*)'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+08:37:20 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In function 'bool tcp::test()':
+../CommunicationPackage.cpp:33:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../CommunicationPackage.cpp: In member function 'unsigned int tcp::CommunicationPackage::getUIntFromFrame(short unsigned int)':
+../CommunicationPackage.cpp:42:50: error: expected ')' before ';' token
+   return this->char2UInt(&(this->frame[position]);
+                                                  ^
+../CommunicationPackage.cpp: In member function 'unsigned int tcp::CommunicationPackage::char2UInt(char*)':
+../CommunicationPackage.cpp:48:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<sizeof(unsigned int); i++)
+                 ^
+../CommunicationPackage.cpp: In member function 'unsigned int tcp::CommunicationPackage::getUIntFromFrame(short unsigned int)':
+../CommunicationPackage.cpp:43:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+make: *** [CommunicationPackage.o] Error 1
+08:37:30 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In function 'bool tcp::test()':
+../CommunicationPackage.cpp:33:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../CommunicationPackage.cpp: In member function 'unsigned int tcp::CommunicationPackage::char2UInt(char*)':
+../CommunicationPackage.cpp:48:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<sizeof(unsigned int); i++)
+                 ^
+Finished building: ../CommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
 Finished building target: RPi test
  
-22:08:06 **** Incremental Build of configuration Debug for project bareMatalTest ****
+08:37:39 **** Incremental Build of configuration Debug for project RPi test ****
 make all 
 make: Nothing to be done for `all'.
+08:48:04 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)':
+../CommunicationPackage.cpp:61:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[3] = output & 255;
+                        ^
+../CommunicationPackage.cpp:62:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:62:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:63:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[2] = output & 255;
+                        ^
+../CommunicationPackage.cpp:64:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:64:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:65:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[1] = output & 255;
+                        ^
+../CommunicationPackage.cpp:66:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:66:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:67:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[0] = output & 255;
+                        ^
+make: *** [CommunicationPackage.o] Error 1
+08:49:06 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)':
+../CommunicationPackage.cpp:61:32: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[3] = (char) (output & 255);
+                                ^
+../CommunicationPackage.cpp:62:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:62:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:63:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[2] = output & 255;
+                        ^
+../CommunicationPackage.cpp:64:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:64:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:65:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[1] = output & 255;
+                        ^
+../CommunicationPackage.cpp:66:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:66:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:67:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[0] = output & 255;
+                        ^
+make: *** [CommunicationPackage.o] Error 1
+08:50:01 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)':
+../CommunicationPackage.cpp:62:32: error: invalid operands of types 'char*' and 'unsigned int' to binary 'operator&'
+   output[3] = (char) (output & mask);
+                                ^
+../CommunicationPackage.cpp:63:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:63:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:64:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[2] = output & 255;
+                        ^
+../CommunicationPackage.cpp:65:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:65:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:66:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[1] = output & 255;
+                        ^
+../CommunicationPackage.cpp:67:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:67:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:68:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[0] = output & 255;
+                        ^
+make: *** [CommunicationPackage.o] Error 1
+08:50:19 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)':
+../CommunicationPackage.cpp:62:13: error: invalid operands of types 'char*' and 'unsigned int' to binary 'operator&'
+   (output & mask);
+             ^
+../CommunicationPackage.cpp:63:32: error: invalid operands of types 'char*' and 'unsigned int' to binary 'operator&'
+   output[3] = (char) (output & mask);
+                                ^
+../CommunicationPackage.cpp:64:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:64:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:65:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[2] = output & 255;
+                        ^
+../CommunicationPackage.cpp:66:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:66:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:67:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[1] = output & 255;
+                        ^
+../CommunicationPackage.cpp:68:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:68:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:69:24: error: invalid operands of types 'char*' and 'int' to binary 'operator&'
+   output[0] = output & 255;
+                        ^
+make: *** [CommunicationPackage.o] Error 1
+08:51:07 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)':
+../CommunicationPackage.cpp:63:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:63:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:65:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:65:10: error:   in evaluation of 'operator>>=(char*, int)'
+../CommunicationPackage.cpp:67:10: error: invalid operands of types 'char*' and 'int' to binary 'operator>>'
+   output >>=8;
+          ^
+../CommunicationPackage.cpp:67:10: error:   in evaluation of 'operator>>=(char*, int)'
+make: *** [CommunicationPackage.o] Error 1
+08:51:21 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:38:43: error: cannot call member function 'bool tcp::CommunicationPackage::test()' without object
+   cout << tcp::CommunicationPackage::test();
+                                           ^
+../test.cpp:36:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:37:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+08:51:54 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In static member function 'static bool tcp::CommunicationPackage::test()':
+../CommunicationPackage.cpp:34:28: error: cannot call member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)' without object
+   uInt2Char(test, testArray);
+                            ^
+../CommunicationPackage.cpp:35:33: error: cannot call member function 'unsigned int tcp::CommunicationPackage::char2UInt(char*)' without object
+   if(test == char2UInt(testArray)) return true;
+                                 ^
+make: *** [CommunicationPackage.o] Error 1
+08:53:01 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In static member function 'static bool tcp::CommunicationPackage::test()':
+../CommunicationPackage.cpp:34:28: error: cannot call member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)' without object
+   uInt2Char(test, testArray);
+                            ^
+../CommunicationPackage.cpp:35:33: error: cannot call member function 'unsigned int tcp::CommunicationPackage::char2UInt(char*)' without object
+   if(test == char2UInt(testArray)) return true;
+                                 ^
+make: *** [CommunicationPackage.o] Error 1
+08:53:30 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In static member function 'static bool tcp::CommunicationPackage::test()':
+../CommunicationPackage.cpp:34:3: error: 'this' is unavailable for static member functions
+   this->uInt2Char(test, testArray);
+   ^
+../CommunicationPackage.cpp:35:14: error: 'this' is unavailable for static member functions
+   if(test == this->char2UInt(testArray)) return true;
+              ^
+make: *** [CommunicationPackage.o] Error 1
+08:53:42 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+In file included from ../test.cpp:18:0:
+../CommunicationPackage.h: In function 'int main()':
+../CommunicationPackage.h:56:2: error: 'tcp::CommunicationPackage::CommunicationPackage()' is protected
+  CommunicationPackage();
+  ^
+../test.cpp:38:69: error: within this context
+   tcp::CommunicationPackage package = new tcp::CommunicationPackage();
+                                                                     ^
+../test.cpp:38:69: error: conversion from 'tcp::CommunicationPackage*' to non-scalar type 'tcp::CommunicationPackage' requested
+In file included from ../test.cpp:18:0:
+../CommunicationPackage.h:59:2: error: 'tcp::CommunicationPackage::~CommunicationPackage()' is protected
+  ~CommunicationPackage();
+  ^
+../test.cpp:38:69: error: within this context
+   tcp::CommunicationPackage package = new tcp::CommunicationPackage();
+                                                                     ^
+../test.cpp:39:43: error: cannot call member function 'bool tcp::CommunicationPackage::test()' without object
+   cout << tcp::CommunicationPackage::test();
+                                           ^
+../test.cpp:40:10: error: type 'class tcp::CommunicationPackage' argument given to 'delete', expected pointer
+   delete package;
+          ^
+../test.cpp:36:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:37:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+08:53:55 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+In file included from ../test.cpp:18:0:
+../CommunicationPackage.h: In function 'int main()':
+../CommunicationPackage.h:56:2: error: 'tcp::CommunicationPackage::CommunicationPackage()' is protected
+  CommunicationPackage();
+  ^
+../test.cpp:38:69: error: within this context
+   tcp::CommunicationPackage package = new tcp::CommunicationPackage();
+                                                                     ^
+../test.cpp:38:69: error: conversion from 'tcp::CommunicationPackage*' to non-scalar type 'tcp::CommunicationPackage' requested
+In file included from ../test.cpp:18:0:
+../CommunicationPackage.h:59:2: error: 'tcp::CommunicationPackage::~CommunicationPackage()' is protected
+  ~CommunicationPackage();
+  ^
+../test.cpp:38:69: error: within this context
+   tcp::CommunicationPackage package = new tcp::CommunicationPackage();
+                                                                     ^
+../test.cpp:39:43: error: cannot call member function 'bool tcp::CommunicationPackage::test()' without object
+   cout << tcp::CommunicationPackage::test();
+                                           ^
+../test.cpp:40:10: error: type 'class tcp::CommunicationPackage' argument given to 'delete', expected pointer
+   delete package;
+          ^
+../test.cpp:36:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:37:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+08:54:18 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+In file included from ../test.cpp:18:0:
+../CommunicationPackage.h: In function 'int main()':
+../CommunicationPackage.h:56:2: error: 'tcp::CommunicationPackage::CommunicationPackage()' is protected
+  CommunicationPackage();
+  ^
+../test.cpp:38:70: error: within this context
+   tcp::CommunicationPackage *package = new tcp::CommunicationPackage();
+                                                                      ^
+In file included from ../test.cpp:18:0:
+../CommunicationPackage.h:59:2: error: 'tcp::CommunicationPackage::~CommunicationPackage()' is protected
+  ~CommunicationPackage();
+  ^
+../test.cpp:40:10: error: within this context
+   delete package;
+          ^
+../test.cpp:36:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:37:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+08:54:56 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:36:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:37:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:30:15 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building file: ../GPIOAccess.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"GPIOAccess.d" -MT"GPIOAccess.d" -o "GPIOAccess.o" "../GPIOAccess.cpp"
+Finished building: ../GPIOAccess.cpp
+ 
+Building file: ../Sender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
+Finished building: ../Sender.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+In file included from ../test.cpp:19:0:
+../CommunicationPackage.h: In function 'int main()':
+../CommunicationPackage.h:57:2: error: 'tcp::CommunicationPackage::CommunicationPackage()' is protected
+  CommunicationPackage();
+  ^
+../test.cpp:40:70: error: within this context
+   tcp::CommunicationPackage *package = new tcp::CommunicationPackage();
+                                                                      ^
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+17:30:35 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+21:48:07 **** Clean-only build of configuration Debug for project RPi test ****
+make clean 
+rm -rf  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o  ./CommunicationPackage.d ./GPIOAccess.d ./Sender.d ./TCPSender.d ./test.d  "RPi test"
+ 
+21:48:07 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../GPIOAccess.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"GPIOAccess.d" -MT"GPIOAccess.d" -o "GPIOAccess.o" "../GPIOAccess.cpp"
+Finished building: ../GPIOAccess.cpp
+ 
+Building file: ../Sender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
+Finished building: ../Sender.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+In file included from ../test.cpp:19:0:
+.././Communication/CommunicationPackage.h:8:25: fatal error: PackageType.h: No such file or directory
+ #include "PackageType.h"
+                         ^
+compilation terminated.
+make: *** [test.o] Error 1
+21:48:19 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+21:48:46 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+21:49:34 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../GPIOAccess.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I./Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"GPIOAccess.d" -MT"GPIOAccess.d" -o "GPIOAccess.o" "../GPIOAccess.cpp"
+Finished building: ../GPIOAccess.cpp
+ 
+Building file: ../Sender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I./Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
+Finished building: ../Sender.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I./Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I./Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+21:51:41 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../GPIOAccess.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"GPIOAccess.d" -MT"GPIOAccess.d" -o "GPIOAccess.o" "../GPIOAccess.cpp"
+Finished building: ../GPIOAccess.cpp
+ 
+Building file: ../Sender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
+Finished building: ../Sender.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+21:51:59 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+21:52:15 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../GPIOAccess.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I../Communication -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"GPIOAccess.d" -MT"GPIOAccess.d" -o "GPIOAccess.o" "../GPIOAccess.cpp"
+Finished building: ../GPIOAccess.cpp
+ 
+Building file: ../Sender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I../Communication -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
+Finished building: ../Sender.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I../Communication -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I../Communication -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+21:54:18 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I../Communication -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:39:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:40:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:37: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:38: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+21:54:41 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../GPIOAccess.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"GPIOAccess.d" -MT"GPIOAccess.d" -o "GPIOAccess.o" "../GPIOAccess.cpp"
+Finished building: ../GPIOAccess.cpp
+ 
+Building file: ../Sender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
+Finished building: ../Sender.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp:19:34: fatal error: CommunicationPackage.h: No such file or directory
+ #include "CommunicationPackage.h"
+                                  ^
+compilation terminated.
+make: *** [test.o] Error 1
+21:54:51 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+21:55:43 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+21:56:27 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+21:56:36 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp:14:12: warning: extra tokens at end of #include directive
+ #include <>wiringPi.h>
+            ^
+../test.cpp:14:10: error: empty filename in #include
+ #include <>wiringPi.h>
+          ^
+../test.cpp: In function 'int main()':
+../test.cpp:35:17: error: 'wiringPiSetup' was not declared in this scope
+   wiringPiSetup();
+                 ^
+../test.cpp:36:14: error: 'OUTPUT' was not declared in this scope
+   pinMode(7, OUTPUT);
+              ^
+../test.cpp:36:20: error: 'pinMode' was not declared in this scope
+   pinMode(7, OUTPUT);
+                    ^
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+21:56:46 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+22:00:26 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+22:00:32 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+22:01:18 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+22:02:08 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+22:02:30 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'bool tcp::CommunicationPackage::test()':
+../CommunicationPackage.cpp:186:19: warning: '*((void*)& testArray +4)' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   ptr[4] = data[4];
+                   ^
+../CommunicationPackage.cpp:47:8: note: '*((void*)& testArray +4)' was declared here
+   char testArray[4];
+        ^
+../CommunicationPackage.cpp:187:19: warning: '*((void*)& testArray +5)' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   ptr[5] = data[5];
+                   ^
+../CommunicationPackage.cpp:47:8: note: '*((void*)& testArray +5)' was declared here
+   char testArray[4];
+        ^
+../CommunicationPackage.cpp:188:19: warning: '*((void*)& testArray +6)' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   ptr[6] = data[6];
+                   ^
+../CommunicationPackage.cpp:47:8: note: '*((void*)& testArray +6)' was declared here
+   char testArray[4];
+        ^
+../CommunicationPackage.cpp:189:19: warning: '*((void*)& testArray +7)' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   ptr[7] = data[7];
+                   ^
+../CommunicationPackage.cpp:47:8: note: '*((void*)& testArray +7)' was declared here
+   char testArray[4];
+        ^
+Finished building: ../CommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+22:03:41 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:35: undefined reference to `wiringPiSetup'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:36: undefined reference to `pinMode'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+22:05:49 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building file: ../GPIOAccess.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"GPIOAccess.d" -MT"GPIOAccess.d" -o "GPIOAccess.o" "../GPIOAccess.cpp"
+Finished building: ../GPIOAccess.cpp
+ 
+Building file: ../Sender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
+Finished building: ../Sender.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -l-lwiringPi
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../lib/gcc/arm-linux-gnueabihf/4.9.1/../../../../arm-linux-gnueabihf/bin/ld: cannot find -l-lwiringPi
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+22:06:12 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../lib/gcc/arm-linux-gnueabihf/4.9.1/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lwiringPi
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+22:06:41 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl,-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../lib/gcc/arm-linux-gnueabihf/4.9.1/../../../../arm-linux-gnueabihf/bin/ld: warning: libpthread.so.0, needed by /usr/local/wiringPi/wiringPi/libwiringPi.so, not found (try using -rpath or -rpath-link)
+/usr/local/wiringPi/wiringPi/libwiringPi.so: undefined reference to `pthread_join@GLIBC_2.4'
+/usr/local/wiringPi/wiringPi/libwiringPi.so: undefined reference to `pthread_create@GLIBC_2.4'
+/usr/local/wiringPi/wiringPi/libwiringPi.so: undefined reference to `pthread_cancel@GLIBC_2.4'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+22:07:59 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-Wl, -rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+arm-linux-gnueabihf-g++: error: unrecognized command line option '-rpath=/usr/local/wiringPi'
+make: *** [RPi test] Error 1
+22:08:18 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl, -rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+arm-linux-gnueabihf-g++: error: unrecognized command line option '-rpath=/usr/local/wiringPi'
+make: *** [RPi test] Error 1
+22:08:18 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl, -rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+arm-linux-gnueabihf-g++: error: unrecognized command line option '-rpath=/usr/local/wiringPi'
+make: *** [RPi test] Error 1
+22:08:21 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-Wl, -rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+arm-linux-gnueabihf-g++: error: unrecognized command line option '-rpath=/usr/local/wiringPi'
+make: *** [RPi test] Error 1
+22:08:50 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/../lib/gcc/arm-linux-gnueabihf/4.9.1/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lwiringPi
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+22:09:15 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+22:09:46 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+22:11:13 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp:19:34: fatal error: CommunicationPackage.h: No such file or directory
+ #include "CommunicationPackage.h"
+                                  ^
+compilation terminated.
+make: *** [test.o] Error 1
+22:11:43 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../GPIOAccess.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"GPIOAccess.d" -MT"GPIOAccess.d" -o "GPIOAccess.o" "../GPIOAccess.cpp"
+Finished building: ../GPIOAccess.cpp
+ 
+Building file: ../Sender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
+Finished building: ../Sender.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QHBoxLayout>
 
 namespace Ui {
 class MainWindow;
@@ -16,7 +17,9 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
+    QTabWidget *tabWidget;
+    QWidget *tcpComWidget;
+    QWidget *adcWidget;
 };
 
 #endif // MAINWINDOW_H

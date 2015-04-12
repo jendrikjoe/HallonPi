@@ -1,0 +1,21 @@
+/*
+ * CommunicationPackage.cpp
+ *
+ *  Created on: Apr 11, 2015
+ *      Author: Jendrik
+ */
+
+
+#include "CommunicationPackage.h"
+
+namespace tcp{
+	const char CommunicationPackage::starting = {0x13, 0x7D};
+	const char CommunicationPackage::ending = {0x16, 0x7B};
+
+	void CommunicationPackage::getFrame(char *output) const {
+		for(int i=0; i<packageLength, i++) {
+			output[i] = frame[i];
+		}
+	}
+}
+

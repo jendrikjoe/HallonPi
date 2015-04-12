@@ -1,0 +1,22 @@
+/*
+ * CommunicationPackage.h
+ *
+ *  Created on: Apr 10, 2015
+ *      Author: Jendrik
+ */
+
+
+
+namespace tcp{
+
+}
+class CommunicationPackage{
+
+public:
+
+protected:
+	CommunicationPackage();
+	~CommunicationPackage();
+};
+
+}

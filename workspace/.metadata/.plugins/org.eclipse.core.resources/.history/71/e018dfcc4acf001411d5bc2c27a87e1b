@@ -1,6 +1,0 @@
-eclipse.preferences.version=1
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.2062504248/PATH/delimiter=\:
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.2062504248/PATH/operation=replace
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.2062504248/PATH/value=/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin\:/usr/bin\:/bin\:/usr/sbin\:/sbin\:
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.2062504248/append=true
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.2062504248/appendContributed=true
