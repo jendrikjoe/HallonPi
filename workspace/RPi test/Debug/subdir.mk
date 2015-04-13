@@ -4,18 +4,24 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../ADCCommunicationPackage.cpp \
+../CommunicationPackage.cpp \
 ../GPIOAccess.cpp \
 ../Sender.cpp \
 ../TCPSender.cpp \
 ../test.cpp 
 
 OBJS += \
+./ADCCommunicationPackage.o \
+./CommunicationPackage.o \
 ./GPIOAccess.o \
 ./Sender.o \
 ./TCPSender.o \
 ./test.o 
 
 CPP_DEPS += \
+./ADCCommunicationPackage.d \
+./CommunicationPackage.d \
 ./GPIOAccess.d \
 ./Sender.d \
 ./TCPSender.d \

@@ -1,0 +1,301 @@
+/*
+ * CommunicationPackage.cpp
+ *
+ *  Created on: Apr 11, 2015
+ *      Author: Jendrik
+ */
+
+
+#include "CommunicationPackage.h"
+
+namespace tcp{
+
+	const char CommunicationPackage::starting[2] = {0x13, 0x7D};
+	const char CommunicationPackage::ending[2] = {0x16, 0x7B};
+	const unsigned short CommunicationPackage::timeStampPos = 2+sizeof(PackageType);
+	const unsigned short CommunicationPackage::packageTypePos = 2;
+
+	const unsigned short CommunicationPackage::floatBytes = FLOATSIZE;
+	const unsigned short CommunicationPackage::doubleBytes = DOUBLESIZE;
+	const unsigned short CommunicationPackage::uIntBytes = UINTSIZE;
+	const unsigned short CommunicationPackage::uShortBytes = USHORTSIZE;
+
+	//public:
+
+	bool CommunicationPackage::isValid() const {
+		return this->valid;
+	}
+
+	void CommunicationPackage::getFrame(char *output) const {
+		for(int i=0; i<packageLength; i++) {
+			output[i] = frame[i];
+		}
+	}
+
+	unsigned int CommunicationPackage::getTimeStamp() const {
+		return timeStamp;
+	}
+
+	bool CommunicationPackage::isStarting(char* input) {
+		if(input[0] != starting[0]) return false;
+		if(input[1] != starting[1]) return false;
+		return true;
+	}
+
+	bool CommunicationPackage::test(){
+		unsigned int test = 98;
+		char testArray[4];
+		uInt2Char(test, testArray);
+		if(test != char2UInt(testArray)) return false;
+
+		float testf = 675.4;
+		float2Char(testf,testArray);
+		if(testf != char2Float(testArray)) return false;
+
+		double testd = 98.3;
+		char testArrayd[8];
+		double2Char(testd,testArrayd);
+		if(testd != char2Double(testArrayd)) return false;
+
+		return true;
+
+	}
+	//private:
+
+	bool CommunicationPackage::writeTimeStamp() {
+		if(timeStampPos + 4 > packageLength) return false;
+		uInt2Char(timeStamp, &frame[timeStampPos]);
+		return true;
+	}
+
+	unsigned int CommunicationPackage::readTimeStamp() {
+		return char2UInt(&frame[timeStampPos]);
+	}
+
+	bool CommunicationPackage::writePackageType() {
+		if(packageTypePos+1 > packageLength) return false;
+		frame[packageTypePos] = packageType;
+		return true;
+	}
+
+	PackageType CommunicationPackage::readPackageType() {
+		return (PackageType) frame[packageTypePos];
+	}
+
+	void CommunicationPackage::writeStart() {
+		frame[0] = starting[0];
+		frame[1] = starting[1];
+	}
+
+	void CommunicationPackage::readStart(char* output) {
+		output[0] = frame[0];
+		output[1] = frame[1];
+	}
+
+	void CommunicationPackage::writeEnd() {
+		frame[packageLength-2] = ending[0];
+		frame[packageLength-1] = ending[1];
+	}
+
+	void CommunicationPackage::readEnd(char* output) {
+		output[0] = frame[packageLength-2];
+		output[1] = frame[packageLength-1];
+	}
+
+
+	unsigned int CommunicationPackage::getTimeStamp(){
+		return getUIntFromFrame(timeStampPos);
+	}
+
+	//protected:
+
+	unsigned int CommunicationPackage::getUIntFromFrame(unsigned short position) {
+		return this->char2UInt(&frame[position]);
+	}
+
+	bool CommunicationPackage::putUIntToFrame(unsigned int input, unsigned short position) {
+		if(position+4 > packageLength) return false;
+		this->uInt2Char(input, &frame[position]);
+		return true;
+	}
+
+	unsigned int CommunicationPackage::char2UInt(char *data) {
+		unsigned int output = 0;
+		output += data[0];
+		output = (output << 8) + data[1];
+		output = (output << 8) + data[2];
+		output = (output << 8) + data[3];
+		return output;
+	}
+
+	void CommunicationPackage::uInt2Char(unsigned int input, char* output) {
+		unsigned int mask = 255;
+		output[3] = (char) (input & mask);
+		input >>=8;
+		output[2] = (char) (input & mask);
+		input >>=8;
+		output[1] = (char) (input & mask);
+		input >>=8;
+		output[0] = (char) (input & mask);
+	}
+
+	float CommunicationPackage::getFlaotFromFrame(unsigned short position) {
+		return this->char2Float(&frame[position]);
+	}
+
+	bool CommunicationPackage::putFloatToFrame(float input,
+			unsigned short position) {
+		if(position+4 > packageLength) return false;
+		this->float2Char(input, &frame[position]);
+		return true;
+	}
+
+	float CommunicationPackage::char2Float(char* data) {
+		float buffer;
+		char* ptr = (char*) &buffer;
+		ptr[0] = data[0];
+		ptr[1] = data[1];
+		ptr[2] = data[2];
+		ptr[3] = data[3];
+		return buffer;
+	}
+
+	void CommunicationPackage::float2Char(float input, char* output) {
+		char* ptr = (char*) &input;
+		output[0] = ptr[0];
+		output[1] = ptr[1];
+		output[2] = ptr[2];
+		output[3] = ptr[3];
+	}
+
+	unsigned short CommunicationPackage::getUShortFromFrame(
+			unsigned short position) {
+		return this->char2UShort(&frame[position]);
+	}
+
+	bool CommunicationPackage::putUShortToFrame(unsigned short input,
+			unsigned short position) {
+		if(position+2 > packageLength) return false;
+		this->uShort2Char(input, &frame[position]);
+		return true;
+	}
+
+	unsigned short CommunicationPackage::char2UShort(char* data) {
+		unsigned short buffer;
+		char* ptr = (char*) &buffer;
+		ptr[0] = data[0];
+		ptr[1] = data[1];
+		return buffer;
+	}
+
+	void CommunicationPackage::uShort2Char(unsigned short input, char* output) {
+		char* ptr = (char*) &input;
+		output[0] = ptr[0];
+		output[1] = ptr[1];
+	}
+
+	double CommunicationPackage::getDoubleFromFrame(unsigned short position) {
+		return this->char2Double(&frame[position]);
+	}
+
+	bool CommunicationPackage::putDoubleToFrame(double input,
+			unsigned short position) {
+		if(position+8 > packageLength) return false;
+		this->double2Char(input, &frame[position]);
+		return true;
+	}
+
+	double CommunicationPackage::char2Double(char* data) {
+		double buffer;
+		char* ptr = (char*) &buffer;
+		ptr[0] = data[0];
+		ptr[1] = data[1];
+		ptr[2] = data[2];
+		ptr[3] = data[3];
+		ptr[4] = data[4];
+		ptr[5] = data[5];
+		ptr[6] = data[6];
+		ptr[7] = data[7];
+		return buffer;
+
+	}
+
+	void CommunicationPackage::double2Char(double input, char* output) {
+		char* ptr = (char*) &input;
+		output[0] = ptr[0];
+		output[1] = ptr[1];
+		output[2] = ptr[2];
+		output[3] = ptr[3];
+		output[4] = ptr[4];
+		output[5] = ptr[5];
+		output[6] = ptr[6];
+		output[7] = ptr[7];
+	}
+
+
+	//Constructors and Destructors:
+
+	CommunicationPackage::CommunicationPackage() {
+		this->packageLength = 0;
+		this->packageType = DEFAULT_COM;
+		this->valid = false;
+		this->timeStamp = 0;
+		this->frame = new char[1];
+	}
+
+
+	CommunicationPackage::CommunicationPackage(const CommunicationPackage &input) {
+		this->valid = input.valid;
+		this->timeStamp = input.timeStamp;
+		this->packageLength = input.packageLength;
+		this->packageType = input.packageType;
+
+		this->frame = new char[packageLength];
+		for(int i=0; i<packageLength; i++) {
+			this->frame[i] = input.frame[i];
+		}
+	}
+
+
+	CommunicationPackage::CommunicationPackage(char *input,
+			PackageType type, unsigned short packageLength) {
+		this->packageLength = packageLength;
+		this->packageType = type;
+		this->frame = new char[this->packageLength];
+		for(int i=0; i<this->packageLength; i++) {
+			this->frame[i] = input[i];
+		}
+		this->valid = true;
+		this->timeStamp = this->readTimeStamp();
+
+		char startComp[2];
+		this->readStart(startComp);
+		if(startComp[0] != starting[0] || startComp[1] != starting[1]) {
+			this->valid = false;
+		}
+		char endComp[2];
+		this->readEnd(endComp);
+		if(endComp[0] != ending[0] || endComp[1] != ending[1]) {
+			this->valid = false;
+		}
+	}
+
+	CommunicationPackage::CommunicationPackage(PackageType packageType,
+			unsigned int timestamp, unsigned short packageLength) {
+		this->timeStamp = timestamp;
+		this->packageType = packageType;
+		this->packageLength = packageLength;
+		this->valid = true;
+		this->frame = new char[this->packageLength];
+
+		if(!write)
+
+	}
+
+
+	CommunicationPackage::~CommunicationPackage() {
+		delete frame;
+	}
+
+}
+

@@ -5,6 +5,9 @@
  *      Author: Jendrik
  */
 
+#ifndef TCPSENDER_H_
+#define TCPSENDER_H_
+
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -30,3 +33,5 @@ private:
 
 
 };
+
+#endif

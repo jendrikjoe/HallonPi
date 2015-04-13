@@ -1671,3 +1671,1325 @@ Invoking: Cross G++ Linker
 arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
 Finished building target: RPi test
  
+22:32:38 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+make: Nothing to be done for `all'.
+22:47:21 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+22:47:41 **** Clean-only build of configuration Debug for project RPi test ****
+make clean 
+rm -rf  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o  ./GPIOAccess.d ./Sender.d ./TCPSender.d ./test.d  "RPi test"
+ 
+22:47:41 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../GPIOAccess.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"GPIOAccess.d" -MT"GPIOAccess.d" -o "GPIOAccess.o" "../GPIOAccess.cpp"
+Finished building: ../GPIOAccess.cpp
+ 
+Building file: ../Sender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Sender.d" -MT"Sender.d" -o "Sender.o" "../Sender.cpp"
+Finished building: ../Sender.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+23:05:56 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+23:07:39 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+make: Nothing to be done for `all'.
+23:08:29 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+make: Nothing to be done for `all'.
+23:09:02 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+make: Nothing to be done for `all'.
+23:13:20 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+In file included from ../ADCCommunicationPackage.h:12:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+../Communication/PackageType.h:9:7: error: multiple definition of 'enum tcp::PackageType'
+  enum PackageType{
+       ^
+In file included from ../Communication/CommunicationPackage.h:8:0,
+                 from ../ADCCommunicationPackage.h:11,
+                 from ../ADCCommunicationPackage.cpp:8:
+../Communication/PackageType.h:9:7: error: previous definition here
+  enum PackageType{
+       ^
+make: *** [ADCCommunicationPackage.o] Error 1
+23:17:47 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+In file included from ../ADCCommunicationPackage.h:12:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+../Communication/PackageType.h:9:7: error: multiple definition of 'enum tcp::PackageType'
+  enum PackageType{
+       ^
+In file included from ../Communication/CommunicationPackage.h:8:0,
+                 from ../ADCCommunicationPackage.h:11,
+                 from ../ADCCommunicationPackage.cpp:8:
+../Communication/PackageType.h:9:7: error: previous definition here
+  enum PackageType{
+       ^
+../ADCCommunicationPackage.cpp:13:47: error: 'const short unsigned int tcp::ADCCommunicationPackage::packageLength' is not a static member of 'class tcp::ADCCommunicationPackage'
+ const unsigned short ADCCommunicationPackage::packageLength = 11;
+                                               ^
+../ADCCommunicationPackage.cpp:14:44: error: 'const tcp::PackageType tcp::ADCCommunicationPackage::packageType' is not a static member of 'class tcp::ADCCommunicationPackage'
+ const PackageType ADCCommunicationPackage::packageType = ADC_COM;
+                                            ^
+make: *** [ADCCommunicationPackage.o] Error 1
+23:17:56 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+In file included from ../ADCCommunicationPackage.h:12:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+../Communication/PackageType.h:9:7: error: multiple definition of 'enum tcp::PackageType'
+  enum PackageType{
+       ^
+In file included from ../Communication/CommunicationPackage.h:8:0,
+                 from ../ADCCommunicationPackage.h:11,
+                 from ../ADCCommunicationPackage.cpp:8:
+../Communication/PackageType.h:9:7: error: previous definition here
+  enum PackageType{
+       ^
+make: *** [ADCCommunicationPackage.o] Error 1
+23:18:26 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+./ADCCommunicationPackage.o: In function `tcp::ADCCommunicationPackage::ADCCommunicationPackage()':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../ADCCommunicationPackage.cpp:17: undefined reference to `tcp::CommunicationPackage::CommunicationPackage()'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+23:19:17 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+./ADCCommunicationPackage.o: In function `tcp::ADCCommunicationPackage::ADCCommunicationPackage()':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../ADCCommunicationPackage.cpp:17: undefined reference to `tcp::CommunicationPackage::CommunicationPackage()'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+23:21:29 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+./ADCCommunicationPackage.o: In function `tcp::ADCCommunicationPackage::ADCCommunicationPackage()':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../ADCCommunicationPackage.cpp:17: undefined reference to `tcp::CommunicationPackage::CommunicationPackage()'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+23:21:45 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+23:22:00 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+./ADCCommunicationPackage.o: In function `tcp::ADCCommunicationPackage::ADCCommunicationPackage()':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../ADCCommunicationPackage.cpp:17: undefined reference to `tcp::CommunicationPackage::CommunicationPackage()'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+23:23:28 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+23:24:09 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+./ADCCommunicationPackage.o: In function `tcp::ADCCommunicationPackage::ADCCommunicationPackage()':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../ADCCommunicationPackage.cpp:17: undefined reference to `tcp::CommunicationPackage::CommunicationPackage()'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+23:24:26 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'bool tcp::CommunicationPackage::putFloatToFrame(float, short unsigned int)':
+../CommunicationPackage.cpp:128:50: error: void value not ignored as it ought to be
+   return this->float2Char(input, &frame[position]);
+                                                  ^
+make: *** [CommunicationPackage.o] Error 1
+23:24:51 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+23:40:20 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:52:15: error: 'unsigned int tcp::CommunicationPackage::readTimeStamp()' cannot be overloaded
+  unsigned int readTimeStamp();
+               ^
+.././CommunicationPackage.h:41:15: error: with 'unsigned int tcp::CommunicationPackage::readTimeStamp()'
+  unsigned int readTimeStamp();
+               ^
+.././CommunicationPackage.h: In constructor 'tcp::ADCCommunicationPackage::ADCCommunicationPackage(char*)':
+.././CommunicationPackage.h:36:7: error: 'bool tcp::CommunicationPackage::valid' is private
+  bool valid;
+       ^
+../ADCCommunicationPackage.cpp:19:6: error: within this context
+  if(!valid) {
+      ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h: In member function 'bool tcp::ADCCommunicationPackage::writeADCValue(short unsigned int)':
+.././CommunicationPackage.h:70:7: error: 'void tcp::CommunicationPackage::uShort2Char(short unsigned int, char*)' is private
+  void uShort2Char(unsigned short input, char *output);
+       ^
+../ADCCommunicationPackage.cpp:33:2: error: within this context
+  uShort2Char(value, &frame[adcValuePosition]);
+  ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:35:8: error: 'char* tcp::CommunicationPackage::frame' is private
+  char *frame;
+        ^
+../ADCCommunicationPackage.cpp:33:22: error: within this context
+  uShort2Char(value, &frame[adcValuePosition]);
+                      ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:70:7: error: 'void tcp::CommunicationPackage::uShort2Char(short unsigned int, char*)' is private
+  void uShort2Char(unsigned short input, char *output);
+       ^
+../ADCCommunicationPackage.cpp:33:45: error: within this context
+  uShort2Char(value, &frame[adcValuePosition]);
+                                             ^
+../ADCCommunicationPackage.cpp: At global scope:
+../ADCCommunicationPackage.cpp:37:1: error: prototype for 'tcp::ADCCommunicationPackage::ADCCommunicationPackage(short unsigned int)' does not match any in class 'tcp::ADCCommunicationPackage'
+ ADCCommunicationPackage::ADCCommunicationPackage(unsigned short adcValue) {
+ ^
+In file included from ../ADCCommunicationPackage.cpp:8:0:
+.././ADCCommunicationPackage.h:15:7: error: candidates are: tcp::ADCCommunicationPackage::ADCCommunicationPackage(const tcp::ADCCommunicationPackage&)
+ class ADCCommunicationPackage : public CommunicationPackage {
+       ^
+.././ADCCommunicationPackage.h:20:2: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage(unsigned int, short unsigned int)
+  ADCCommunicationPackage(unsigned int timestamp, unsigned short adcValue);
+  ^
+../ADCCommunicationPackage.cpp:17:1: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage(char*)
+ ADCCommunicationPackage::ADCCommunicationPackage(char *frame):
+ ^
+../ADCCommunicationPackage.cpp:27:1: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage()
+ ADCCommunicationPackage::ADCCommunicationPackage():CommunicationPackage() {
+ ^
+../ADCCommunicationPackage.cpp: In member function 'short unsigned int tcp::ADCCommunicationPackage::getADCValue() const':
+../ADCCommunicationPackage.cpp:41:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h: In member function 'short unsigned int tcp::ADCCommunicationPackage::readADCValue()':
+.././CommunicationPackage.h:69:17: error: 'short unsigned int tcp::CommunicationPackage::char2UShort(char*)' is private
+  unsigned short char2UShort(char *data);
+                 ^
+../ADCCommunicationPackage.cpp:44:9: error: within this context
+  return char2UShort(&frame[adcValuePosition]);
+         ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:35:8: error: 'char* tcp::CommunicationPackage::frame' is private
+  char *frame;
+        ^
+../ADCCommunicationPackage.cpp:44:22: error: within this context
+  return char2UShort(&frame[adcValuePosition]);
+                      ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:69:17: error: 'short unsigned int tcp::CommunicationPackage::char2UShort(char*)' is private
+  unsigned short char2UShort(char *data);
+                 ^
+../ADCCommunicationPackage.cpp:44:45: error: within this context
+  return char2UShort(&frame[adcValuePosition]);
+                                             ^
+make: *** [ADCCommunicationPackage.o] Error 1
+23:40:50 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h: In constructor 'tcp::ADCCommunicationPackage::ADCCommunicationPackage(char*)':
+.././CommunicationPackage.h:36:7: error: 'bool tcp::CommunicationPackage::valid' is private
+  bool valid;
+       ^
+../ADCCommunicationPackage.cpp:19:6: error: within this context
+  if(!valid) {
+      ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h: In member function 'bool tcp::ADCCommunicationPackage::writeADCValue(short unsigned int)':
+.././CommunicationPackage.h:68:7: error: 'void tcp::CommunicationPackage::uShort2Char(short unsigned int, char*)' is private
+  void uShort2Char(unsigned short input, char *output);
+       ^
+../ADCCommunicationPackage.cpp:33:2: error: within this context
+  uShort2Char(value, &frame[adcValuePosition]);
+  ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:35:8: error: 'char* tcp::CommunicationPackage::frame' is private
+  char *frame;
+        ^
+../ADCCommunicationPackage.cpp:33:22: error: within this context
+  uShort2Char(value, &frame[adcValuePosition]);
+                      ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:68:7: error: 'void tcp::CommunicationPackage::uShort2Char(short unsigned int, char*)' is private
+  void uShort2Char(unsigned short input, char *output);
+       ^
+../ADCCommunicationPackage.cpp:33:45: error: within this context
+  uShort2Char(value, &frame[adcValuePosition]);
+                                             ^
+../ADCCommunicationPackage.cpp: At global scope:
+../ADCCommunicationPackage.cpp:37:1: error: prototype for 'tcp::ADCCommunicationPackage::ADCCommunicationPackage(short unsigned int)' does not match any in class 'tcp::ADCCommunicationPackage'
+ ADCCommunicationPackage::ADCCommunicationPackage(unsigned short adcValue) {
+ ^
+In file included from ../ADCCommunicationPackage.cpp:8:0:
+.././ADCCommunicationPackage.h:15:7: error: candidates are: tcp::ADCCommunicationPackage::ADCCommunicationPackage(const tcp::ADCCommunicationPackage&)
+ class ADCCommunicationPackage : public CommunicationPackage {
+       ^
+.././ADCCommunicationPackage.h:20:2: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage(unsigned int, short unsigned int)
+  ADCCommunicationPackage(unsigned int timestamp, unsigned short adcValue);
+  ^
+../ADCCommunicationPackage.cpp:17:1: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage(char*)
+ ADCCommunicationPackage::ADCCommunicationPackage(char *frame):
+ ^
+../ADCCommunicationPackage.cpp:27:1: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage()
+ ADCCommunicationPackage::ADCCommunicationPackage():CommunicationPackage() {
+ ^
+../ADCCommunicationPackage.cpp: In member function 'short unsigned int tcp::ADCCommunicationPackage::getADCValue() const':
+../ADCCommunicationPackage.cpp:41:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h: In member function 'short unsigned int tcp::ADCCommunicationPackage::readADCValue()':
+.././CommunicationPackage.h:67:17: error: 'short unsigned int tcp::CommunicationPackage::char2UShort(char*)' is private
+  unsigned short char2UShort(char *data);
+                 ^
+../ADCCommunicationPackage.cpp:44:9: error: within this context
+  return char2UShort(&frame[adcValuePosition]);
+         ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:35:8: error: 'char* tcp::CommunicationPackage::frame' is private
+  char *frame;
+        ^
+../ADCCommunicationPackage.cpp:44:22: error: within this context
+  return char2UShort(&frame[adcValuePosition]);
+                      ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:67:17: error: 'short unsigned int tcp::CommunicationPackage::char2UShort(char*)' is private
+  unsigned short char2UShort(char *data);
+                 ^
+../ADCCommunicationPackage.cpp:44:45: error: within this context
+  return char2UShort(&frame[adcValuePosition]);
+                                             ^
+make: *** [ADCCommunicationPackage.o] Error 1
+23:43:19 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h: In constructor 'tcp::ADCCommunicationPackage::ADCCommunicationPackage(char*)':
+.././CommunicationPackage.h:36:7: error: 'bool tcp::CommunicationPackage::valid' is private
+  bool valid;
+       ^
+../ADCCommunicationPackage.cpp:19:6: error: within this context
+  if(!valid) {
+      ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h: In member function 'bool tcp::ADCCommunicationPackage::writeADCValue(short unsigned int)':
+.././CommunicationPackage.h:68:7: error: 'void tcp::CommunicationPackage::uShort2Char(short unsigned int, char*)' is private
+  void uShort2Char(unsigned short input, char *output);
+       ^
+../ADCCommunicationPackage.cpp:33:2: error: within this context
+  uShort2Char(value, &frame[adcValuePosition]);
+  ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:35:8: error: 'char* tcp::CommunicationPackage::frame' is private
+  char *frame;
+        ^
+../ADCCommunicationPackage.cpp:33:22: error: within this context
+  uShort2Char(value, &frame[adcValuePosition]);
+                      ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:68:7: error: 'void tcp::CommunicationPackage::uShort2Char(short unsigned int, char*)' is private
+  void uShort2Char(unsigned short input, char *output);
+       ^
+../ADCCommunicationPackage.cpp:33:45: error: within this context
+  uShort2Char(value, &frame[adcValuePosition]);
+                                             ^
+../ADCCommunicationPackage.cpp: At global scope:
+../ADCCommunicationPackage.cpp:37:1: error: prototype for 'tcp::ADCCommunicationPackage::ADCCommunicationPackage(short unsigned int)' does not match any in class 'tcp::ADCCommunicationPackage'
+ ADCCommunicationPackage::ADCCommunicationPackage(unsigned short adcValue) {
+ ^
+In file included from ../ADCCommunicationPackage.cpp:8:0:
+.././ADCCommunicationPackage.h:15:7: error: candidates are: tcp::ADCCommunicationPackage::ADCCommunicationPackage(const tcp::ADCCommunicationPackage&)
+ class ADCCommunicationPackage : public CommunicationPackage {
+       ^
+.././ADCCommunicationPackage.h:20:2: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage(unsigned int, short unsigned int)
+  ADCCommunicationPackage(unsigned int timestamp, unsigned short adcValue);
+  ^
+../ADCCommunicationPackage.cpp:17:1: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage(char*)
+ ADCCommunicationPackage::ADCCommunicationPackage(char *frame):
+ ^
+../ADCCommunicationPackage.cpp:27:1: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage()
+ ADCCommunicationPackage::ADCCommunicationPackage():CommunicationPackage() {
+ ^
+../ADCCommunicationPackage.cpp: In member function 'short unsigned int tcp::ADCCommunicationPackage::getADCValue() const':
+../ADCCommunicationPackage.cpp:41:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h: In member function 'short unsigned int tcp::ADCCommunicationPackage::readADCValue()':
+.././CommunicationPackage.h:67:17: error: 'short unsigned int tcp::CommunicationPackage::char2UShort(char*)' is private
+  unsigned short char2UShort(char *data);
+                 ^
+../ADCCommunicationPackage.cpp:44:9: error: within this context
+  return char2UShort(&frame[adcValuePosition]);
+         ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:35:8: error: 'char* tcp::CommunicationPackage::frame' is private
+  char *frame;
+        ^
+../ADCCommunicationPackage.cpp:44:22: error: within this context
+  return char2UShort(&frame[adcValuePosition]);
+                      ^
+In file included from .././ADCCommunicationPackage.h:11:0,
+                 from ../ADCCommunicationPackage.cpp:8:
+.././CommunicationPackage.h:67:17: error: 'short unsigned int tcp::CommunicationPackage::char2UShort(char*)' is private
+  unsigned short char2UShort(char *data);
+                 ^
+../ADCCommunicationPackage.cpp:44:45: error: within this context
+  return char2UShort(&frame[adcValuePosition]);
+                                             ^
+make: *** [ADCCommunicationPackage.o] Error 1
+23:44:15 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+../ADCCommunicationPackage.cpp:37:1: error: prototype for 'tcp::ADCCommunicationPackage::ADCCommunicationPackage(short unsigned int)' does not match any in class 'tcp::ADCCommunicationPackage'
+ ADCCommunicationPackage::ADCCommunicationPackage(unsigned short adcValue) {
+ ^
+In file included from ../ADCCommunicationPackage.cpp:8:0:
+.././ADCCommunicationPackage.h:15:7: error: candidates are: tcp::ADCCommunicationPackage::ADCCommunicationPackage(const tcp::ADCCommunicationPackage&)
+ class ADCCommunicationPackage : public CommunicationPackage {
+       ^
+.././ADCCommunicationPackage.h:20:2: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage(unsigned int, short unsigned int)
+  ADCCommunicationPackage(unsigned int timestamp, unsigned short adcValue);
+  ^
+../ADCCommunicationPackage.cpp:17:1: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage(char*)
+ ADCCommunicationPackage::ADCCommunicationPackage(char *frame):
+ ^
+../ADCCommunicationPackage.cpp:27:1: error:                 tcp::ADCCommunicationPackage::ADCCommunicationPackage()
+ ADCCommunicationPackage::ADCCommunicationPackage():CommunicationPackage() {
+ ^
+../ADCCommunicationPackage.cpp: In member function 'short unsigned int tcp::ADCCommunicationPackage::getADCValue() const':
+../ADCCommunicationPackage.cpp:41:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make: *** [ADCCommunicationPackage.o] Error 1
+17:22:23 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+../ADCCommunicationPackage.cpp: In constructor 'tcp::ADCCommunicationPackage::ADCCommunicationPackage(unsigned int, short unsigned int)':
+../ADCCommunicationPackage.cpp:32:22: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  CommunicationPackage{
+                      ^
+../ADCCommunicationPackage.cpp:36:1: error: expected '{' before 'bool'
+ bool ADCCommunicationPackage::writeADCValue(unsigned short value) {
+ ^
+../ADCCommunicationPackage.cpp: In member function 'short unsigned int tcp::ADCCommunicationPackage::getADCValue() const':
+../ADCCommunicationPackage.cpp:45:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make: *** [ADCCommunicationPackage.o] Error 1
+17:23:33 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+../ADCCommunicationPackage.cpp: In member function 'short unsigned int tcp::ADCCommunicationPackage::getADCValue() const':
+../ADCCommunicationPackage.cpp:45:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'tcp::PackageType tcp::CommunicationPackage::readPackageType()':
+../CommunicationPackage.cpp:82:30: error: invalid conversion from 'char' to 'tcp::PackageType' [-fpermissive]
+   return frame[packageTypePos];
+                              ^
+../CommunicationPackage.cpp: At global scope:
+../CommunicationPackage.cpp:106:15: error: redefinition of 'unsigned int tcp::CommunicationPackage::readTimeStamp()'
+  unsigned int CommunicationPackage::readTimeStamp(){
+               ^
+../CommunicationPackage.cpp:71:15: note: 'unsigned int tcp::CommunicationPackage::readTimeStamp()' previously defined here
+  unsigned int CommunicationPackage::readTimeStamp() {
+               ^
+../CommunicationPackage.cpp: In constructor 'tcp::CommunicationPackage::CommunicationPackage(tcp::PackageType, unsigned int, short unsigned int)':
+../CommunicationPackage.cpp:291:7: error: 'write' was not declared in this scope
+   if(!write)
+       ^
+../CommunicationPackage.cpp:293:2: error: expected primary-expression before '}' token
+  }
+  ^
+make: *** [CommunicationPackage.o] Error 1
+17:25:50 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+../ADCCommunicationPackage.cpp: In member function 'short unsigned int tcp::ADCCommunicationPackage::getADCValue() const':
+../ADCCommunicationPackage.cpp:47:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'tcp::PackageType tcp::CommunicationPackage::readPackageType()':
+../CommunicationPackage.cpp:82:30: error: invalid conversion from 'char' to 'tcp::PackageType' [-fpermissive]
+   return frame[packageTypePos];
+                              ^
+../CommunicationPackage.cpp: At global scope:
+../CommunicationPackage.cpp:106:15: error: redefinition of 'unsigned int tcp::CommunicationPackage::readTimeStamp()'
+  unsigned int CommunicationPackage::readTimeStamp(){
+               ^
+../CommunicationPackage.cpp:71:15: note: 'unsigned int tcp::CommunicationPackage::readTimeStamp()' previously defined here
+  unsigned int CommunicationPackage::readTimeStamp() {
+               ^
+../CommunicationPackage.cpp: In constructor 'tcp::CommunicationPackage::CommunicationPackage(tcp::PackageType, unsigned int, short unsigned int)':
+../CommunicationPackage.cpp:291:7: error: 'write' was not declared in this scope
+   if(!write)
+       ^
+../CommunicationPackage.cpp:293:2: error: expected primary-expression before '}' token
+  }
+  ^
+make: *** [CommunicationPackage.o] Error 1
+17:26:17 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'tcp::PackageType tcp::CommunicationPackage::readPackageType()':
+../CommunicationPackage.cpp:82:30: error: invalid conversion from 'char' to 'tcp::PackageType' [-fpermissive]
+   return frame[packageTypePos];
+                              ^
+../CommunicationPackage.cpp: At global scope:
+../CommunicationPackage.cpp:106:15: error: redefinition of 'unsigned int tcp::CommunicationPackage::readTimeStamp()'
+  unsigned int CommunicationPackage::readTimeStamp(){
+               ^
+../CommunicationPackage.cpp:71:15: note: 'unsigned int tcp::CommunicationPackage::readTimeStamp()' previously defined here
+  unsigned int CommunicationPackage::readTimeStamp() {
+               ^
+../CommunicationPackage.cpp: In constructor 'tcp::CommunicationPackage::CommunicationPackage(tcp::PackageType, unsigned int, short unsigned int)':
+../CommunicationPackage.cpp:291:7: error: 'write' was not declared in this scope
+   if(!write)
+       ^
+../CommunicationPackage.cpp:293:2: error: expected primary-expression before '}' token
+  }
+  ^
+make: *** [CommunicationPackage.o] Error 1
+17:26:45 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp:106:15: error: redefinition of 'unsigned int tcp::CommunicationPackage::readTimeStamp()'
+  unsigned int CommunicationPackage::readTimeStamp(){
+               ^
+../CommunicationPackage.cpp:71:15: note: 'unsigned int tcp::CommunicationPackage::readTimeStamp()' previously defined here
+  unsigned int CommunicationPackage::readTimeStamp() {
+               ^
+../CommunicationPackage.cpp: In constructor 'tcp::CommunicationPackage::CommunicationPackage(tcp::PackageType, unsigned int, short unsigned int)':
+../CommunicationPackage.cpp:291:7: error: 'write' was not declared in this scope
+   if(!write)
+       ^
+../CommunicationPackage.cpp:293:2: error: expected primary-expression before '}' token
+  }
+  ^
+make: *** [CommunicationPackage.o] Error 1
+17:28:05 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In constructor 'tcp::CommunicationPackage::CommunicationPackage(tcp::PackageType, unsigned int, short unsigned int)':
+../CommunicationPackage.cpp:287:7: error: 'write' was not declared in this scope
+   if(!write)
+       ^
+../CommunicationPackage.cpp:289:2: error: expected primary-expression before '}' token
+  }
+  ^
+make: *** [CommunicationPackage.o] Error 1
+17:29:35 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:33:52 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+In file included from ../Communication/CommunicationPackage.h:8:0,
+                 from ../Communication/ADCCommunicationPackage.h:11,
+                 from ../test.cpp:20:
+../Communication/PackageType.h:9:7: error: multiple definition of 'enum tcp::PackageType'
+  enum PackageType{
+       ^
+In file included from ../Communication/CommunicationPackage.h:8:0,
+                 from ../test.cpp:19:
+../Communication/PackageType.h:9:7: error: previous definition here
+  enum PackageType{
+       ^
+In file included from ../Communication/ADCCommunicationPackage.h:11:0,
+                 from ../test.cpp:20:
+../Communication/CommunicationPackage.h:17:7: error: redefinition of 'class tcp::CommunicationPackage'
+ class CommunicationPackage{
+       ^
+In file included from ../test.cpp:19:0:
+../Communication/CommunicationPackage.h:17:7: error: previous definition of 'class tcp::CommunicationPackage'
+ class CommunicationPackage{
+       ^
+../test.cpp: In function 'int main()':
+../test.cpp:40:3: error: 'ADCCommunicationPackage' was not declared in this scope
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+   ^
+../test.cpp:40:3: note: suggested alternative:
+In file included from ../test.cpp:20:0:
+../Communication/ADCCommunicationPackage.h:15:7: note:   'tcp::ADCCommunicationPackage'
+ class ADCCommunicationPackage : public CommunicationPackage {
+       ^
+../test.cpp:40:28: error: 'adcPack' was not declared in this scope
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+                            ^
+../test.cpp:40:42: error: expected type-specifier before 'ADCCommunicationPackage'
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+                                          ^
+../test.cpp:38:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:39:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+17:35:16 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+In file included from ../Communication/CommunicationPackage.h:8:0,
+                 from ../Communication/ADCCommunicationPackage.h:11,
+                 from ../test.cpp:20:
+../Communication/PackageType.h:9:7: error: multiple definition of 'enum tcp::PackageType'
+  enum PackageType{
+       ^
+In file included from ../Communication/CommunicationPackage.h:8:0,
+                 from ../test.cpp:19:
+../Communication/PackageType.h:9:7: error: previous definition here
+  enum PackageType{
+       ^
+In file included from ../Communication/ADCCommunicationPackage.h:11:0,
+                 from ../test.cpp:20:
+../Communication/CommunicationPackage.h:17:7: error: redefinition of 'class tcp::CommunicationPackage'
+ class CommunicationPackage{
+       ^
+In file included from ../test.cpp:19:0:
+../Communication/CommunicationPackage.h:17:7: error: previous definition of 'class tcp::CommunicationPackage'
+ class CommunicationPackage{
+       ^
+../test.cpp: In function 'int main()':
+../test.cpp:40:3: error: 'ADCCommunicationPackage' was not declared in this scope
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+   ^
+../test.cpp:40:3: note: suggested alternative:
+In file included from ../test.cpp:20:0:
+../Communication/ADCCommunicationPackage.h:15:7: note:   'tcp::ADCCommunicationPackage'
+ class ADCCommunicationPackage : public CommunicationPackage {
+       ^
+../test.cpp:40:28: error: 'adcPack' was not declared in this scope
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+                            ^
+../test.cpp:40:42: error: expected type-specifier before 'ADCCommunicationPackage'
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+                                          ^
+../test.cpp:38:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:39:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+17:35:57 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+In file included from ../Communication/CommunicationPackage.h:8:0,
+                 from ../Communication/ADCCommunicationPackage.h:11,
+                 from ../test.cpp:20:
+../Communication/PackageType.h:9:7: error: multiple definition of 'enum tcp::PackageType'
+  enum PackageType{
+       ^
+In file included from ../Communication/CommunicationPackage.h:8:0,
+                 from ../test.cpp:19:
+../Communication/PackageType.h:9:7: error: previous definition here
+  enum PackageType{
+       ^
+In file included from ../Communication/ADCCommunicationPackage.h:11:0,
+                 from ../test.cpp:20:
+../Communication/CommunicationPackage.h:17:7: error: redefinition of 'class tcp::CommunicationPackage'
+ class CommunicationPackage{
+       ^
+In file included from ../test.cpp:19:0:
+../Communication/CommunicationPackage.h:17:7: error: previous definition of 'class tcp::CommunicationPackage'
+ class CommunicationPackage{
+       ^
+../test.cpp: In function 'int main()':
+../test.cpp:40:3: error: 'ADCCommunicationPackage' was not declared in this scope
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+   ^
+../test.cpp:40:3: note: suggested alternative:
+In file included from ../test.cpp:20:0:
+../Communication/ADCCommunicationPackage.h:15:7: note:   'tcp::ADCCommunicationPackage'
+ class ADCCommunicationPackage : public CommunicationPackage {
+       ^
+../test.cpp:40:28: error: 'adcPack' was not declared in this scope
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+                            ^
+../test.cpp:40:42: error: expected type-specifier before 'ADCCommunicationPackage'
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+                                          ^
+../test.cpp:38:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:39:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+17:37:03 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:39:3: error: 'ADCCommunicationPackage' was not declared in this scope
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+   ^
+../test.cpp:39:3: note: suggested alternative:
+In file included from ../global.h:12:0,
+                 from ../test.cpp:19:
+../Communication/ADCCommunicationPackage.h:15:7: note:   'tcp::ADCCommunicationPackage'
+ class ADCCommunicationPackage : public CommunicationPackage {
+       ^
+../test.cpp:39:28: error: 'adcPack' was not declared in this scope
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+                            ^
+../test.cpp:39:42: error: expected type-specifier before 'ADCCommunicationPackage'
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+                                          ^
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+17:37:50 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:39:3: error: 'ADCCommunicationPackage' was not declared in this scope
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+   ^
+../test.cpp:39:3: note: suggested alternative:
+In file included from ../global.h:12:0,
+                 from ../test.cpp:19:
+.././Communication/ADCCommunicationPackage.h:15:7: note:   'tcp::ADCCommunicationPackage'
+ class ADCCommunicationPackage : public CommunicationPackage {
+       ^
+../test.cpp:39:28: error: 'adcPack' was not declared in this scope
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+                            ^
+../test.cpp:39:42: error: expected type-specifier before 'ADCCommunicationPackage'
+   ADCCommunicationPackage *adcPack = new ADCCommunicationPackage(1000,15);
+                                          ^
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+17:38:39 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:40:20: error: invalid use of non-static member function
+   cout << adcPack->getADCValue << " " << adcPack->getTimeStamp <<endl;
+                    ^
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+make: *** [test.o] Error 1
+17:38:58 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:39: undefined reference to `tcp::ADCCommunicationPackage::ADCCommunicationPackage(unsigned int, unsigned short)'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:40: undefined reference to `tcp::ADCCommunicationPackage::getADCValue() const'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:40: undefined reference to `tcp::CommunicationPackage::getTimeStamp() const'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+17:41:09 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:39: undefined reference to `tcp::ADCCommunicationPackage::ADCCommunicationPackage(unsigned int, unsigned short)'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:40: undefined reference to `tcp::ADCCommunicationPackage::getADCValue() const'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:40: undefined reference to `tcp::CommunicationPackage::getTimeStamp() const'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+17:41:59 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:39: undefined reference to `tcp::ADCCommunicationPackage::ADCCommunicationPackage()'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:40: undefined reference to `tcp::ADCCommunicationPackage::getADCValue() const'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:40: undefined reference to `tcp::CommunicationPackage::getTimeStamp() const'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+17:42:31 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:42:41 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:44:56 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:48:09 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:48:33 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:49:55 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:53:37 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)':
+../CommunicationPackage.cpp:129:3: error: 'cout' was not declared in this scope
+   cout << ptr[0] << ptr[1] << ptr[2] << ptr[3];
+   ^
+../CommunicationPackage.cpp:129:3: note: suggested alternative:
+In file included from ../CommunicationPackage.cpp:10:0:
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/iostream:61:18: note:   'std::cout'
+   extern ostream cout;  /// Linked to standard output
+                  ^
+make: *** [CommunicationPackage.o] Error 1
+17:54:07 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:54:39 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:54:44 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)':
+../CommunicationPackage.cpp:129:75: error: 'endl' was not declared in this scope
+   std::cout << (int)ptr[0] << (int)ptr[1] <<(int) ptr[2] << (int)ptr[3] <<endl;;
+                                                                           ^
+../CommunicationPackage.cpp:129:75: note: suggested alternative:
+In file included from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/iostream:39:0,
+                 from ../CommunicationPackage.cpp:10:
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/ostream:564:5: note:   'std::endl'
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+make: *** [CommunicationPackage.o] Error 1
+17:54:46 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+../CommunicationPackage.cpp: In member function 'void tcp::CommunicationPackage::uInt2Char(unsigned int, char*)':
+../CommunicationPackage.cpp:129:75: error: 'endl' was not declared in this scope
+   std::cout << (int)ptr[0] << (int)ptr[1] <<(int) ptr[2] << (int)ptr[3] <<endl;;
+                                                                           ^
+../CommunicationPackage.cpp:129:75: note: suggested alternative:
+In file included from /usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/iostream:39:0,
+                 from ../CommunicationPackage.cpp:10:
+/usr/local/linaro/arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include/c++/4.9.1/ostream:564:5: note:   'std::endl'
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+make: *** [CommunicationPackage.o] Error 1
+17:54:56 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:56:37 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+17:57:02 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+make: Nothing to be done for `all'.
+17:59:13 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+18:00:08 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+18:37:02 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+./test.o: In function `main':
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:39: undefined reference to `tcp::ADCCommunicationPackage::ADCCommunicationPackage(unsigned int, unsigned short)'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:40: undefined reference to `tcp::ADCCommunicationPackage::getADCValue() const'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:40: undefined reference to `tcp::CommunicationPackage::getTimeStamp() const'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:42: undefined reference to `tcp::CommunicationPackage::getFrame(char*) const'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:43: undefined reference to `tcp::ADCCommunicationPackage::ADCCommunicationPackage(char*)'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:44: undefined reference to `tcp::ADCCommunicationPackage::getADCValue() const'
+/Users/Jendrik/Desktop/Uni/Photonizer/HallonPi/workspace/RPi test/Debug/../test.cpp:44: undefined reference to `tcp::CommunicationPackage::getTimeStamp() const'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+18:49:19 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building file: ../RingBuffer.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"RingBuffer.d" -MT"RingBuffer.d" -o "RingBuffer.o" "../RingBuffer.cpp"
+In file included from ../RingBuffer.cpp:9:0:
+../RingBuffer.h:23:6: error: invalid use of non-static data member 'RingBuffer<T>::size'
+  int size;
+      ^
+../RingBuffer.h:24:15: error: from this location
+  T ringBuffer[size];
+               ^
+../RingBuffer.cpp:11:1: error: invalid use of template-name 'RingBuffer' without an argument list
+ RingBuffer::RingBuffer(int size) {
+ ^
+make: *** [RingBuffer.o] Error 1
+19:17:22 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../RingBuffer.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"RingBuffer.d" -MT"RingBuffer.d" -o "RingBuffer.o" "../RingBuffer.cpp"
+Finished building: ../RingBuffer.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./RingBuffer.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+19:19:01 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 

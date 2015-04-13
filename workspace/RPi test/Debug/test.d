@@ -1,6 +1,7 @@
 test.d: ../test.cpp /usr/local/wiringPi/wiringPi/wiringPi.h \
- ../GPIOAccess.h ../BitStruct.h ../TCPSender.h \
- ../Communication/CommunicationPackage.h ../Communication/PackageType.h
+ ../GPIOAccess.h ../BitStruct.h ../TCPSender.h ../global.h \
+ .././ADCCommunicationPackage.h ../././CommunicationPackage.h \
+ .././././PackageType.h
 
 /usr/local/wiringPi/wiringPi/wiringPi.h:
 
@@ -10,6 +11,10 @@ test.d: ../test.cpp /usr/local/wiringPi/wiringPi/wiringPi.h \
 
 ../TCPSender.h:
 
-../Communication/CommunicationPackage.h:
+../global.h:
 
-../Communication/PackageType.h:
+.././ADCCommunicationPackage.h:
+
+../././CommunicationPackage.h:
+
+.././././PackageType.h:

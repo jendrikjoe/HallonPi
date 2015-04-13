@@ -1,0 +1,30 @@
+/*
+ * ADCCOmmunicationPackage.h
+ *
+ *  Created on: Apr 12, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef ADCCOMMUNICATIONPACKAGE_H_
+#define ADCCOMMUNICATIONPACKAGE_H_
+
+#include "CommunicationPackage.h"
+#include "PackageType.h"
+
+namespace tcp{
+
+class ADCCommunicationPackage{
+
+public:
+	ADCCommunicationPackage();
+	ADCCommunicationPackage(char *frame);
+	ADCCommunicationPackage(unsigned short adcValue);
+
+	unsigned short getADCValue() const;
+
+
+}
+
+}
+
+#endif /* ADCCOMMUNICATIONPACKAGE_H_ */

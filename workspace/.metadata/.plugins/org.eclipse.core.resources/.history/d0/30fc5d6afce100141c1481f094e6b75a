@@ -1,0 +1,23 @@
+/*
+ * RingBuffer.h
+ *
+ *  Created on: Apr 13, 2015
+ *      Author: Jendrik
+ */
+#ifndef RINGBUFFER_H_
+#define RINGBUFFER_H_
+
+template<typename T>
+class RingBuffer {
+
+public:
+
+private:
+	int size;
+	T ringBuffer[size];
+};
+
+
+
+
+#endif

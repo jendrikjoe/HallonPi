@@ -16,7 +16,7 @@
 #include <time.h>
 #include "BitStruct.h"
 #include "TCPSender.h"
-#include "CommunicationPackage.h"
+#include "global.h"
 
 #define NUMBEROFTHREADS 4
 
@@ -36,7 +36,12 @@ int main (void)
   pinMode(7, OUTPUT);
   pthread_t tcpThread;
   int control;
-
+  tcp::ADCCommunicationPackage *adcPack = new tcp::ADCCommunicationPackage(1000,15);
+  cout << adcPack->getADCValue() << " " << adcPack->getTimeStamp() <<endl;
+  char test[500];
+  adcPack->getFrame(test);
+  tcp::ADCCommunicationPackage *adcPack2 = new tcp::ADCCommunicationPackage(test);
+  cout << adcPack2->getADCValue() << " " << adcPack2->getTimeStamp() <<endl;
   //tcp::CommunicationPackage *package = new tcp::CommunicationPackage();
   //startTCP((void*) tcpThread);
   /*cout << "Before thread" << endl;

@@ -1,0 +1,34 @@
+/*
+ * RingBuffer.h
+ *
+ *  Created on: Apr 13, 2015
+ *      Author: Jendrik
+ */
+#ifndef RINGBUFFER_H_
+#define RINGBUFFER_H_
+
+template<typename T>
+class RingBuffer {
+
+public:
+	RingBuffer(int size) {
+		this->size = size;
+	}
+	void writeElementToBuffer(T input);
+	T getOldestElement();
+	T getNewestElement();
+	bool dataToRead();
+	~RingBuffer();
+
+private:
+	int size;
+	T *ringBuffer;
+	int writerPoint;
+	int readerPoint;
+
+};
+
+
+
+
+#endif
