@@ -7,6 +7,7 @@ CPP_SRCS += \
 ../ADCCommunicationPackage.cpp \
 ../CommunicationPackage.cpp \
 ../GPIOAccess.cpp \
+../HallonThread.cpp \
 ../Sender.cpp \
 ../TCPSender.cpp \
 ../test.cpp 
@@ -15,6 +16,7 @@ OBJS += \
 ./ADCCommunicationPackage.o \
 ./CommunicationPackage.o \
 ./GPIOAccess.o \
+./HallonThread.o \
 ./Sender.o \
 ./TCPSender.o \
 ./test.o 
@@ -23,6 +25,7 @@ CPP_DEPS += \
 ./ADCCommunicationPackage.d \
 ./CommunicationPackage.d \
 ./GPIOAccess.d \
+./HallonThread.d \
 ./Sender.d \
 ./TCPSender.d \
 ./test.d 

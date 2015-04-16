@@ -2993,3 +2993,279 @@ Invoking: Cross G++ Linker
 arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
 Finished building target: RPi test
  
+20:11:12 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCCommunicationPackage.d" -MT"ADCCommunicationPackage.d" -o "ADCCommunicationPackage.o" "../ADCCommunicationPackage.cpp"
+Finished building: ../ADCCommunicationPackage.cpp
+ 
+Building file: ../CommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommunicationPackage.d" -MT"CommunicationPackage.d" -o "CommunicationPackage.o" "../CommunicationPackage.cpp"
+Finished building: ../CommunicationPackage.cpp
+ 
+Building file: ../TCPSender.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"TCPSender.d" -MT"TCPSender.d" -o "TCPSender.o" "../TCPSender.cpp"
+Finished building: ../TCPSender.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:37:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:38:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+16:12:30 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../Thread.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Thread.d" -MT"Thread.d" -o "Thread.o" "../Thread.cpp"
+../Thread.cpp: In member function 'void Thread::start()':
+../Thread.cpp:29:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:29:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:30:14: error: 'exit' was not declared in this scope
+   exit(status);
+              ^
+../Thread.cpp:36:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:36:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:37:14: error: 'exit' was not declared in this scope
+   exit(status);
+              ^
+../Thread.cpp:43:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:43:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:44:14: error: 'exit' was not declared in this scope
+   exit(status);
+              ^
+../Thread.cpp:49:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:49:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:50:14: error: 'exit' was not declared in this scope
+   exit(status);
+              ^
+../Thread.cpp: In member function 'void* Thread::join()':
+../Thread.cpp:58:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:58:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:59:14: error: 'exit' was not declared in this scope
+   exit(status);
+              ^
+../Thread.cpp: In member function 'void Thread::printError(char*, int, char*, int)':
+../Thread.cpp:69:44: error: 'strerror' was not declared in this scope
+     << lineNumber << "-" << strerror(status) << std::endl;
+                                            ^
+make: *** [Thread.o] Error 1
+16:15:15 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../Thread.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Thread.d" -MT"Thread.d" -o "Thread.o" "../Thread.cpp"
+../Thread.cpp: In member function 'void Thread::start()':
+../Thread.cpp:31:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:31:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:32:14: error: 'exit' was not declared in this scope
+   exit(status);
+              ^
+../Thread.cpp:38:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:38:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:39:14: error: 'exit' was not declared in this scope
+   exit(status);
+              ^
+../Thread.cpp:45:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:45:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:46:14: error: 'exit' was not declared in this scope
+   exit(status);
+              ^
+../Thread.cpp:51:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:51:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:52:14: error: 'exit' was not declared in this scope
+   exit(status);
+              ^
+../Thread.cpp: In member function 'void* Thread::join()':
+../Thread.cpp:60:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:60:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:61:14: error: 'exit' was not declared in this scope
+   exit(status);
+              ^
+../Thread.cpp: In member function 'void Thread::printError(char*, int, char*, int)':
+../Thread.cpp:71:44: error: 'strerror' was not declared in this scope
+     << lineNumber << "-" << strerror(status) << endl;
+                                            ^
+make: *** [Thread.o] Error 1
+16:15:49 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../Thread.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Thread.d" -MT"Thread.d" -o "Thread.o" "../Thread.cpp"
+../Thread.cpp: In member function 'void Thread::start()':
+../Thread.cpp:31:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:31:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:38:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:38:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:45:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:45:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:51:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:51:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp: In member function 'void* Thread::join()':
+../Thread.cpp:60:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:60:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp: In member function 'void Thread::printError(char*, int, char*, int)':
+../Thread.cpp:71:44: error: 'strerror' was not declared in this scope
+     << lineNumber << "-" << strerror(status) << endl;
+                                            ^
+make: *** [Thread.o] Error 1
+16:16:56 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../Thread.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Thread.d" -MT"Thread.d" -o "Thread.o" "../Thread.cpp"
+../Thread.cpp: In member function 'void Thread::start()':
+../Thread.cpp:31:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:31:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:38:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:38:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:45:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:45:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:51:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:51:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp: In member function 'void* Thread::join()':
+../Thread.cpp:60:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:60:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+Finished building: ../Thread.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:39:13: warning: unused variable 'tcpThread' [-Wunused-variable]
+   pthread_t tcpThread;
+             ^
+../test.cpp:40:7: warning: unused variable 'control' [-Wunused-variable]
+   int control;
+       ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./Thread.o ./test.o   -lwiringPi -lpthread
+./Thread.o: In function `.LANCHOR0':
+Thread.cpp:(.rodata+0x38): undefined reference to `Thread::run()'
+collect2: error: ld returned 1 exit status
+make: *** [RPi test] Error 1
+16:18:04 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../Thread.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"Thread.d" -MT"Thread.d" -o "Thread.o" "../Thread.cpp"
+../Thread.cpp: In member function 'void Thread::start()':
+../Thread.cpp:31:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:31:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:38:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:38:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:45:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:45:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp:51:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:51:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../Thread.cpp: In member function 'void* Thread::join()':
+../Thread.cpp:60:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../Thread.cpp:60:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+Finished building: ../Thread.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./Sender.o ./TCPSender.o ./Thread.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+18:02:50 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../HallonThread.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -I../Communication -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"HallonThread.d" -MT"HallonThread.d" -o "HallonThread.o" "../HallonThread.cpp"
+../HallonThread.cpp: In member function 'void HallonThread::start()':
+../HallonThread.cpp:31:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../HallonThread.cpp:31:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../HallonThread.cpp:38:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../HallonThread.cpp:38:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../HallonThread.cpp:45:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../HallonThread.cpp:45:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../HallonThread.cpp:51:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../HallonThread.cpp:51:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+../HallonThread.cpp: In member function 'void* HallonThread::join()':
+../HallonThread.cpp:60:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     __FILE__,__LINE__);
+                      ^
+../HallonThread.cpp:60:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+Finished building: ../HallonThread.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./HallonThread.o ./Sender.o ./TCPSender.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 

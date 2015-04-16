@@ -1,0 +1,36 @@
+/*
+ * HousekeepingCommunicationPackage.cpp
+ *
+ *  Created on: Apr 15, 2015
+ *      Author: Jendrik
+ */
+
+#include "HousekeepingCommunicationPackage.h"
+
+namespace tcp {
+
+const unsigned short packageLength = HOUSE_COM;
+
+
+HousekeepingCommunicationPackage::HousekeepingCommunicationPackage() :
+CommunicationPackage() {
+	this->cpuAverage = 0;
+}
+
+HousekeepingCommunicationPackage::HousekeepingCommunicationPackage(char* frame) :
+	CommunicationPackage(frame, packageType, ){
+	if(!valid) {
+		this->cpuAverage = 0;
+	}
+	else  {
+		this->cpuAverage = readCpuAverage();
+	}
+}
+
+HousekeepingCommunicationPackage::HousekeepingCommunicationPackage(unsigned short cpuAverage)
+
+HousekeepingCommunicationPackage::~HousekeepingCommunicationPackage() {
+	// TODO Auto-generated destructor stub
+}
+
+}

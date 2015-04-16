@@ -1,0 +1,39 @@
+/*
+ * Thread.cpp
+ *
+ *  Created on: Apr 15, 2015
+ *      Author: Jendrik
+ */
+
+
+
+#include "Thread.h"
+
+Thread::Thread() {
+}
+
+Thread::~Thread() {}
+
+void* Thread::startThread(void* pVoid) {
+	Thread* aThread = static_cast<Thread*>(pVoid);
+	assert(aThread);
+	aThread->result = aThread->run();
+	aThread->setCompleted();
+	return aThread->result;
+}
+
+void Thread::start() {
+	int status = pthread_attr_init(&threadAttribute);
+	if (status) {
+		printError("pthread attribute init failed at", status,
+				__FILE__,__LINE__);
+		exit(status);
+	}
+	status = pthread_attr_setscope(&threadAttribute,
+			PTHREAD_SCOPE_SYSTEM);
+	if (status) {
+		printError("pthread attribute setscope failed at", status,
+						__FILE__,__LINE__);
+				exit(status);
+	}
+}

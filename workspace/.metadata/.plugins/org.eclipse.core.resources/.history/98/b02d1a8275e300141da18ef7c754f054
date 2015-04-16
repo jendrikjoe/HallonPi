@@ -1,0 +1,22 @@
+/*
+ * Thread.cpp
+ *
+ *  Created on: Apr 15, 2015
+ *      Author: Jendrik
+ */
+
+
+
+#include "Thread.h"
+
+Thread::Thread() {
+}
+
+void* Thread::startThread(void* pVoid) {
+	Thread* aThread = static_cast<Thread*>(pVoid);
+	assert(aThread);
+	aThread->result = aThread->run();
+	aThread->setCompleted();
+	return aThread->result;
+
+}

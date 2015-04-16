@@ -1,0 +1,73 @@
+/*
+ * RingBuffer.h
+ *
+ *  Created on: Apr 13, 2015
+ *      Author: Jendrik
+ *      source: http://osix.net/modules/article/?id=464
+ *      source-date: 13.04.15
+ */
+#ifndef RINGBUFFER_H_
+#define RINGBUFFER_H_
+
+#include <semaphore.h>
+#include <>
+
+template<typename T>
+class RingBuffer{
+
+public:
+	RingBuffer(int size,
+			sem_t *readSemaphore) : HallonThread(){
+		this->size = size;
+		this->ringBuffer = new T[size];
+		this->readerPoint = 0;
+		this->writerPoint = 0;
+		this->readSemaphore = readSemaphore;
+		pthread_mutex_init(accesMutex,NULL);
+	}
+
+	void writeElementToBuffer(T input) {
+		if(writerPoint > size) writerPoint = 0;
+		ringBuffer[writerPoint] = input;
+		writerPoint++;
+		if(writerPoint == readerPoint) readerPoint++;
+		if(!readable) readable = true;
+	}
+
+	T getElement() {
+		if(readerPoint == writerPoint) return -1;
+		T buffer;
+		pthread_mutex_lock(accesMutex);
+		buffer = ringBuffer[readerPoint];
+		pthread_mutex_unlock(accesMutex);
+		return buffer;
+	}
+
+	T getNewestElement(){
+		if(readerPoint == writerPoint) return -1;
+		pthread_mutex_lock(accesMutex);
+		T buffer = ringBuffer[writerPoint-1];
+		pthread_mutex_unlock(accesMutex);
+		return buffer;
+	}
+
+	~RingBuffer() {
+		pthread_mutex_destroy(accesMutex);
+		delete ringBuffer;
+	}
+
+private:
+	int size;
+	T *ringBuffer;
+	int writerPoint;
+	int readerPoint;
+	sem_t *readSemaphore;
+	pthread_mutex_t *accesMutex;
+
+
+};
+
+
+
+
+#endif

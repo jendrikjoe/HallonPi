@@ -1,0 +1,20 @@
+/*
+ * HousekeepingCommunicationPackage.cpp
+ *
+ *  Created on: Apr 15, 2015
+ *      Author: Jendrik
+ */
+
+#include "HousekeepingCommunicationPackage.h"
+
+using namespace tcp;
+
+HousekeepingCommunicationPackage::HousekeepingCommunicationPackage() :
+CommunicationPackage() {
+	this->cpuAverage = 0;
+}
+
+HousekeepingCommunicationPackage::~HousekeepingCommunicationPackage() {
+	// TODO Auto-generated destructor stub
+}
+

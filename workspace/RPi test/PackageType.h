@@ -9,6 +9,7 @@ namespace tcp {
 	enum PackageType{
 		DEFAULT_COM,
 		ADC_COM,
+		HOUSE_COM,
 	};
 }
 

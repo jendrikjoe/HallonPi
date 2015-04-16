@@ -13,10 +13,12 @@
 #include "GPIOAccess.h"
 #include <unistd.h>
 #include <pthread.h>
+#include <semaphore.h>
 #include <time.h>
 #include "BitStruct.h"
 #include "TCPSender.h"
 #include "global.h"
+
 
 #define NUMBEROFTHREADS 4
 
@@ -24,11 +26,6 @@ using namespace std;
 
 
 
-void *startTCP(void* threadid){
-	printf("Hello World");
-	//TCPSender *tcpSender = new TCPSender();
-	pthread_exit(NULL);
-}
 
 int main (void)
 {
@@ -42,15 +39,6 @@ int main (void)
   adcPack->getFrame(test);
   tcp::ADCCommunicationPackage *adcPack2 = new tcp::ADCCommunicationPackage(test);
   cout << adcPack2->getADCValue() << " " << adcPack2->getTimeStamp() <<endl;
-  //tcp::CommunicationPackage *package = new tcp::CommunicationPackage();
-  //startTCP((void*) tcpThread);
-  /*cout << "Before thread" << endl;
-  control = pthread_create(&tcpThread, NULL, startTCP, (void*) tcpThread);
-  if (control){
-           printf("ERROR; return code from pthread_create() is %d\n", control);
-           exit(-1);
-        }
-  pthread_exit(NULL);*/
 }
 
 

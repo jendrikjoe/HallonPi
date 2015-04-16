@@ -10,6 +10,7 @@
 
 
 #include "./ADCCommunicationPackage.h"
+#include "./HousekeepingCommunicationPackage.h"
 //#include "./Communication/ADCCommunicationPackage.h"
 
 

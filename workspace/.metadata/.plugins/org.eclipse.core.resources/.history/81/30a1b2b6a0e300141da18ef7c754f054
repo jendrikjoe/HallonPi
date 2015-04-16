@@ -1,0 +1,30 @@
+/*
+ * HousekeepingCommunicationPackage.h
+ *
+ *  Created on: Apr 15, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef HOUSEKEEPINGCOMMUNICATIONPACKAGE_H_
+#define HOUSEKEEPINGCOMMUNICATIONPACKAGE_H_
+
+#include "CommunicationPackage.h"
+
+namespace tcp{
+
+class HousekeepingCommunicationPackage :
+		public CommunicationPackage{
+
+public:
+	HousekeepingCommunicationPackage();
+	HousekeepingCommunicationPackage(char* frame);
+	HousekeepingCommunicationPackage(unsigned short cpuAverage);
+
+
+	virtual ~HousekeepingCommunicationPackage();
+
+private:
+	unsigned short cpuAverage;
+};
+}
+#endif /* HOUSEKEEPINGCOMMUNICATIONPACKAGE_H_ */
