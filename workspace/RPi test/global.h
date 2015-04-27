@@ -8,10 +8,18 @@
 #ifndef GLOBAL_H_
 #define GLOBAL_H_
 
+#include "ADCCommunicationPackage.h"
+#include "HousekeepingCommunicationPackage.h"
+#include "CommandCommunicationPackage.h"
+#include "PackageType.h"
+#include "CommandNumber.h"
 
-#include "./ADCCommunicationPackage.h"
-#include "./HousekeepingCommunicationPackage.h"
-//#include "./Communication/ADCCommunicationPackage.h"
+
+/*#include "./Communication/ADCCommunicationPackage.h"
+#include "./Communication/HousekeepingCommunicationPackage.h"
+#include "./Communication/CommandCommunicationPackage.h"
+#include "./Communication/PackageType.h"
+#include "./Communication/CommandNumber.h"*/
 
 
 

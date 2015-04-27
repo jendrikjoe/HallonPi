@@ -1,0 +1,42 @@
+/*
+ * TCPReceiver.cpp
+ *
+ *  Created on: Apr 27, 2015
+ *      Author: Jendrik
+ */
+
+#include "TCPReceiver.h"
+#define COMMANDLENGTH 20
+
+
+TCPReceiver::TCPReceiver(int inputSocket, struct sockaddr* remoteAddress,
+		const RingBuffer<tcp::CommandCommunicationPackage>* commandBuffer) :
+		HallonThread(), commandBuffer(commandBuffer), remoteAddress(remoteAddress),
+		inputSocket(inputSocket) {
+	buffer = new char[1000];
+}
+
+TCPReceiver::~TCPReceiver() {
+	// TODO Auto-generated destructor stub
+}
+
+void* TCPReceiver::run() {
+	tcp::CommandCommunicationPackage commandPackage;
+	int startReading;
+	char charBuffer[500];
+	while(runBool) {
+		bzero(charBuffer,500);
+		recv(inputSocket, charBuffer, (size_t)COMMANDLENGTH, 0);
+		buffer.append(charBuffer);
+		startReading = buffer.find(tcp::CommunicationPackage::starting);
+		if(startReading!=std::string::npos ) {
+			if((buffer.length()-startReading-COMMANDLENGTH) < 0)
+			recv(inputSocket, buffer, (size_t)(buffer.length()), 0);
+		}
+		commandPackage = tcp::CommandCommunicationPackage(startReading);
+		if(commandPackage.isValid()) {
+			commandBuffer->writeElementToBuffer(commandPackage);
+		}
+
+	}
+}

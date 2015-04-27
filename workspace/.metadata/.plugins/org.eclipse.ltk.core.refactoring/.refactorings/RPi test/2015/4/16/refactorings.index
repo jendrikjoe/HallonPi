@@ -8,3 +8,5 @@
 1429000710121	Move 5 resources to 'RPi test'
 1429113756114	Rename resource 'Thread.cpp'
 1429113762443	Rename resource 'Thread.h'
+1429180726098	Rename resource 'TCPSender.h'
+1429180733378	Rename resource 'TCPSender.cpp'

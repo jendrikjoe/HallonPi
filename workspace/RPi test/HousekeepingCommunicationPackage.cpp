@@ -14,6 +14,8 @@ const unsigned short HousekeepingCommunicationPackage::packageLength = 14;
 const PackageType HousekeepingCommunicationPackage::packageType = HOUSE_COM;
 
 
+
+
 HousekeepingCommunicationPackage::HousekeepingCommunicationPackage() :
 CommunicationPackage() {
 	this->cpuAverage = 0;
@@ -35,13 +37,17 @@ HousekeepingCommunicationPackage::HousekeepingCommunicationPackage(unsigned int 
 	if(!writeCpuAverage(this->cpuAverage)) valid = false;
 }
 
-HousekeepingCommunicationPackage::~HousekeepingCommunicationPackage() {
-	// TODO Auto-generated destructor stub
+
+
+unsigned short HousekeepingCommunicationPackage::getCpuAverage() const {
+	return this->cpuAverage;
 }
 
 unsigned short HousekeepingCommunicationPackage::readCpuAverage() {
-	getUShortFromFrame(cpuAveragePosition);
+	return getUShortFromFrame(cpuAveragePosition);
 }
+
+
 
 bool HousekeepingCommunicationPackage::writeCpuAverage(unsigned short value) {
 	return putUShortToFrame(value, cpuAveragePosition);

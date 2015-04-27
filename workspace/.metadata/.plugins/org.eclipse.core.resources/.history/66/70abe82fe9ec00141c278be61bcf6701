@@ -1,0 +1,19 @@
+/*
+ * CommandCommunicationPackage.h
+ *
+ *  Created on: Apr 27, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef COMMANDCOMMUNICATIONPACKAGE_H_
+#define COMMANDCOMMUNICATIONPACKAGE_H_
+
+#include "CommunicationPackage.h"
+
+class CommandCommunicationPackage: public tcp::CommunicationPackage {
+public:
+	CommandCommunicationPackage();
+	virtual ~CommandCommunicationPackage();
+};
+
+#endif /* COMMANDCOMMUNICATIONPACKAGE_H_ */

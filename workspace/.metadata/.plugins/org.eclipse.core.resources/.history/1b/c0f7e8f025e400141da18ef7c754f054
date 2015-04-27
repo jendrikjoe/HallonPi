@@ -1,0 +1,19 @@
+/*
+ * TCPSender.h
+ *
+ *  Created on: Apr 16, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef TCPSENDER_H_
+#define TCPSENDER_H_
+
+#include "HallonThread.h"
+
+class TCPSender: public HallonThread {
+public:
+	TCPSender();
+	virtual ~TCPSender();
+};
+
+#endif /* TCPSENDER_H_ */

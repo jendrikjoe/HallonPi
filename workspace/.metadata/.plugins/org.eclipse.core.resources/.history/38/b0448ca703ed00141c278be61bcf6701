@@ -1,0 +1,18 @@
+/*
+ * CommandExecuter.cpp
+ *
+ *  Created on: Apr 27, 2015
+ *      Author: Jendrik
+ */
+
+#include "CommandExecuter.h"
+
+CommandExecuter::CommandExecuter() {
+	// TODO Auto-generated constructor stub
+
+}
+
+CommandExecuter::~CommandExecuter() {
+	// TODO Auto-generated destructor stub
+}
+

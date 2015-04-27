@@ -1,54 +1,55 @@
 /*
  * TCPSender.cpp
  *
- *  Created on: Apr 10, 2015
+ *  Created on: Apr 16, 2015
  *      Author: Jendrik
  */
 
 #include "TCPSender.h"
 
-
-TCPSender::TCPSender(){
-	//The own system network properties are saved:
-	//A socket is created, making it possible to talk to
-	// the operating system:
-	unsigned int sinSize;
-	socketNumber = socket(AF_INET,SOCK_STREAM,0);
-	if(socketNumber == -1){
-		perror("socket establishing failed! \n");
-		//TODO Put what to do if socket does not work
-	}
-	//Address family is set to standard:
-	myAddr.sin_family = AF_INET;
-	//Port set to MYPORT
-	myAddr.sin_port = htons(MYPORT);
-	//Setting addr to 0.0.0.0 which makes bind to fill in
-	// the machines address.
-	myAddr.sin_addr.s_addr = INADDR_ANY;
-	//zero the rest of the struct
-	memset(&(myAddr.sin_zero), 0, 8);
-	//The socket is bind to a certain port:
-	if(bind(socketNumber, (struct sockaddr*)&myAddr,
-			sizeof(struct sockaddr)) == -1){
-		perror("bind establishing failed! \n");
-		//TODO Put what to do if bind does not work
-	}
-	if(listen(socketNumber, CLIENTNUMBER) == -1){
-		perror("Listener couldn't be established");
-	}
-	sinSize = sizeof(struct sockaddr_in);
-	inputSocket = accept(socketNumber, (struct sockaddr*) &remoteAddr,
-			&sinSize);
-	if(inputSocket == -1){
-		perror("Accept error!\n");
-	}
-	send(inputSocket, "Hello, I'm HallonPi!\n",21,0);
-	//disables read and write to base socket.
-	close(inputSocket);
-	close(socketNumber);
-
+TCPSender::TCPSender(const std::map<tcp::PackageType, void*> &bufferMap,
+		int inputSocket, struct sockaddr_in remoteAddress,
+		sem_t* tcpReadSemaphore) : HallonThread(),
+		bufferMap(bufferMap), tcpReadSemaphore(tcpReadSemaphore),
+		remoteAddress(remoteAddress) {
+	this->inputSocket = inputSocket;
+	this->adcBuffer = (RingBuffer<tcp::ADCCommunicationPackage> *) (bufferMap.at(tcp::ADC_COM));
+	this->houseBuffer = (RingBuffer <tcp::HousekeepingCommunicationPackage> *) (bufferMap.at(tcp::HOUSE_COM));
 }
 
-
-TCPSender::~TCPSender(){
+void* TCPSender::run() {
+	char buffer[500];
+	bool dataSendable = true;
+	int determineSendable;
+	while(dataSendable) {
+		sem_wait(tcpReadSemaphore);
+		tcp::HousekeepingCommunicationPackage house;
+		house = houseBuffer->getElement();
+		if((int*)&house != NULL) {
+			house.getFrame(buffer);
+			determineSendable = send(inputSocket, &buffer, (size_t)house.getPackageLength(),0);
+			std::cout << "Sended House" <<std::endl;
+			if (determineSendable<=0) {
+				dataSendable = false;
+				continue;
+			}
+		}
+		tcp::ADCCommunicationPackage adc;
+		adc = adcBuffer->getElement();
+		if((int*)&adc != NULL) {
+			adc.getFrame(buffer);
+			determineSendable = send(inputSocket, &buffer, (size_t)adc.getPackageLength(),0);
+			std::cout << "Sended ADC" <<std::endl;
+			if (determineSendable<=0) {
+				dataSendable = false;
+				continue;
+			}
+		}
+	}
+	return 0;
 }
+
+TCPSender::~TCPSender() {
+	// TODO Auto-generated destructor stub
+}
+

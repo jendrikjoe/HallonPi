@@ -1,0 +1,19 @@
+/*
+ * CommandExecuter.h
+ *
+ *  Created on: Apr 27, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef COMMANDEXECUTER_H_
+#define COMMANDEXECUTER_H_
+
+#include "HallonThread.h"
+
+class CommandExecuter: public HallonThread {
+public:
+	CommandExecuter();
+	virtual ~CommandExecuter();
+};
+
+#endif /* COMMANDEXECUTER_H_ */

@@ -1,0 +1,86 @@
+/*
+ * test.cpp
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+#include <wiringPi.h>
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <map>
+#include "GPIOAccess.h"
+#include <unistd.h>
+#include <pthread.h>
+#include <semaphore.h>
+#include <time.h>
+#include "BitStruct.h"
+#include "Global.h"
+#include "TCPServer.h"
+#include "RingBuffer.h"
+#include "HousekeepingCollector.h"
+
+#define BUFFERSIZES 10
+#define WAIT 200
+
+bool runBool = true;
+
+using namespace std;
+
+
+
+
+int main (void)
+{
+	printf("Hallo\n");
+	wiringPiSetup();
+	pinMode(7, OUTPUT);
+	//digitalWrite(7, HIGH);
+	pinMode(3, INPUT);
+
+	sem_t tcpReadSemaphore;
+	int answer = sem_init(&tcpReadSemaphore,0,0);
+
+	sem_t commandSemaphore;
+	int answer = sem_init(&commandSemaphore,0,0);
+
+	//building Buffers and map
+	map<tcp::PackageType, void*> bufferMap;
+
+	RingBuffer <tcp::HousekeepingCommunicationPackage> *houseBuffer = new RingBuffer<tcp::HousekeepingCommunicationPackage>(
+			BUFFERSIZES, &tcpReadSemaphore);
+	bufferMap.insert(std::pair<tcp::PackageType, void*>(
+			tcp::HOUSE_COM, (void*)houseBuffer));
+	RingBuffer <tcp::ADCCommunicationPackage> *adcBuffer = new RingBuffer<tcp::ADCCommunicationPackage>(
+				BUFFERSIZES, &tcpReadSemaphore);
+	bufferMap.insert(std::pair<tcp::PackageType, void*>(
+			tcp::ADC_COM, (void*)adcBuffer));
+
+	TCPServer *tcpServer = new TCPServer(bufferMap,
+			&tcpReadSemaphore);
+
+	HousekeepingCollector *houseCollector = new HousekeepingCollector(
+			houseBuffer);
+	houseCollector->start();
+
+	printf("Before start\n");
+	tcpServer->start();
+	tcpServer->join();
+	printf("After join\n");
+
+
+
+
+	/*pthread_t tcpThread;
+  int control;
+  tcp::ADCCommunicationPackage *adcPack = new tcp::ADCCommunicationPackage(1000,15);
+  cout << adcPack->getADCValue() << " " << adcPack->getTimeStamp() <<endl;
+  char test[500];
+  adcPack->getFrame(test);
+  tcp::ADCCommunicationPackage *adcPack2 = new tcp::ADCCommunicationPackage(test);
+  cout << adcPack2->getADCValue() << " " << adcPack2->getTimeStamp() <<endl;*/
+}
+
+

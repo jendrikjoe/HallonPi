@@ -1,0 +1,31 @@
+/*
+ * HousekeepingCollector.h
+ *
+ *  Created on: Apr 15, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef HOUSEKEEPINGCOLLECTOR_H_
+#define HOUSEKEEPINGCOLLECTOR_H_
+
+#include "RingBuffer.h"
+
+extern bool runBool;
+
+
+class HousekeepingCollector : public HallonThread {
+
+public:
+	HousekeepingCollector(RingBuffer<tcp::HousekeepingCommunicationPackage>* houseBuffer);
+
+	virtual ~HousekeepingCollector();
+
+
+private:
+	RingBuffer<tcp::HousekeepingCommunicationPackage> *houseBuffer;
+
+};
+
+
+
+#endif /* HOUSEKEEPINGCOLLECTOR_H_ */

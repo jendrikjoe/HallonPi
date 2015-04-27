@@ -1,0 +1,43 @@
+/*
+ * TCPSender.h
+ *
+ *  Created on: Apr 10, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef TCPSERVER_H_
+#define TCPSERVER_H_
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <string.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <map>
+#include "HallonThread.h"
+#include "PackageType.h"
+#include "RingBuffer.h"
+#define MYPORT 31725
+#define CLIENTNUMBER 2
+
+
+
+class TCPServer : public HallonThread{
+
+public:
+	TCPServer(std::map<tcp::PackageType,RingBuffer*> bufferMap);
+	~TCPServer();
+
+private:
+	int socketNumber;
+	struct sockaddr_in myAddr;
+	int inputSocket;
+	struct sockaddr_in remoteAddr;
+	std::map bufferMap;
+	void* run();
+
+
+};
+
+#endif

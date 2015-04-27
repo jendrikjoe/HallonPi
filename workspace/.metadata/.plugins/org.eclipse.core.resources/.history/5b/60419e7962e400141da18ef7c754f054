@@ -1,0 +1,51 @@
+/*
+ * HousekeepingCollector.cpp
+ *
+ *  Created on: Apr 15, 2015
+ *      Author: Jendrik
+ */
+
+#include "HousekeepingCollector.h"
+
+const std::string HousekeepingCollector::readpath = std::string("/proc/stat");
+
+HousekeepingCollector::HousekeepingCollector(
+		RingBuffer<tcp::HousekeepingCommunicationPackage> *houseBuffer) :
+		HallonThread(), houseBuffer(houseBuffer) {
+	usage = 0;
+	usageBuffer = 0;
+}
+
+void* HousekeepingCollector::run() {
+	std::ifstream housestream;
+	std::string line;
+	int buffer;
+	while(runBool) {
+		usage = 0;
+		housestream.open(readpath.c_str());
+		std::getline(housestream, line);
+		buffer = line.find(' ',0);
+		usage += atof((line.substr(buffer)).c_str());
+		//std::cout << usage << std::endl;
+		buffer = line.find(' ',buffer);
+		usage += atof((line.substr(buffer)).c_str());
+		//std::cout << usage << std::endl;
+		buffer = line.find(' ',buffer);
+		usage += atof((line.substr(buffer)).c_str());
+		//std::cout << usage << std::endl;
+		usageBuffer = usage;
+
+		cpuLoad = 1.*(400 - usage - usageBuffer) / 400.;
+		std::cout << "CPULoad: " << cpuLoad << std::endl;
+		tcp::HousekeepingCommunicationPackage house = tcp::HousekeepingCommunicationPackage(time(NULL), cpuLoad);
+		houseBuffer->writeElementToBuffer(house);
+		housestream.close();
+		sleep(1);
+	}
+}
+
+
+HousekeepingCollector::~HousekeepingCollector() {
+	// TODO Auto-generated destructor stub
+}
+
