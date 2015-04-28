@@ -64,12 +64,13 @@ int main (void)
 
 	TCPServer *tcpServer = new TCPServer(bufferMap,
 			commandBuffer, &tcpReadSemaphore, &commandSemaphore);
+	tcpServer->start();
 
 	HousekeepingCollector *houseCollector = new HousekeepingCollector(
 			houseBuffer);
 	houseCollector->start();
 
-	adc::ADCRead *adcReader = new adc::ADCRead(1000, 1.0, adcBuffer);
+	adc::ADCRead *adcReader = new adc::ADCRead(adcBuffer, 1000, 1.0);
 	adcReader->start();
 
 	printf("Before start\n");

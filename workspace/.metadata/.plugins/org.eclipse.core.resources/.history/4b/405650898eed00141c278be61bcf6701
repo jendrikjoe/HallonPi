@@ -69,9 +69,8 @@ int main (void)
 			houseBuffer);
 	houseCollector->start();
 
-	adc::ADCRead *adcReader = new adc::ADCRead(1000, 1.0, adcBuffer);
+	adc::ADCRead *adcReader = new adc::ADCRead(adcBuffer, 1000, 1.0);
 	adcReader->start();
-
 	printf("Before start\n");
 	tcpServer->start();
 	tcpServer->join();

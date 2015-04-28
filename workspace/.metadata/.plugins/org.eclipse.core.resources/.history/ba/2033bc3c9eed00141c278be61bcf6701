@@ -58,8 +58,6 @@ void* TCPServer::run() {
 				remoteAddr, tcpReadSemaphore);
 		TCPReceiver tcpReceiver(inputSocket, remoteAddr,
 				commandBuffer, commandSemaphore);
-		tcpSender.start();
-		tcpReceiver.start();
 		tcpReceiver.join();
 	}
 	//disables read and write to base socket.

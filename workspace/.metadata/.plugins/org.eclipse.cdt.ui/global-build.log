@@ -2725,3 +2725,80 @@ Invoking: Cross G++ Linker
 arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommandCommunicationPackage.o ./CommunicationPackage.o ./GPIOAccess.o ./HallonThread.o ./HousekeepingCollector.o ./HousekeepingCommunicationPackage.o ./Sender.o ./TCPReceiver.o ./TCPSender.o ./TCPServer.o ./test.o   -lwiringPi -lpthread
 Finished building target: RPi test
  
+11:27:23 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../CommandExecuter.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"CommandExecuter.d" -MT"CommandExecuter.d" -o "CommandExecuter.o" "../CommandExecuter.cpp"
+../CommandExecuter.cpp: In member function 'virtual void* CommandExecuter::run()':
+../CommandExecuter.cpp:27:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../CommandExecuter.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./CommandCommunicationPackage.o ./CommandExecuter.o ./CommunicationPackage.o ./GPIOAccess.o ./HallonThread.o ./HousekeepingCollector.o ./HousekeepingCommunicationPackage.o ./Sender.o ./TCPReceiver.o ./TCPSender.o ./TCPServer.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+12:08:48 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../ADCRead.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"ADCRead.d" -MT"ADCRead.d" -o "ADCRead.o" "../ADCRead.cpp"
+../ADCRead.cpp: In member function 'virtual void* adc::ADCRead::run()':
+../ADCRead.cpp:133:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../ADCRead.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:73:65: error: no matching function for call to 'adc::ADCRead::ADCRead(RingBuffer<tcp::ADCCommunicationPackage>*&, int, double)'
+  adc::ADCRead *adcReader = new adc::ADCRead(adcBuffer, 1000, 1.0);
+                                                                 ^
+../test.cpp:73:65: note: candidates are:
+In file included from ../test.cpp:24:0:
+../ADCRead.h:43:2: note: adc::ADCRead::ADCRead(int, int, int, int, int, int, double, int, RingBuffer<tcp::ADCCommunicationPackage>*)
+  ADCRead(int ADCChannel, int SCLKPin, int MOSIPin,
+  ^
+../ADCRead.h:43:2: note:   candidate expects 9 arguments, 3 provided
+../ADCRead.h:40:2: note: adc::ADCRead::ADCRead(int, int, int, int, int, int, double, RingBuffer<tcp::ADCCommunicationPackage>*)
+  ADCRead(int ADCChannel, int SCLKPin, int MOSIPin,
+  ^
+../ADCRead.h:40:2: note:   candidate expects 8 arguments, 3 provided
+../ADCRead.h:38:2: note: adc::ADCRead::ADCRead(int, int, int, int, int, RingBuffer<tcp::ADCCommunicationPackage>*)
+  ADCRead(int ADCChannel, int SCLKPin, int MOSIPin,
+  ^
+../ADCRead.h:38:2: note:   candidate expects 6 arguments, 3 provided
+../ADCRead.h:36:2: note: adc::ADCRead::ADCRead(int, double, RingBuffer<tcp::ADCCommunicationPackage>*)
+  ADCRead(int RPS, double Conversion,
+  ^
+../ADCRead.h:36:2: note:   no known conversion for argument 3 from 'double' to 'RingBuffer<tcp::ADCCommunicationPackage>*'
+../ADCRead.h:35:2: note: adc::ADCRead::ADCRead(RingBuffer<tcp::ADCCommunicationPackage>*)
+  ADCRead(RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer);
+  ^
+../ADCRead.h:35:2: note:   candidate expects 1 argument, 3 provided
+../ADCRead.h:32:7: note: adc::ADCRead::ADCRead(const adc::ADCRead&)
+ class ADCRead : public HallonThread {
+       ^
+../ADCRead.h:32:7: note:   candidate expects 1 argument, 3 provided
+make: *** [test.o] Error 1
+12:09:19 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:45:6: warning: variable 'answer' set but not used [-Wunused-but-set-variable]
+  int answer = sem_init(&tcpReadSemaphore,0,0);
+      ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./ADCRead.o ./CommandCommunicationPackage.o ./CommandExecuter.o ./CommunicationPackage.o ./GPIOAccess.o ./HallonThread.o ./HousekeepingCollector.o ./HousekeepingCommunicationPackage.o ./Sender.o ./TCPReceiver.o ./TCPSender.o ./TCPServer.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 

@@ -4,7 +4,7 @@ test.d: ../test.cpp /usr/local/wiringPi/wiringPi/wiringPi.h \
  ../HousekeepingCommunicationPackage.h ../CommunicationPackage.h \
  ../CommandCommunicationPackage.h ../CommandNumber.h ../PackageType.h \
  ../TCPServer.h ../HallonThread.h ../RingBuffer.h ../TCPSender.h \
- ../TCPReceiver.h ../HousekeepingCollector.h
+ ../TCPReceiver.h ../HousekeepingCollector.h ../ADCRead.h
 
 /usr/local/wiringPi/wiringPi/wiringPi.h:
 
@@ -41,3 +41,5 @@ test.d: ../test.cpp /usr/local/wiringPi/wiringPi/wiringPi.h \
 ../TCPReceiver.h:
 
 ../HousekeepingCollector.h:
+
+../ADCRead.h:

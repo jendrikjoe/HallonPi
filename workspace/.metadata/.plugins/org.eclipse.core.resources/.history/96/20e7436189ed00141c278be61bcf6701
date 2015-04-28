@@ -1,0 +1,67 @@
+/*
+ * ADCRead.h
+ *
+ *  Created on: Apr 3, 2015
+ *      Author: soeren
+ */
+
+#ifndef ADCREAD_H_
+#define ADCREAD_H_
+
+#include "HallonThread.h"
+#include "RingBuffer.h"
+#include "Global.h"
+
+// default values
+#define ADCCHANNEL 0
+#define READPERSECOND 1
+#define ADCVALUE 0
+#define SCLKPIN 14
+#define MOSIPIN 12
+#define MISOPIN 13
+#define CSPIN 10
+#define MAXINVOLTAGE 3.3
+#define ADCSLOTS 1024
+#define ADCCONVERSION 1.0
+
+namespace adc {
+
+class ADCRead : public HallonThread {
+public:
+
+	ADCRead();
+	ADCRead(int RPS, double Conversion,
+			RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer);
+	ADCRead(int ADCChannel, int SCLKPin, int MOSIPin,
+			int MISOPin, int CSPin, RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer);
+	ADCRead(int ADCChannel, int SCLKPin, int MOSIPin,
+			int MISOPin, int CSPin, int RPS,
+			double Conversion, RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer);
+	ADCRead(int ADCChannel, int SCLKPin, int MOSIPin,
+			int MISOPin, int CSPin, int RPS,
+			double Conversion, int ADCValue, RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer);
+	virtual ~ADCRead();
+	void readADC();
+	void conv2volts();
+	void printVolt();
+	void setUpADC();
+	void setAll(int ADCChannel, int SCLKPin, int MOSIPin, int MISOPin, int CSPin, int RPS, double Conversion, int ADCValue);
+	double getVoltage();
+
+
+private:
+
+	int ADCChannel;		// ADC channel
+	int SCLKPin;		// SCLK Pin
+	int MOSIPin;		// MOSI Pin
+	int MISOPin;		// MISO Pin
+	int CSPin;			// CS Pin
+	int RPS;			// reads per second
+	double Conversion;	// conversion factor
+	int ADCValue;		// ADC signal
+	double ADCVoltage;		// measured voltage
+	RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer;
+
+};
+}
+#endif /* ADCREAD_H_ */

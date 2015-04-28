@@ -64,6 +64,7 @@ int main (void)
 
 	TCPServer *tcpServer = new TCPServer(bufferMap,
 			commandBuffer, &tcpReadSemaphore, &commandSemaphore);
+	tcpServer->start();
 
 	HousekeepingCollector *houseCollector = new HousekeepingCollector(
 			houseBuffer);

@@ -5,7 +5,9 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../ADCCommunicationPackage.cpp \
+../ADCRead.cpp \
 ../CommandCommunicationPackage.cpp \
+../CommandExecuter.cpp \
 ../CommunicationPackage.cpp \
 ../GPIOAccess.cpp \
 ../HallonThread.cpp \
@@ -19,7 +21,9 @@ CPP_SRCS += \
 
 OBJS += \
 ./ADCCommunicationPackage.o \
+./ADCRead.o \
 ./CommandCommunicationPackage.o \
+./CommandExecuter.o \
 ./CommunicationPackage.o \
 ./GPIOAccess.o \
 ./HallonThread.o \
@@ -33,7 +37,9 @@ OBJS += \
 
 CPP_DEPS += \
 ./ADCCommunicationPackage.d \
+./ADCRead.d \
 ./CommandCommunicationPackage.d \
+./CommandExecuter.d \
 ./CommunicationPackage.d \
 ./GPIOAccess.d \
 ./HallonThread.d \
