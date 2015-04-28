@@ -1,0 +1,71 @@
+/*
+ * HousekeepingCommunicationPackage.cpp
+ *
+ *  Created on: Apr 15, 2015
+ *      Author: Jendrik
+ */
+
+#include "HousekeepingCommunicationPackage.h"
+
+namespace tcp {
+
+const unsigned short HousekeepingCommunicationPackage::cpuAveragePosition = 10;
+const unsigned short HousekeepingCommunicationPackage::memoryUsedPosition = 12;
+const unsigned short HousekeepingCommunicationPackage::packageLength = 18;
+const PackageType HousekeepingCommunicationPackage::packageType = HOUSE_COM;
+
+
+
+
+HousekeepingCommunicationPackage::HousekeepingCommunicationPackage() :
+CommunicationPackage() {
+	this->cpuAverage = 0;
+	this->memoryUsed = 0;
+}
+
+HousekeepingCommunicationPackage::HousekeepingCommunicationPackage(char* frame) :
+	CommunicationPackage(frame, packageType, packageLength){
+	if(!valid) {
+		this->cpuAverage = 0;
+		this->memoryUsed = 0;
+	}
+	else  {
+		this->cpuAverage = readCpuAverage();
+		this->memoryUsed = readMemoryUsed();
+	}
+}
+
+HousekeepingCommunicationPackage::HousekeepingCommunicationPackage(unsigned int timestamp, unsigned short cpuAverage, unsigned int memoryUsed) :
+		CommunicationPackage(packageType, timestamp, packageLength){
+	this->cpuAverage = cpuAverage;
+	if(!writeCpuAverage(this->cpuAverage)) valid = false;
+	if(!writeMemoryUsed(this->memoryUsed)) valid = false;
+}
+
+
+
+unsigned short HousekeepingCommunicationPackage::getCpuAverage() const {
+	return this->cpuAverage;
+}
+
+unsigned short HousekeepingCommunicationPackage::readCpuAverage() {
+	return getUShortFromFrame(cpuAveragePosition);
+}
+
+unsigned int HousekeepingCommunicationPackage::getMemoryUsage() const {
+	return this->memoryUsed;
+}
+
+bool HousekeepingCommunicationPackage::writeCpuAverage(unsigned short value) {
+	return putUShortToFrame(value, cpuAveragePosition);
+}
+
+unsigned int HousekeepingCommunicationPackage::readMemoryUsed() {
+	return getUIntFromFrame(memoryUsedPosition);
+}
+
+bool HousekeepingCommunicationPackage::writeMemoryUsed(unsigned int value) {
+	return putUIntToFrame(value, memoryUsedPosition);
+}
+
+}

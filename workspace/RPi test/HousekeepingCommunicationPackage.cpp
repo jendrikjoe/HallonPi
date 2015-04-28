@@ -10,7 +10,9 @@
 namespace tcp {
 
 const unsigned short HousekeepingCommunicationPackage::cpuAveragePosition = 10;
-const unsigned short HousekeepingCommunicationPackage::packageLength = 14;
+const unsigned short HousekeepingCommunicationPackage::memoryUsedPosition = 12;
+const unsigned short HousekeepingCommunicationPackage::temperaturePosition = 16;
+const unsigned short HousekeepingCommunicationPackage::packageLength = 20;
 const PackageType HousekeepingCommunicationPackage::packageType = HOUSE_COM;
 
 
@@ -19,24 +21,35 @@ const PackageType HousekeepingCommunicationPackage::packageType = HOUSE_COM;
 HousekeepingCommunicationPackage::HousekeepingCommunicationPackage() :
 CommunicationPackage() {
 	this->cpuAverage = 0;
+	this->memoryUsed = 0;
+	this->temperature = 0;
 }
 
 HousekeepingCommunicationPackage::HousekeepingCommunicationPackage(char* frame) :
 	CommunicationPackage(frame, packageType, packageLength){
 	if(!valid) {
 		this->cpuAverage = 0;
+		this->memoryUsed = 0;
+		this->temperature = 0;
 	}
 	else  {
 		this->cpuAverage = readCpuAverage();
+		this->memoryUsed = readMemoryUsed();
+		this->temperature = readTemperature();
 	}
 }
 
-HousekeepingCommunicationPackage::HousekeepingCommunicationPackage(unsigned int timestamp, unsigned short cpuAverage) :
+HousekeepingCommunicationPackage::HousekeepingCommunicationPackage(unsigned int timestamp,
+		unsigned short cpuAverage, unsigned int memoryUsed,
+		unsigned short temperature) :
 		CommunicationPackage(packageType, timestamp, packageLength){
 	this->cpuAverage = cpuAverage;
+	this->memoryUsed = memoryUsed;
+	this->temperature = temperature;
 	if(!writeCpuAverage(this->cpuAverage)) valid = false;
+	if(!writeMemoryUsed(this->memoryUsed)) valid = false;
+	if(!writeTemperature(this->temperature)) valid = false;
 }
-
 
 
 unsigned short HousekeepingCommunicationPackage::getCpuAverage() const {
@@ -47,10 +60,32 @@ unsigned short HousekeepingCommunicationPackage::readCpuAverage() {
 	return getUShortFromFrame(cpuAveragePosition);
 }
 
-
+unsigned int HousekeepingCommunicationPackage::getMemoryUsage() const {
+	return this->memoryUsed;
+}
 
 bool HousekeepingCommunicationPackage::writeCpuAverage(unsigned short value) {
 	return putUShortToFrame(value, cpuAveragePosition);
+}
+
+unsigned int HousekeepingCommunicationPackage::readMemoryUsed() {
+	return getUIntFromFrame(memoryUsedPosition);
+}
+
+unsigned short HousekeepingCommunicationPackage::getTemperature() const {
+	return this->temperature;
+}
+
+bool HousekeepingCommunicationPackage::writeMemoryUsed(unsigned int value) {
+	return putUIntToFrame(value, memoryUsedPosition);
+}
+
+unsigned short HousekeepingCommunicationPackage::readTemperature() {
+	return getUShortFromFrame(temperaturePosition);
+}
+
+bool HousekeepingCommunicationPackage::writeTemperature(unsigned short value) {
+	return putUShortToFrame(value, temperaturePosition);
 }
 
 }

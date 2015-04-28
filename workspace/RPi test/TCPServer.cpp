@@ -62,6 +62,7 @@ void* TCPServer::run() {
 		tcpReceiver.start();
 		tcpReceiver.join();
 	}
+	std::cout << "After while" << std::endl;
 	//disables read and write to base socket.
 	close(inputSocket);
 	close(socketNumber);

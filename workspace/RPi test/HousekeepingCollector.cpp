@@ -7,7 +7,10 @@
 
 #include "HousekeepingCollector.h"
 
-const std::string HousekeepingCollector::readpath = std::string("/proc/stat");
+const std::string HousekeepingCollector::readpathCPU = std::string("/proc/stat");
+const std::string HousekeepingCollector::readpathMemory = std::string("/proc/meminfo");
+const std::string HousekeepingCollector::readpathTemperature = std::string("/sys/class/thermal/thermal_zone0/temp");
+
 
 HousekeepingCollector::HousekeepingCollector(
 		RingBuffer<tcp::HousekeepingCommunicationPackage> *houseBuffer) :
@@ -15,6 +18,7 @@ HousekeepingCollector::HousekeepingCollector(
 	usage = 0;
 	usageBuffer = 0;
 	cpuLoad = 0;
+	temperature = 0;
 }
 
 void* HousekeepingCollector::run() {
@@ -22,7 +26,7 @@ void* HousekeepingCollector::run() {
 	std::string line;
 	int buffer;
 	usageBuffer = 0;
-	housestream.open(readpath.c_str());
+	housestream.open(readpathCPU.c_str());
 	std::getline(housestream, line);
 	buffer = line.find(' ',0);
 	usageBuffer += atof((line.substr(buffer)).c_str());
@@ -34,8 +38,9 @@ void* HousekeepingCollector::run() {
 	usageBuffer += atof((line.substr(buffer)).c_str());
 	sleep(1);
 	while(runBool) {
+		//Get CPU usage:
 		usage = 0;
-		housestream.open(readpath.c_str());
+		housestream.open(readpathCPU.c_str());
 		std::getline(housestream, line);
 		buffer = line.find(' ',0);
 		usage += atof((line.substr(buffer)).c_str());
@@ -47,9 +52,29 @@ void* HousekeepingCollector::run() {
 		usage += atof((line.substr(buffer)).c_str());
 		cpuLoad = 1.*(usage - usageBuffer) / 400.;
 		usageBuffer = usage;
-		tcp::HousekeepingCommunicationPackage house = tcp::HousekeepingCommunicationPackage(time(NULL), cpuLoad);
-		houseBuffer->writeElementToBuffer(house);
 		housestream.close();
+
+		//Get memory used:
+		housestream.open(readpathMemory.c_str());
+		std::getline(housestream, line);
+		buffer = line.find(' ',0);
+		memoryUsed = atof((line.substr(buffer)).c_str());
+		std::getline(housestream, line);
+		buffer = line.find(' ',0);
+		memoryUsed -= atof((line.substr(buffer)).c_str());
+		housestream.close();
+
+		//Get temperature:
+		housestream.open(readpathTemperature.c_str());
+		std::getline(housestream, line);
+		temperature = atof(line.c_str())/1000;
+		housestream.close();
+
+		tcp::HousekeepingCommunicationPackage house = tcp::HousekeepingCommunicationPackage(time(NULL), cpuLoad, memoryUsed, temperature);
+		houseBuffer->writeElementToBuffer(house);
+		/*std::cout << "CPU: " <<  house.getCpuAverage()
+				  << "Memory used[MB]: " << ((double)house.getMemoryUsage())/1000
+				  << "Temperature [C]: " << house.getTemperature() << std::endl;*/
 		sleep(1);
 	}
 	return 0;

@@ -16,6 +16,7 @@
 #include <time.h>
 #include <unistd.h>
 #include "Global.h"
+#include <stdio.h>
 
 extern bool runBool;
 
@@ -30,11 +31,15 @@ public:
 
 private:
 	RingBuffer<tcp::HousekeepingCommunicationPackage> *houseBuffer;
-	const static std::string readpath;
+	const static std::string readpathCPU;
+	const static std::string readpathMemory;
+	const static std::string readpathTemperature;
 	void* run();
 	unsigned long usage;
 	unsigned long usageBuffer;
 	double cpuLoad;
+	unsigned int memoryUsed;
+	unsigned short temperature;
 };
 
 

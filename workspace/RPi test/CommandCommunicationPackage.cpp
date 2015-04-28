@@ -11,7 +11,7 @@ namespace tcp{
 
 const unsigned short CommandCommunicationPackage::commandNumberPosition = 10;
 const unsigned short CommandCommunicationPackage::parameterPosition = 14;
-const unsigned short CommandCommunicationPackage::packageLength = 20;
+const unsigned short CommandCommunicationPackage::packageLength = 24;
 const PackageType CommandCommunicationPackage::packageType = COMMAND_COM;
 
 CommandCommunicationPackage::CommandCommunicationPackage() : CommunicationPackage() {
