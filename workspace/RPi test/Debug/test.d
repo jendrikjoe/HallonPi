@@ -1,7 +1,10 @@
 test.d: ../test.cpp /usr/local/wiringPi/wiringPi/wiringPi.h \
- ../GPIOAccess.h ../BitStruct.h ../TCPSender.h ../global.h \
- .././ADCCommunicationPackage.h ../././CommunicationPackage.h \
- .././././PackageType.h
+ ../GPIOAccess.h ../BitStruct.h ../Global.h ../ADCCommunicationPackage.h \
+ .././CommunicationPackage.h ../././PackageType.h \
+ ../HousekeepingCommunicationPackage.h ../CommunicationPackage.h \
+ ../CommandCommunicationPackage.h ../CommandNumber.h ../PackageType.h \
+ ../TCPServer.h ../HallonThread.h ../RingBuffer.h ../TCPSender.h \
+ ../TCPReceiver.h ../HousekeepingCollector.h ../ADCRead.h
 
 /usr/local/wiringPi/wiringPi/wiringPi.h:
 
@@ -9,12 +12,34 @@ test.d: ../test.cpp /usr/local/wiringPi/wiringPi/wiringPi.h \
 
 ../BitStruct.h:
 
+../Global.h:
+
+../ADCCommunicationPackage.h:
+
+.././CommunicationPackage.h:
+
+../././PackageType.h:
+
+../HousekeepingCommunicationPackage.h:
+
+../CommunicationPackage.h:
+
+../CommandCommunicationPackage.h:
+
+../CommandNumber.h:
+
+../PackageType.h:
+
+../TCPServer.h:
+
+../HallonThread.h:
+
+../RingBuffer.h:
+
 ../TCPSender.h:
 
-../global.h:
+../TCPReceiver.h:
 
-.././ADCCommunicationPackage.h:
+../HousekeepingCollector.h:
 
-../././CommunicationPackage.h:
-
-.././././PackageType.h:
+../ADCRead.h:

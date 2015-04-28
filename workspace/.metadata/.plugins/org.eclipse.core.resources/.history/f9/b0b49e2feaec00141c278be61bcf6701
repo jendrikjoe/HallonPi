@@ -1,0 +1,36 @@
+/*
+ * CommandCommunicationPackage.h
+ *
+ *  Created on: Apr 27, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef COMMANDCOMMUNICATIONPACKAGE_H_
+#define COMMANDCOMMUNICATIONPACKAGE_H_
+
+#include "CommunicationPackage.h"
+#include "CommandNumber.h"
+
+namespace tcp{
+
+class CommandCommunicationPackage: public CommunicationPackage {
+public:
+	CommandCommunicationPackage();
+	virtual ~CommandCommunicationPackage();
+
+private:
+	CommandNumber commandNumber;
+	double parameter;
+
+	static const unsigned short packageLength;
+	static const PackageType packageType;
+	static const unsigned short commandNumberPosition;
+	static const unsigned short parameterPosition;
+
+	CommandNumber getCommandNumber();
+	bool writeCommandNumber();
+
+};
+}
+
+#endif /* COMMANDCOMMUNICATIONPACKAGE_H_ */

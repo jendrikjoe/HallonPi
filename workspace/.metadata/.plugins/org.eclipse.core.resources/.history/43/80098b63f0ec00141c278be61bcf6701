@@ -1,0 +1,19 @@
+/*
+ * TCPReceiver.h
+ *
+ *  Created on: Apr 27, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef TCPRECEIVER_H_
+#define TCPRECEIVER_H_
+
+#include "HallonThread.h"
+
+class TCPReceiver: public HallonThread {
+public:
+	TCPReceiver();
+	virtual ~TCPReceiver();
+};
+
+#endif /* TCPRECEIVER_H_ */

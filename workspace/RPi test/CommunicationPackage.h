@@ -23,8 +23,9 @@ public:
 	void getFrame(char *output) const;
 	unsigned int getTimeStamp() const;
 	bool isValid() const;
-	bool isStarting(char *input);
-	bool test();
+	static bool isStarting(char *input);
+	PackageType getPackageType();
+	unsigned short getPackageLength();
 
 	static const char starting[2];
 	static const char ending[2];
@@ -60,7 +61,7 @@ protected:
 	static const unsigned short uShortBytes;
 
 	char *frame;
-		bool valid;
+	bool valid;
 
 	unsigned int getUIntFromFrame(unsigned short position);
 	bool putUIntToFrame(unsigned int input, unsigned short position);
@@ -86,10 +87,16 @@ protected:
 	double char2Double(char *data);
 	void double2Char(double input, char *output);
 
+	int getIntFromFrame(unsigned short position);
+	bool putIntToFrame(int input, unsigned short position);
+
+	int char2Int(char *data);
+	void int2Char(int input, char *output);
+
 
 	CommunicationPackage();
 	CommunicationPackage(const CommunicationPackage &input);
-	CommunicationPackage(char *frame, PackageType type, unsigned short packageLength);
+	CommunicationPackage(const char *frame, PackageType type, unsigned short packageLength);
 	CommunicationPackage(PackageType packageType, unsigned int timestamp, unsigned short packageLength);
 	~CommunicationPackage();
 

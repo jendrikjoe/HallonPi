@@ -1,0 +1,127 @@
+/*
+ * ADCRead.cpp
+ *
+ *  Created on: Apr 3, 2015
+ *      Author: soeren
+ */
+
+#include "ADCRead.h"
+#include <wiringPi.h>
+#include <iostream>
+
+
+
+namespace adc {
+
+// default constructor
+ADCRead::ADCRead(RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer) : HallonThread() {
+	setUpADC();
+	setAll(ADCCHANNEL, SCLKPIN, MOSIPIN, MISOPIN, CSPIN, READPERSECOND, ADCCONVERSION, ADCVALUE);
+}
+
+ADCRead::ADCRead(int RPS, double Conversion, RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer) : HallonThread() {
+	setAll(ADCCHANNEL, SCLKPIN, MOSIPIN, MISOPIN, CSPIN, RPS, Conversion, ADCVALUE);
+}
+
+ADCRead::ADCRead(int ADCChannel, int SCLKPin,
+		int MOSIPin, int MISOPin, int CSPin,
+		RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer) : HallonThread() {
+	setAll(ADCChannel, SCLKPin, MOSIPin, MISOPin, CSPin, READPERSECOND, ADCCONVERSION, ADCVALUE);
+}
+
+ADCRead::ADCRead(int ADCChannel, int SCLKPin, int MOSIPin,
+		int MISOPin, int CSPin, int RPS, double Conversion,
+		RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer) : HallonThread() {
+	setAll(ADCChannel, SCLKPin, MOSIPin, MISOPin, CSPin, RPS, Conversion, ADCVALUE);
+	// TODO Auto-generated constructor stub
+
+}
+
+ADCRead::ADCRead(int ADCChannel, int SCLKPin, int MOSIPin,
+		int MISOPin, int CSPin, int RPS, double Conversion,
+		int ADCValue, RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer) : HallonThread() {
+	this->ADCChannel = ADCChannel;
+	this->SCLKPin = SCLKPin;
+	this->MOSIPin = MOSIPin;
+	this->MISOPin = MISOPin;
+	this->CSPin = CSPin;
+	this->RPS = RPS;
+	this->Conversion = Conversion;
+	this->ADCValue = ADCValue;
+	conv2volts();
+}
+
+ADCRead::~ADCRead() {
+	// TODO Auto-generated destructor stub
+}
+
+void ADCRead::readADC() {
+
+	//enable ADC by CS from HIGH to LOW:
+	digitalWrite(this->CSPin, HIGH);
+	digitalWrite(this->CSPin, LOW);
+	//set SCLK signal to LOW:
+	digitalWrite(this->SCLKPin, LOW);
+
+	int sendcmd = this->ADCChannel;
+	sendcmd |= 0b00011000;
+
+	for (int i = 0; i<5; i++) {
+		if (sendcmd & 0x10) {
+			digitalWrite(this->MOSIPin, HIGH);
+		}
+		else{
+			digitalWrite(this->MOSIPin, LOW);
+		}
+		digitalWrite(this->SCLKPin, HIGH);
+		digitalWrite(this->SCLKPin, LOW);
+		sendcmd = sendcmd << 1;
+	}
+	this->ADCValue = 0;
+	for (int i = 0; i<11; i++) {
+		digitalWrite(this->SCLKPin, HIGH);
+		digitalWrite(this->SCLKPin, LOW);
+		this->ADCValue = this->ADCValue << 1;
+		if (digitalRead(this->MISOPin)) {
+			this->ADCValue |= 0x01;
+		}
+	}
+	conv2volts();
+	int delayTime = 1000*1/this->RPS;
+	delay(delayTime);
+
+}
+
+void ADCRead::conv2volts() {
+	this->ADCVoltage = this->ADCValue * this->Conversion * MAXINVOLTAGE / ADCSLOTS;
+}
+
+void ADCRead::printVolt() {
+	readADC();
+	conv2volts();
+	std::cout << this->ADCVoltage << " V" << std::endl;
+}
+
+void ADCRead::setUpADC() {
+	pinMode(this->SCLKPin, OUTPUT);
+	pinMode(this->MOSIPin, OUTPUT);
+	pinMode(this->MISOPin, INPUT);
+	pinMode(this->CSPin, OUTPUT);
+}
+
+double ADCRead::getVoltage() {
+	return this->ADCVoltage;
+}
+
+void ADCRead::setAll(int ADCChannel, int SCLKPin, int MOSIPin, int MISOPin, int CSPin, int RPS, double Conversion, int ADCValue) {
+	this->ADCChannel = ADCChannel;
+	this->SCLKPin = SCLKPin;
+	this->MOSIPin = MOSIPin;
+	this->MISOPin = MISOPin;
+	this->CSPin = CSPin;
+	this->RPS = RPS;
+	this->Conversion = Conversion;
+	this->ADCValue = ADCValue;
+	conv2volts();
+}
+}

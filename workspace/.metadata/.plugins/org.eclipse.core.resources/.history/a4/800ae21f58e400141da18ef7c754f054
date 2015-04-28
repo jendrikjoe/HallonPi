@@ -1,0 +1,21 @@
+/*
+ * HousekeepingCollector.cpp
+ *
+ *  Created on: Apr 15, 2015
+ *      Author: Jendrik
+ */
+
+#include "HousekeepingCollector.h"
+
+const std::string HousekeepingCollector::readpath = std::string("/proc/stat");
+
+HousekeepingCollector::HousekeepingCollector(
+		RingBuffer<tcp::HousekeepingCommunicationPackage> *houseBuffer) :
+		HallonThread(), houseBuffer(houseBuffer) {
+}
+
+
+HousekeepingCollector::~HousekeepingCollector() {
+	// TODO Auto-generated destructor stub
+}
+

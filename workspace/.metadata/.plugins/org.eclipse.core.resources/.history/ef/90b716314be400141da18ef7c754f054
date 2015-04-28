@@ -1,0 +1,66 @@
+/*
+ * test.cpp
+ *
+ *  Created on: Mar 17, 2015
+ *      Author: Jendrik
+ */
+
+#include <wiringPi.h>
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <map>
+#include "GPIOAccess.h"
+#include <unistd.h>
+#include <pthread.h>
+#include <semaphore.h>
+#include <time.h>
+#include "BitStruct.h"
+#include "global.h"
+#include "TCPServer.h"
+#include "RingBuffer.h"
+#include "PackageType.h"
+
+#define BUFFERSIZES 10
+
+
+using namespace std;
+
+
+
+
+int main (void)
+{
+	wiringPiSetup();
+	pinMode(7, OUTPUT);
+
+	sem_t *tcpReadSemaphore;
+	int answer = sem_init(tcpReadSemaphore,0,0);
+	//building Buffers and map
+	map<tcp::PackageType, void*> bufferMap;
+
+	RingBuffer <tcp::HousekeepingCommunicationPackage> *houseBuffer = new RingBuffer<tcp::HousekeepingCommunicationPackage>(
+			BUFFERSIZES, tcpReadSemaphore);
+	bufferMap.insert(std::pair<tcp::PackageType, void*>(
+			tcp::HOUSE_COM, (void*)houseBuffer));
+	RingBuffer <tcp::ADCCommunicationPackage> *adcBuffer = new RingBuffer<tcp::ADCCommunicationPackage>(
+				BUFFERSIZES, tcpReadSemaphore);
+	bufferMap.insert(std::pair<tcp::PackageType, void*>(
+			tcp::ADC_COM, (void*)adcBuffer));
+	TCPServer(buffermap);
+
+
+
+
+	/*pthread_t tcpThread;
+  int control;
+  tcp::ADCCommunicationPackage *adcPack = new tcp::ADCCommunicationPackage(1000,15);
+  cout << adcPack->getADCValue() << " " << adcPack->getTimeStamp() <<endl;
+  char test[500];
+  adcPack->getFrame(test);
+  tcp::ADCCommunicationPackage *adcPack2 = new tcp::ADCCommunicationPackage(test);
+  cout << adcPack2->getADCValue() << " " << adcPack2->getTimeStamp() <<endl;*/
+}
+
+

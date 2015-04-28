@@ -9,12 +9,13 @@
 
 
 #ifndef HALLONTHREAD_H_
-#define HALLLONTHREAD_H_
+#define HALLONTHREAD_H_
 #include <pthread.h>
 #include <error.h>
 #include <iostream>
 #include <cassert>
 #include <stdlib.h>
+#include <unistd.h>
 
 class HallonThread {
 

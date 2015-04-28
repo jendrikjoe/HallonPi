@@ -1,0 +1,66 @@
+/*
+ * CommandCommunicationPackage.cpp
+ *
+ *  Created on: Apr 27, 2015
+ *      Author: Jendrik
+ */
+
+#include "CommandCommunicationPackage.h"
+
+namespace tcp{
+
+const unsigned short CommandCommunicationPackage::commandNumberPosition = 10;
+const unsigned short CommandCommunicationPackage::parameterPosition = 14;
+const unsigned short CommandCommunicationPackage::packageLength = 20;
+const unsigned short CommandCommunicationPackage::packageType = COMMAND_COM;
+
+CommandCommunicationPackage::CommandCommunicationPackage() : CommunicationPackage() {
+	this->commandNumber = COMMAND_DEFAULT;
+	this->parameter = 0;
+
+}
+
+CommandCommunicationPackage::CommandCommunicationPackage(char* frame) :CommunicationPackage(frame, COMMAND_COM, this->packageLength){
+	if(!valid) {
+		this->commandNumber = COMMAND_DEFAULT;
+		this->parameter = 0;
+	}
+	else {
+		this->commandNumber = this->readCommandNumber();
+		this->parameter = this->readParameter();
+	}
+}
+
+CommandCommunicationPackage::CommandCommunicationPackage(unsigned int timestamp,
+		CommandNumber commandNumber, double parameter) :
+				CommunicationPackage(this->packageType,timestamp, this->packageLength) {
+	this->commandNumber = commandNumber;
+	this->parameter = parameter;
+	if(!writeCommandNumber(this->commandNumber)) valid = false;
+	if(!writeParameter(this->parameter)) valid = false;
+}
+
+
+CommandNumber CommandCommunicationPackage::getCommandNumber() {
+
+}
+
+double CommandCommunicationPackage::getParameter() {
+	return this->getDoubleFromFrame();
+}
+
+CommandNumber CommandCommunicationPackage::readCommandNumber() {
+	return (CommandNumber)this->char2Int(&frame[commandNumberPosition]);
+}
+
+bool CommandCommunicationPackage::writeCommandNumber(
+		CommandNumber commandNumber) {
+}
+
+double CommandCommunicationPackage::readParameter() {
+}
+
+bool CommandCommunicationPackage::writeParameter(double parameter) {
+}
+
+}

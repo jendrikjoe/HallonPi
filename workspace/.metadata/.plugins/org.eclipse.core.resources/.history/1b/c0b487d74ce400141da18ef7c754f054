@@ -1,0 +1,20 @@
+/*
+ * TCPSender.cpp
+ *
+ *  Created on: Apr 16, 2015
+ *      Author: Jendrik
+ */
+
+#include "TCPSender.h"
+
+TCPSender::TCPSender(int inputSocket, struct sockaddr* remoteAddress,
+		std::map<tcp::PackageType, void*>, sem_t* tcpReadSemaphore
+		) : HallonThread(){
+	this->inputSocket = inputSocket;
+	this->remoteAddress = remoteAddress;
+}
+
+TCPSender::~TCPSender() {
+	// TODO Auto-generated destructor stub
+}
+

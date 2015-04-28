@@ -8,12 +8,35 @@
 #ifndef HOUSEKEEPINGCOLLECTOR_H_
 #define HOUSEKEEPINGCOLLECTOR_H_
 
+#include "HallonThread.h"
 #include "RingBuffer.h"
+#include <string>
+#include <fstream>
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+#include "Global.h"
 
-class HousekeepingCollector {
+extern bool runBool;
+
+
+class HousekeepingCollector : public HallonThread {
+
 public:
-	HousekeepingCollector();
+	HousekeepingCollector(RingBuffer<tcp::HousekeepingCommunicationPackage>* houseBuffer);
+
 	virtual ~HousekeepingCollector();
+
+
+private:
+	RingBuffer<tcp::HousekeepingCommunicationPackage> *houseBuffer;
+	const static std::string readpath;
+	void* run();
+	unsigned long usage;
+	unsigned long usageBuffer;
+	double cpuLoad;
 };
+
+
 
 #endif /* HOUSEKEEPINGCOLLECTOR_H_ */

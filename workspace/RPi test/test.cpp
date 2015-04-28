@@ -10,17 +10,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <map>
 #include "GPIOAccess.h"
 #include <unistd.h>
 #include <pthread.h>
 #include <semaphore.h>
 #include <time.h>
 #include "BitStruct.h"
-#include "TCPSender.h"
-#include "global.h"
+#include "Global.h"
+#include "TCPServer.h"
+#include "RingBuffer.h"
+#include "HousekeepingCollector.h"
+#include "ADCRead.h"
 
+#define BUFFERSIZES 10
+#define WAIT 200
 
-#define NUMBEROFTHREADS 4
+bool runBool = true;
 
 using namespace std;
 
@@ -29,16 +35,59 @@ using namespace std;
 
 int main (void)
 {
-  wiringPiSetup();
-  pinMode(7, OUTPUT);
-  pthread_t tcpThread;
+	printf("Hallo\n");
+	wiringPiSetup();
+	pinMode(7, OUTPUT);
+	//digitalWrite(7, HIGH);
+	pinMode(3, INPUT);
+
+	sem_t tcpReadSemaphore;
+	int answer = sem_init(&tcpReadSemaphore,0,0);
+
+	sem_t commandSemaphore;
+	answer = sem_init(&commandSemaphore,0,0);
+
+	//building Buffers and map
+	map<tcp::PackageType, void*> bufferMap;
+
+	RingBuffer <tcp::HousekeepingCommunicationPackage> *houseBuffer = new RingBuffer<tcp::HousekeepingCommunicationPackage>(
+			BUFFERSIZES, &tcpReadSemaphore);
+	bufferMap.insert(std::pair<tcp::PackageType, void*>(
+			tcp::HOUSE_COM, (void*)houseBuffer));
+	RingBuffer <tcp::ADCCommunicationPackage> *adcBuffer = new RingBuffer<tcp::ADCCommunicationPackage>(
+				BUFFERSIZES, &tcpReadSemaphore);
+	bufferMap.insert(std::pair<tcp::PackageType, void*>(
+			tcp::ADC_COM, (void*)adcBuffer));
+
+	RingBuffer <tcp::CommandCommunicationPackage> *commandBuffer =
+			new RingBuffer<tcp::CommandCommunicationPackage>(100,&commandSemaphore);
+
+	TCPServer *tcpServer = new TCPServer(bufferMap,
+			commandBuffer, &tcpReadSemaphore, &commandSemaphore);
+
+	HousekeepingCollector *houseCollector = new HousekeepingCollector(
+			houseBuffer);
+	houseCollector->start();
+
+	adc::ADCRead *adcReader = new adc::ADCRead(1000, 1.0, adcBuffer);
+	adcReader->start();
+
+	printf("Before start\n");
+	tcpServer->start();
+	tcpServer->join();
+	printf("After join\n");
+
+
+
+
+	/*pthread_t tcpThread;
   int control;
   tcp::ADCCommunicationPackage *adcPack = new tcp::ADCCommunicationPackage(1000,15);
   cout << adcPack->getADCValue() << " " << adcPack->getTimeStamp() <<endl;
   char test[500];
   adcPack->getFrame(test);
   tcp::ADCCommunicationPackage *adcPack2 = new tcp::ADCCommunicationPackage(test);
-  cout << adcPack2->getADCValue() << " " << adcPack2->getTimeStamp() <<endl;
+  cout << adcPack2->getADCValue() << " " << adcPack2->getTimeStamp() <<endl;*/
 }
 
 

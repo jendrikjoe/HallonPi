@@ -1,0 +1,41 @@
+/*
+ * HousekeepingCollector.cpp
+ *
+ *  Created on: Apr 15, 2015
+ *      Author: Jendrik
+ */
+
+#include "HousekeepingCollector.h"
+
+const std::string HousekeepingCollector::readpath = std::string("/proc/stat");
+
+HousekeepingCollector::HousekeepingCollector(
+		RingBuffer<tcp::HousekeepingCommunicationPackage> *houseBuffer) :
+		HallonThread(), houseBuffer(houseBuffer) {
+	usage = 0;
+	usageBuffer = 0;
+}
+
+void* HousekeepingCollector::run() {
+	std::ifstream housestream;
+	std::string line;
+	int buffer;
+	while(runBool) {
+		usage = 0;
+		housestream.open(readpath.c_str());
+		std::getline(housestream, line);
+		buffer = line.find(' ',0);
+		buffer = line.find_first_not_of(' ',buffer);
+		usage += atof(line.c_str+buffer);
+
+
+
+		housestream.close();
+	}
+}
+
+
+HousekeepingCollector::~HousekeepingCollector() {
+	// TODO Auto-generated destructor stub
+}
+

@@ -1,0 +1,37 @@
+/*
+ * TCPReceiver.h
+ *
+ *  Created on: Apr 27, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef TCPRECEIVER_H_
+#define TCPRECEIVER_H_
+
+#include "HallonThread.h"
+#include "Global.h"
+#include "RingBuffer.h"
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <string>
+
+extern bool runBool;
+
+class TCPReceiver: public HallonThread {
+public:
+	TCPReceiver(int inputSocket, struct sockaddr* remoteAddress,
+			RingBuffer<tcp::CommandCommunicationPackage> *commandBuffer);
+
+	virtual ~TCPReceiver();
+
+private:
+	int inputSocket;
+	struct sockaddr* remoteAddress;
+	std::string buffer;
+	RingBuffer<tcp::CommandCommunicationPackage> *commandBuffer;
+	void* run();
+
+};
+
+#endif /* TCPRECEIVER_H_ */

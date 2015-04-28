@@ -1,0 +1,41 @@
+/*
+ * HousekeepingCollector.h
+ *
+ *  Created on: Apr 15, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef HOUSEKEEPINGCOLLECTOR_H_
+#define HOUSEKEEPINGCOLLECTOR_H_
+
+#include "RingBuffer.h"
+#include "global.h"
+#include <string>
+#include <fstream>
+#include <stdlib.h>
+
+#include <timer.h>
+
+extern bool runBool;
+
+
+class HousekeepingCollector : public HallonThread {
+
+public:
+	HousekeepingCollector(RingBuffer<tcp::HousekeepingCommunicationPackage>* houseBuffer);
+
+	virtual ~HousekeepingCollector();
+
+
+private:
+	RingBuffer<tcp::HousekeepingCommunicationPackage> *houseBuffer;
+	const static std::string readpath;
+	void* run();
+	unsigned long usage;
+	unsigned long usageBuffer;
+	double cpuLoad;
+};
+
+
+
+#endif /* HOUSEKEEPINGCOLLECTOR_H_ */

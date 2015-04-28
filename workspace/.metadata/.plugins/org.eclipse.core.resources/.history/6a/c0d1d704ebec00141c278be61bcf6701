@@ -1,0 +1,51 @@
+/*
+ * CommandCommunicationPackage.cpp
+ *
+ *  Created on: Apr 27, 2015
+ *      Author: Jendrik
+ */
+
+#include "CommandCommunicationPackage.h"
+
+namespace tcp{
+
+const unsigned short CommandCommunicationPackage::commandNumberPosition = 10;
+const unsigned short CommandCommunicationPackage::parameterPosition = 14;
+
+CommandCommunicationPackage::CommandCommunicationPackage() : CommunicationPackage() {
+	this->commandNumber = COMMAND_DEFAULT;
+	this->parameter = 0;
+
+}
+
+CommandCommunicationPackage::CommandCommunicationPackage(char* frame) :CommunicationPackage(frame, COMMAND_COM){
+}
+
+CommandCommunicationPackage::CommandCommunicationPackage(unsigned int timestemp,
+		CommandNumber commandNumber, double parameter) {
+}
+
+CommandCommunicationPackage::~CommandCommunicationPackage() {
+	// TODO Auto-generated destructor stub
+}
+
+CommandNumber CommandCommunicationPackage::getCommandNumber() {
+}
+
+double CommandCommunicationPackage::getParameter() {
+}
+
+CommandNumber CommandCommunicationPackage::readCommandNumber() {
+}
+
+bool CommandCommunicationPackage::writeCommandNumber(
+		CommandNumber commandNumber) {
+}
+
+double CommandCommunicationPackage::readParameter() {
+}
+
+bool CommandCommunicationPackage::writeParameter(double parameter) {
+}
+
+}

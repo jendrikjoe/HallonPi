@@ -1,0 +1,35 @@
+/*
+ * TCPSender.h
+ *
+ *  Created on: Apr 16, 2015
+ *      Author: Jendrik
+ */
+
+#ifndef TCPSENDER_H_
+#define TCPSENDER_H_
+
+#include "HallonThread.h"
+#include "PackageType.h"
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <map>
+
+class TCPSender: public HallonThread {
+public:
+	TCPSender(int inputSocket, struct sockaddr* remoteAddress,
+			const std::map<tcp::PackageType, void*> bufferMap,
+			sem_t* tcpReadSemaphore);
+	virtual ~TCPSender();
+
+private:
+	int inputSocket;
+	struct sockaddr* remoteAddress;
+	const std::map<tcp::PackageType, void*> bufferMap;
+	sem_t* tcpReadSemaphore;
+	RingBuffer<tcp::ADCCommunicationPackage> *adcBuffer;
+	RingBuffer<tcp::HousekeepingCommunicationPackage> *houseBuffer;
+
+};
+
+#endif /* TCPSENDER_H_ */

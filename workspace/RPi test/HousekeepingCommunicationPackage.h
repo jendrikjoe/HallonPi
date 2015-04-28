@@ -20,8 +20,9 @@ public:
 	HousekeepingCommunicationPackage(char* frame);
 	HousekeepingCommunicationPackage(unsigned int timestamp, unsigned short cpuAverage);
 
+	unsigned short getCpuAverage() const;
 
-	virtual ~HousekeepingCommunicationPackage();
+
 
 private:
 	unsigned short cpuAverage;

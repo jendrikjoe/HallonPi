@@ -43,24 +43,14 @@ namespace tcp{
 		return true;
 	}
 
-	bool CommunicationPackage::test(){
-		unsigned int test = 98;
-		char testArray[4];
-		uInt2Char(test, testArray);
-		if(test != char2UInt(testArray)) return false;
-
-		float testf = 675.4;
-		float2Char(testf,testArray);
-		if(testf != char2Float(testArray)) return false;
-
-		double testd = 98.3;
-		char testArrayd[8];
-		double2Char(testd,testArrayd);
-		if(testd != char2Double(testArrayd)) return false;
-
-		return true;
-
+	PackageType CommunicationPackage::getPackageType() {
+		return this->packageType;
 	}
+
+	unsigned short CommunicationPackage::getPackageLength() {
+		return this->packageLength;
+	}
+
 	//private:
 
 	bool CommunicationPackage::writeTimeStamp() {
@@ -117,7 +107,6 @@ namespace tcp{
 	unsigned int CommunicationPackage::char2UInt(char *data) {
 		unsigned int output;
 		char* ptr = (char*) &output;
-		std::cout << (int)data[0] << (int)data[1] <<(int) data[2] << (int)data[3] <<std::endl;
 		ptr[0] = data[0];
 		ptr[1] = data[1];
 		ptr[2] = data[2];
@@ -127,12 +116,10 @@ namespace tcp{
 
 	void CommunicationPackage::uInt2Char(unsigned int input, char* output) {
 		char* ptr = (char*) &input;
-		std::cout << (int)ptr[0] << (int)ptr[1] <<(int) ptr[2] << (int)ptr[3] <<std::endl;
 		output[0] = ptr[0];
 		output[1] = ptr[1];
 		output[2] = ptr[2];
 		output[3] = ptr[3];
-		std::cout << (int)output[0] << (int)output[1] <<(int) output[2] << (int)output[3] <<std::endl;
 	}
 
 	float CommunicationPackage::getFlaotFromFrame(unsigned short position) {
@@ -228,6 +215,34 @@ namespace tcp{
 		output[7] = ptr[7];
 	}
 
+	int CommunicationPackage::getIntFromFrame(unsigned short position) {
+			return this->char2Int(&frame[position]);
+		}
+
+	bool CommunicationPackage::putIntToFrame(int input, unsigned short position) {
+			if(position+4 > packageLength) return false;
+			this->int2Char(input, &frame[position]);
+			return true;
+		}
+
+	int CommunicationPackage::char2Int(char *data) {
+			int output;
+			char* ptr = (char*) &output;
+			ptr[0] = data[0];
+			ptr[1] = data[1];
+			ptr[2] = data[2];
+			ptr[3] = data[3];
+			return output;
+		}
+
+	void CommunicationPackage::int2Char(int input, char* output) {
+			char* ptr = (char*) &input;
+			output[0] = ptr[0];
+			output[1] = ptr[1];
+			output[2] = ptr[2];
+			output[3] = ptr[3];
+		}
+
 
 	//Constructors and Destructors:
 
@@ -253,7 +268,7 @@ namespace tcp{
 	}
 
 
-	CommunicationPackage::CommunicationPackage(char *input,
+	CommunicationPackage::CommunicationPackage(const char *input,
 			PackageType type, unsigned short packageLength) {
 		this->packageLength = packageLength;
 		this->packageType = type;

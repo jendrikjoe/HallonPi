@@ -1,0 +1,18 @@
+/*
+ * CommandCommunicationPackage.cpp
+ *
+ *  Created on: Apr 27, 2015
+ *      Author: Jendrik
+ */
+
+#include "CommandCommunicationPackage.h"
+
+CommandCommunicationPackage::CommandCommunicationPackage() {
+	// TODO Auto-generated constructor stub
+
+}
+
+CommandCommunicationPackage::~CommandCommunicationPackage() {
+	// TODO Auto-generated destructor stub
+}
+
