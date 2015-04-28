@@ -12,8 +12,8 @@ TARGET = HallonPi
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES = mainwindow.cpp \
+          main.cpp
 
 HEADERS  += mainwindow.h
 
