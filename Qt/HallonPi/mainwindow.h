@@ -13,6 +13,7 @@
 #include <QComboBox>
 #include <QStringList>
 #include <QLabel>
+#include "convolutionwindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -37,6 +38,7 @@ private:
     QLabel *adcChooseChannelLabel;
     QDesktopWidget *desktopSize;
     QStringList *adcChannels;
+    ConvolutionWindow *convWindow;
 };
 
 #endif // MAINWINDOW_H

@@ -72,9 +72,9 @@ void* HousekeepingCollector::run() {
 
 		tcp::HousekeepingCommunicationPackage house = tcp::HousekeepingCommunicationPackage(time(NULL), cpuLoad, memoryUsed, temperature);
 		houseBuffer->writeElementToBuffer(house);
-		/*std::cout << "CPU: " <<  house.getCpuAverage()
-				  << "\tMemory used[MB]: " << ((double)house.getMemoryUsage())/1000
-				  << "\tTemperature [C]: " << house.getTemperature() << std::endl;*/
+		std::cout << "CPU: " <<  house.getCpuAverage()
+				  << "Memory used[MB]: " << ((double)house.getMemoryUsage())/1000
+				  << "Temperature [C]: " << house.getTemperature() << std::endl;
 		sleep(1);
 	}
 	return 0;

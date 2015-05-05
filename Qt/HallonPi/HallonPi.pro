@@ -13,8 +13,14 @@ TEMPLATE = app
 
 
 SOURCES = mainwindow.cpp \
-          main.cpp
+          main.cpp \
+    convolutionwindow.cpp \
+    convolutionencoder.cpp \
+    convolutiontester.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    convolutionwindow.h \
+    convolutionencoder.h \
+    convolutiontester.h
 
 FORMS    +=

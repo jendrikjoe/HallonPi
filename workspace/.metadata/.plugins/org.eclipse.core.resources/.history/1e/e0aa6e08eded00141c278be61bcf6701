@@ -12,7 +12,8 @@
 
 namespace tcp{
 
-class HousekeepingCommunicationPackage : public CommunicationPackage{
+class HousekeepingCommunicationPackage :
+		public CommunicationPackage{
 
 public:
 	HousekeepingCommunicationPackage();

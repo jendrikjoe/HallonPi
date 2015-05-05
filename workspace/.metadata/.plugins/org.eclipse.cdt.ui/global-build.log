@@ -3545,3 +3545,65 @@ Invoking: Cross G++ Linker
 arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./ADCRead.o ./CommandCommunicationPackage.o ./CommandExecuter.o ./CommunicationPackage.o ./GPIOAccess.o ./HallonThread.o ./HousekeepingCollector.o ./HousekeepingCommunicationPackage.o ./Sender.o ./TCPReceiver.o ./TCPSender.o ./TCPServer.o ./test.o   -lwiringPi -lpthread
 Finished building target: RPi test
  
+22:40:21 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../HousekeepingCollector.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"HousekeepingCollector.d" -MT"HousekeepingCollector.d" -o "HousekeepingCollector.o" "../HousekeepingCollector.cpp"
+Finished building: ../HousekeepingCollector.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./ADCRead.o ./CommandCommunicationPackage.o ./CommandExecuter.o ./CommunicationPackage.o ./GPIOAccess.o ./HallonThread.o ./HousekeepingCollector.o ./HousekeepingCommunicationPackage.o ./Sender.o ./TCPReceiver.o ./TCPSender.o ./TCPServer.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+22:41:59 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../HousekeepingCollector.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"HousekeepingCollector.d" -MT"HousekeepingCollector.d" -o "HousekeepingCollector.o" "../HousekeepingCollector.cpp"
+Finished building: ../HousekeepingCollector.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./ADCRead.o ./CommandCommunicationPackage.o ./CommandExecuter.o ./CommunicationPackage.o ./GPIOAccess.o ./HallonThread.o ./HousekeepingCollector.o ./HousekeepingCommunicationPackage.o ./Sender.o ./TCPReceiver.o ./TCPSender.o ./TCPServer.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+22:42:10 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../HousekeepingCollector.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"HousekeepingCollector.d" -MT"HousekeepingCollector.d" -o "HousekeepingCollector.o" "../HousekeepingCollector.cpp"
+Finished building: ../HousekeepingCollector.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./ADCRead.o ./CommandCommunicationPackage.o ./CommandExecuter.o ./CommunicationPackage.o ./GPIOAccess.o ./HallonThread.o ./HousekeepingCollector.o ./HousekeepingCommunicationPackage.o ./Sender.o ./TCPReceiver.o ./TCPSender.o ./TCPServer.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 
+23:25:05 **** Incremental Build of configuration Debug for project RPi test ****
+make all 
+Building file: ../HousekeepingCollector.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"HousekeepingCollector.d" -MT"HousekeepingCollector.d" -o "HousekeepingCollector.o" "../HousekeepingCollector.cpp"
+Finished building: ../HousekeepingCollector.cpp
+ 
+Building file: ../HousekeepingCommunicationPackage.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"HousekeepingCommunicationPackage.d" -MT"HousekeepingCommunicationPackage.d" -o "HousekeepingCommunicationPackage.o" "../HousekeepingCommunicationPackage.cpp"
+Finished building: ../HousekeepingCommunicationPackage.cpp
+ 
+Building file: ../test.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/usr/local/wiringPi/wiringPi -O2 -g3 -Wall -c -lwiringPi -fmessage-length=0 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7-a -mtune=cortex-a7 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+../test.cpp: In function 'int main()':
+../test.cpp:45:6: warning: variable 'answer' set but not used [-Wunused-but-set-variable]
+  int answer = sem_init(&tcpReadSemaphore,0,0);
+      ^
+Finished building: ../test.cpp
+ 
+Building target: RPi test
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/usr/local/wiringPi/wiringPi -Wl,-soname=-rpath=/usr/local/wiringPi -o "RPi test"  ./ADCCommunicationPackage.o ./ADCRead.o ./CommandCommunicationPackage.o ./CommandExecuter.o ./CommunicationPackage.o ./GPIOAccess.o ./HallonThread.o ./HousekeepingCollector.o ./HousekeepingCommunicationPackage.o ./Sender.o ./TCPReceiver.o ./TCPSender.o ./TCPServer.o ./test.o   -lwiringPi -lpthread
+Finished building target: RPi test
+ 

@@ -3,8 +3,25 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     // Style
-    this->setStyleSheet("QWidget{background:black}; \
-            QTabBar::tab:selected,QTabBar::tab:hover{color:red};");
+    this->setStyleSheet("QWidget{background:black; color:rgb(180,0,0)} \
+            QTabBar::tab:selected,QTabBar::tab:hover{color:red} \
+            QPushButton{background:rgb(0,110,0); \
+                        border-style:outset; \
+                        border-width: 4px;\
+                        border-radius: 20px;\
+                        border-color: rgb(130,130,130);\
+                        color:white}\
+            QLabel{color:rgb(180,0,0)}\
+            QPushButton{background:rgb(180,0,0); \
+                        border-style:outset; \
+                        border-width: 4px;\
+                        border-radius: 20px;\
+                        border-color: rgb(130,130,130);\
+                        color:white;}\
+            QPushButton:pressed{background:rgb(90,0,0);\
+                                border-style:inset;\
+                                border-color:rgb(130,130,130);}\
+            QPushButton:hover{background:rgb(230,0,0);};");
     // Adapt size to Desktop size
     desktopSize = new QDesktopWidget();
     this->resize(desktopSize->size());
@@ -42,7 +59,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
 
     adcAverage = new QCheckBox("Average Voltage");
-    //adcAverage->setStyleSheet("QCheckBox::indicator {width: 13px;height: 13px;}");
+    adcAverage->setStyleSheet("QCheckBox::indicator {width: 13px;height: 13px;}");
     adcAverage->setStyleSheet(QString("QCheckBox {color : red; font : bold; font : 20px; border : 2px}") +
                               QString("QCheckBox::indicator { width:20px; height: 20px; border : 2px}") +
                               QString("QCheckBox::indicator:unchecked { background-color : white;}") +
@@ -50,6 +67,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     adcLayout->addWidget(adcAverage, 1, 0, 1, 2);
 
     adcWidget->setLayout(adcLayout);
+    convWindow = new ConvolutionWindow(this);
+    tabWidget->addTab(convWindow,"Convolution");
 
 }
 
